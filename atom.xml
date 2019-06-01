@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>阿希、@的博客</title>
+  
+  <subtitle>从学习中积淀，从实践中成长</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://zhuliming66.com/"/>
+  <updated>2019-06-01T16:02:07.427Z</updated>
+  <id>http://zhuliming66.com/</id>
+  
+  <author>
+    <name>阿希、@</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库介绍 SQL基础</title>
+    <link href="http://zhuliming66.com/2019/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BB%8B%E7%BB%8D-SQL%E5%9F%BA%E7%A1%80/"/>
+    <id>http://zhuliming66.com/2019/06/01/数据库介绍-SQL基础/</id>
+    <published>2019-06-01T14:47:49.000Z</published>
+    <updated>2019-06-01T16:02:07.427Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h3&gt;&lt;p&gt;之前通过流去操作文件保存数据的弊端：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;执行效率低&lt;/li&gt;
+&lt;li&gt;开发成本高&lt;/li&gt;
+&lt;li&gt;一般只能保存小量数据&lt;/li&gt;
+&lt;li&gt;只能保存文本数据
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://zhuliming66.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://zhuliming66.com/2019/06/01/hello-world/"/>
+    <id>http://zhuliming66.com/2019/06/01/hello-world/</id>
+    <published>2019-06-01T09:18:23.086Z</published>
+    <updated>2019-06-01T16:02:40.193Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
