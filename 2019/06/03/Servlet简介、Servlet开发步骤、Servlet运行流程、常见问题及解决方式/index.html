@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Servlet,">
 
 
 
@@ -92,17 +92,26 @@
 
 
 
-<meta name="description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
-<meta name="keywords" content="Java SE,HTML,javascript,jquery,MySQL,Spring,SpringMVC,SpringBoot,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿希、@的博客">
-<meta property="og:url" content="http://zhuliming66.com/archives/2019/06/index.html">
+<meta name="description" content="1.什么是Servlet?sun公司制订的一种用来扩展web服务器功能的组件规范。  (1)扩展web服务器功能web服务器只能够处理静态资源的请求（即需要事先将 静态页面写好），不能够处理动态资源的请求（即需要进行计算，生成动态页面），所以，需要扩展其功能。 可以使用Servlet来扩展web服务器功能，web服务器收到 请求之后，如果需要计算，则调用Servlet来处理。(2)组件规范1)什么">
+<meta name="keywords" content="Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta property="og:description" content="1.什么是Servlet?sun公司制订的一种用来扩展web服务器功能的组件规范。  (1)扩展web服务器功能web服务器只能够处理静态资源的请求（即需要事先将 静态页面写好），不能够处理动态资源的请求（即需要进行计算，生成动态页面），所以，需要扩展其功能。 可以使用Servlet来扩展web服务器功能，web服务器收到 请求之后，如果需要计算，则调用Servlet来处理。(2)组件规范1)什么">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/s1.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/s2.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/a1.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/a2.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/a3.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/a4.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/a5.png">
+<meta property="og:updated_time" content="2019-06-03T03:22:22.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿希、@的博客">
-<meta name="twitter:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta name="twitter:title" content="Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式">
+<meta name="twitter:description" content="1.什么是Servlet?sun公司制订的一种用来扩展web服务器功能的组件规范。  (1)扩展web服务器功能web服务器只能够处理静态资源的请求（即需要事先将 静态页面写好），不能够处理动态资源的请求（即需要进行计算，生成动态页面），所以，需要扩展其功能。 可以使用Servlet来扩展web服务器功能，web服务器收到 请求之后，如果需要计算，则调用Servlet来处理。(2)组件规范1)什么">
+<meta name="twitter:image" content="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/s1.png">
 
 
 
@@ -132,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/archives/2019/06/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/">
 
 
 
 
 
-  <title>归档 | 阿希、@的博客</title>
+  <title>Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式 | 阿希、@的博客</title>
   
 
 
@@ -157,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
       <a href="https://github.com/zhuliming66" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -323,177 +332,365 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-03T11:03:38+08:00">
+                2019-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 4 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Servlet/" itemprop="url" rel="index">
+                    <span itemprop="name">Servlet</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/03/HTTP协议/" itemprop="url">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">HTTP协议</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T11:17:28+08:00" content="2019-06-03">
-          06-03
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/" itemprop="url">
-              
-                <span itemprop="name">Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T11:03:38+08:00" content="2019-06-03">
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/01/主键约束、拆分表、事务、数据类型/" itemprop="url">
-              
-                <span itemprop="name">主键约束、拆分表、事务、数据类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-01T22:47:49+08:00" content="2019-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <h1 id="1-什么是Servlet"><a href="#1-什么是Servlet" class="headerlink" title="1.什么是Servlet?"></a>1.什么是Servlet?</h1><p>sun公司制订的一种用来扩展web服务器功能的组件规范。</p>
+<p><img src="s1.png" alt></p>
+<h2 id="1-扩展web服务器功能"><a href="#1-扩展web服务器功能" class="headerlink" title="(1)扩展web服务器功能"></a>(1)扩展web服务器功能</h2><pre><code>web服务器只能够处理静态资源的请求（即需要事先将
+静态页面写好），不能够处理动态资源的请求（即需要进行计算，生成动态页面），所以，需要扩展其功能。
+可以使用Servlet来扩展web服务器功能，web服务器收到
+请求之后，如果需要计算，则调用Servlet来处理。</code></pre><h2 id="2-组件规范"><a href="#2-组件规范" class="headerlink" title="(2)组件规范"></a>(2)组件规范</h2><h3 id="1-什么是组件"><a href="#1-什么是组件" class="headerlink" title="1)什么是组件?"></a>1)什么是组件?</h3><p>符合规范、实现部分功能，并且需要部署到相应的容器当中才能运行的软件模块。</p>
+<pre><code>Servlet是一个组件，必须符合Servlet规范，并且需要部署到Servlet容器当中才能运行。</code></pre><h3 id="2-什么是容器"><a href="#2-什么是容器" class="headerlink" title="2)什么是容器?"></a>2)什么是容器?</h3><p>符合规范、提供组件运行环境的程序。</p>
+<pre><code>Servlet容器(比如Tomcat)为Servlet提供运行环境
+(主要是提供网络相关的服务)</code></pre><h1 id="2-如何写一个Servlet"><a href="#2-如何写一个Servlet" class="headerlink" title="2.如何写一个Servlet?"></a>2.如何写一个Servlet?</h1><p>step1.写一个java类，实现Servlet接口或者继承HttpServlet。</p>
+<p>step2.编译。</p>
+<p>step3.打包。（即建立一个具有如下结构的文件夹）</p>
+<pre><code>appname
+    WEB-INF
+        classes (放.class文件)
+        lib (可选，放.jar文件)
+        web.xml (部署描述文件)</code></pre><p>step4.部署。</p>
+<pre><code>把step3创建好的文件夹拷贝到容器指定的位置。
+注：
+    可以将step3创建好的文件夹压缩成&quot;.war&quot;为后缀
+    的文件，然后拷贝。</code></pre><p>step5.启动容器，访问Servlet。</p>
+<pre><code>http://ip:port/appname/url-pattern
+注:
+    url-pattern在web.xml中设置。</code></pre><h1 id="3-Servlet是如何运行的"><a href="#3-Servlet是如何运行的" class="headerlink" title="3.Servlet是如何运行的?"></a>3.Servlet是如何运行的?</h1><p>比如，在浏览器地址栏输入<a href="http://localhost:8080/day01/hello" target="_blank" rel="noopener">http://localhost:8080/day01/hello</a></p>
+<p><img src="s2.png" alt></p>
+<pre><code>step1.浏览器依据ip和port建立连接。
+step2.浏览器将相关数据放到请求数据包，然后将请求
+数据包发送给服务器。
+step3.服务器解析请求数据包，将解析到的结果放到
+request对象里面，同时，创建一个response对象。
+step4.服务器依据请求路径，创建Servlet对象，然后
+调用该对象的service方法。
+    注:
+        开发人员只需要调用request对象的方法，就
+    可以获得请求数据包中的数据。类似的，只需要调用
+    response对象的方法，就可以将处理结果写到
+    response对象里面，容器会从response对象中取
+    出处理结果，然后创建响应数据包并发送给浏览器。
+step5.容器从response对象中取出处理结果，然后创建
+响应数据包并发送给浏览器。
+step6.浏览器解析响应数据包，生成结果页面。</code></pre><h1 id="4-常见错误"><a href="#4-常见错误" class="headerlink" title="4.常见错误"></a>4.常见错误</h1><h2 id="1-404"><a href="#1-404" class="headerlink" title="(1)404"></a>(1)404</h2><pre><code>a.含义：服务器依据请求路径，找不到对应的资源。
+b.错误原因:
+    b1.请求路径写错。
+    b2.应用没有部署或者部署失败。</code></pre><h2 id="2-500"><a href="#2-500" class="headerlink" title="(2)500"></a>(2)500</h2><pre><code>a.含义:服务器端程序运行发生问题。
+b.错误原因:
+    b1.没有严格按照规范来写代码。
+    比如，没有继承HttpServlet或者实现Servlet
+    接口。又或者部署描述文件写错。
 
-        
-        
-        
+    b2.代码写得不严谨。
+    比如，对请求参数值没有做任何检查就直接做类型
+    转换。</code></pre><h2 id="3-405"><a href="#3-405" class="headerlink" title="(3)405"></a>(3)405</h2><pre><code>a.含义:服务器找不到处理方法。
+b.错误原因:
+    没有正确override HttpServlet的service方法。</code></pre><h1 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h1><p>写一个Servlet(比如DateServlet)，输出当前的<br>系统日期，比如”2018-10-25”</p>
+<p>##　提示</p>
+<h2 id="step1-创建一个maven工程。注意三个细节"><a href="#step1-创建一个maven工程。注意三个细节" class="headerlink" title="step1.创建一个maven工程。注意三个细节:"></a>step1.创建一个maven工程。注意三个细节:</h2><p>细节1:选war包，如下图所示:</p>
+<p><img src="a1.png" alt></p>
+<p>细节2:工程建完之后，默认没有带web.xml文件，需要<br>添加web.xml文件,如下图所示:</p>
+<p><img src="a2.png" alt></p>
+<p>细节3:指定servlet容器，如下图所示:</p>
+<p><img src="a3.png" alt></p>
+<h2 id="step2-添加一个java类-DateServlet"><a href="#step2-添加一个java类-DateServlet" class="headerlink" title="step2.添加一个java类(DateServlet)"></a>step2.添加一个java类(DateServlet)</h2><p>参考代码如下:</p>
+<pre><code>public class DateServlet extends HttpServlet{
 
-        
-        
+public void service(
+        HttpServletRequest request,
+        HttpServletResponse response)
+throws ServletException,IOException{
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/01/数据库介绍-SQL基础/" itemprop="url">
-              
-                <span itemprop="name">数据库介绍 SQL基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-01T22:47:49+08:00" content="2019-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+    //生成日期信息
+    Date date = new Date();
+    SimpleDateFormat sdf = 
+            new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+    String dateInfo = 
+            sdf.format(date);
+    //输出日期
+    response.setContentType(&quot;text/html&quot;);
+    PrintWriter out = 
+            response.getWriter();
+    out.println(dateInfo);
+    out.close();
+    }
+}</code></pre><h2 id="step3-在web-xml添加该Servlet的配置"><a href="#step3-在web-xml添加该Servlet的配置" class="headerlink" title="step3. 在web.xml添加该Servlet的配置"></a>step3. 在web.xml添加该Servlet的配置</h2><p>参考配置如下:</p>
+<pre><code>&lt;servlet&gt;
+    &lt;servlet-name&gt;dateServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;web.DateServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;dateServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/date&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</code></pre><h2 id="step4-部署、运行"><a href="#step4-部署、运行" class="headerlink" title="step4.部署、运行"></a>step4.部署、运行</h2><p><img src="a4.png" alt></p>
+<h2 id="Tomcat的配置请参考doc-tedu-cn上的文档。"><a href="#Tomcat的配置请参考doc-tedu-cn上的文档。" class="headerlink" title="Tomcat的配置请参考doc.tedu.cn上的文档。"></a>Tomcat的配置请参考doc.tedu.cn上的文档。</h2><p><img src="a5.png" alt>    </p>
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><p>写一个Servlet,计算一个人的BMI指数。</p>
+<pre><code>BMI指数 = 体重(公斤) / 身高(米) / 身高(米)</code></pre>
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/Alipay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Servlet/" rel="tag"><i class="fas fa-tag"></i> Servlet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/01/主键约束、拆分表、事务、数据类型/" rel="next" title="主键约束、拆分表、事务、数据类型">
+                <i class="fa fa-chevron-left"></i> 主键约束、拆分表、事务、数据类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/03/HTTP协议/" rel="prev" title="HTTP协议">
+                HTTP协议 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -501,6 +698,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -521,8 +725,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -643,6 +856,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-什么是Servlet"><span class="nav-number">1.</span> <span class="nav-text">1.什么是Servlet?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-扩展web服务器功能"><span class="nav-number">1.1.</span> <span class="nav-text">(1)扩展web服务器功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-组件规范"><span class="nav-number">1.2.</span> <span class="nav-text">(2)组件规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是组件"><span class="nav-number">1.2.1.</span> <span class="nav-text">1)什么是组件?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是容器"><span class="nav-number">1.2.2.</span> <span class="nav-text">2)什么是容器?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-如何写一个Servlet"><span class="nav-number">2.</span> <span class="nav-text">2.如何写一个Servlet?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Servlet是如何运行的"><span class="nav-number">3.</span> <span class="nav-text">3.Servlet是如何运行的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-常见错误"><span class="nav-number">4.</span> <span class="nav-text">4.常见错误</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-404"><span class="nav-number">4.1.</span> <span class="nav-text">(1)404</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-500"><span class="nav-number">4.2.</span> <span class="nav-text">(2)500</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-405"><span class="nav-number">4.3.</span> <span class="nav-text">(3)405</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习："><span class="nav-number">5.</span> <span class="nav-text">练习：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#step1-创建一个maven工程。注意三个细节"><span class="nav-number">5.1.</span> <span class="nav-text">step1.创建一个maven工程。注意三个细节:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step2-添加一个java类-DateServlet"><span class="nav-number">5.2.</span> <span class="nav-text">step2.添加一个java类(DateServlet)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step3-在web-xml添加该Servlet的配置"><span class="nav-number">5.3.</span> <span class="nav-text">step3. 在web.xml添加该Servlet的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step4-部署、运行"><span class="nav-number">5.4.</span> <span class="nav-text">step4.部署、运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat的配置请参考doc-tedu-cn上的文档。"><span class="nav-number">5.5.</span> <span class="nav-text">Tomcat的配置请参考doc.tedu.cn上的文档。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习"><span class="nav-number">6.</span> <span class="nav-text">练习</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -810,6 +1039,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
