@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Spring,">
 
 
 
@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
-<meta name="keywords" content="Java SE,HTML,javascript,jquery,MySQL,Spring,SpringMVC,SpringBoot,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://zhuliming66.com/tags/index.html">
+<meta name="description" content="1. 前2天小结 【理解】通过Spring获取对象的3种条件：无参构造方法、静态工厂方法、实例方法；  【理解】由Spring管理的对象的作用域及生命周期：单例、懒加载、生命周期方法；  【重要】通过SET方式注入属性的值，理解value和ref的使用；  【了解】通过构造方法注入属性的值；  【了解】注入集合类型的属性的值，包括：List / Set / Map；  【重要】注入Properti">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring组件扫描、注解">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/04/Spring组件扫描、注解/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta property="og:description" content="1. 前2天小结 【理解】通过Spring获取对象的3种条件：无参构造方法、静态工厂方法、实例方法；  【理解】由Spring管理的对象的作用域及生命周期：单例、懒加载、生命周期方法；  【重要】通过SET方式注入属性的值，理解value和ref的使用；  【了解】通过构造方法注入属性的值；  【了解】注入集合类型的属性的值，包括：List / Set / Map；  【重要】注入Properti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T04:29:54.751Z">
+<meta property="og:updated_time" content="2019-06-04T13:17:26.059Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta name="twitter:title" content="Spring组件扫描、注解">
+<meta name="twitter:description" content="1. 前2天小结 【理解】通过Spring获取对象的3种条件：无参构造方法、静态工厂方法、实例方法；  【理解】由Spring管理的对象的作用域及生命周期：单例、懒加载、生命周期方法；  【重要】通过SET方式注入属性的值，理解value和ref的使用；  【了解】通过构造方法注入属性的值；  【了解】注入集合类型的属性的值，包括：List / Set / Map；  【重要】注入Properti">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/tags/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/04/Spring组件扫描、注解/">
 
 
 
 
 
-  <title>标签 | 阿希、@的博客</title>
+  <title>Spring组件扫描、注解 | 阿希、@的博客</title>
   
 
 
@@ -326,40 +326,359 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/04/Spring组件扫描、注解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 4 个标签
+          <h1 class="post-title" itemprop="name headline">Spring组件扫描、注解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T21:16:22+08:00">
+                2019-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/04/Spring组件扫描、注解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/04/Spring组件扫描、注解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/HTTP/" style="font-size: 12px; color: #ccc">HTTP</a> <a href="/tags/MySQL/" style="font-size: 21px; color: #6f6f6f">MySQL</a> <a href="/tags/Servlet/" style="font-size: 12px; color: #ccc">Servlet</a> <a href="/tags/Spring/" style="font-size: 30px; color: #111">Spring</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="1-前2天小结"><a href="#1-前2天小结" class="headerlink" title="1. 前2天小结"></a>1. 前2天小结</h3><ol>
+<li><p>【理解】通过Spring获取对象的3种条件：无参构造方法、静态工厂方法、实例方法；</p>
+</li>
+<li><p>【理解】由Spring管理的对象的作用域及生命周期：单例、懒加载、生命周期方法；</p>
+</li>
+<li><p>【重要】通过SET方式注入属性的值，理解value和ref的使用；</p>
+</li>
+<li><p>【了解】通过构造方法注入属性的值；</p>
+</li>
+<li><p>【了解】注入集合类型的属性的值，包括：List / Set / Map；</p>
+</li>
+<li><p>【重要】注入Properties类型的属性的值，读取*.properties文件；</p>
+</li>
+<li><p>【理解】自动装配的作用，取值为byName与byType的特性；</p>
+</li>
+<li><p>【重要】Spring表达式</p>
+</li>
+</ol>
+<h3 id="2-Spring注解（Annotation）"><a href="#2-Spring注解（Annotation）" class="headerlink" title="2. Spring注解（Annotation）"></a>2. Spring注解（Annotation）</h3><h4 id="2-1-基本概念"><a href="#2-1-基本概念" class="headerlink" title="2.1. 基本概念"></a>2.1. 基本概念</h4><p>例如<code>@Override</code>就是注解，在Spring中定义了一些注解，可以取代在Spring的XML文件中的配置！</p>
+<h4 id="2-2-通过Spring获取对象"><a href="#2-2-通过Spring获取对象" class="headerlink" title="2.2. 通过Spring获取对象"></a>2.2. 通过Spring获取对象</h4><p>案例目标：创建<code>cn.tedu.spring.dao.UserDao</code>类，然后，创建<code>cn.tedu.spring.test.SpringTest</code>类，通过Spring获取<code>UserDao</code>的对象。</p>
+<p>在Spring中，有几种通用注解：</p>
+<ul>
+<li><p>@Component</p>
+</li>
+<li><p>@Controller</p>
+</li>
+<li><p>@Service</p>
+</li>
+<li><p>@Repository</p>
+</li>
+</ul>
+<p>这些注解是添加在类的声明之前的，表示这个类是一个“组件”，是希望由Spring进行管理的！</p>
+<p>以上4个注解中，<code>@Component</code>表示“通用组件类”，<code>@Controller</code>表示“控制器类”，<code>@Service</code>表示“业务类”，<code>@Repository</code>表示“数据访问类/持久层处理的类”，这4个注解只有语义的区别，从功能和用法上来说，是完全一样的！即，如果愿意的话，可以用<code>@Service</code>注解添加在控制器类的声明之前，但是，不推荐这样做。</p>
+<p>仅仅只是添加注解是不够的，还需要在Spring的配置文件中开启组件扫描：</p>
+<pre><code>&lt;context:component-scan 
+    base-package=&quot;cn.tedu.spring.dao&quot; /&gt;</code></pre><p>以上配置中，<code>base-package</code>表示根包，即当配置为<code>cn.tedu.spring</code>时，其子级包例如<code>cn.tedu.spring.dao</code>或<code>cn.tedu.spring.service</code>等都在扫描范围之内！</p>
+<p>如果没有显式的指定bean-id，默认为使用类名且首字母改为小写，例如<code>UserDao</code>类的bean-id就是<code>userDao</code>。</p>
+<p>以上注解都可以添加配置，例如<code>@Service(&quot;bean-id&quot;)</code>。</p>
+<p><strong>小结：通用注解共4个，其功能、用法都是完全相同的，只是表达的语义不同，添加的注解的类，并且在组件扫描范围之内，就会被Spring所管理，在配置组件扫描时，配置的包是“根包”，其范围不宜过大，在添加注解时，还可以自定义bean-id。</strong></p>
+<h4 id="2-3-作用域与生命周期"><a href="#2-3-作用域与生命周期" class="headerlink" title="2.3. 作用域与生命周期"></a>2.3. 作用域与生命周期</h4><p>由Spring管理的对象，默认是饿汉式的单例的，通过在类的声明之前添加注解<code>@Lazy</code>可以调整：</p>
+<pre><code>@Component(&quot;userDao&quot;)
+@Lazy(true)
+public class UserDao {
+}</code></pre><p>还可以通过<code>@Scope(&quot;singleton&quot;)</code>或<code>@Scope(&quot;prototype&quot;)</code>注解调整是否为单例的：</p>
+<pre><code>@Service
+@Scope(&quot;prototype&quot;)
+public class UserService {
+}</code></pre><p>关于生命周期方法，依然是先自定义生命周期方法，在初始化方法之前添加<code>@PostConstruct</code>注解，在销毁方法之前添加<code>@PreDestroy</code>注解，这2个注解都是Java EE的注解，来自<code>javax</code>包下，所以，在使用之前，需要为当前项目添加Tomcat运行环境，代码部分例如：</p>
+<pre><code>@Component(&quot;userDao&quot;)
+public class UserDao {
+
+    public UserDao() {
+        System.out.println(&quot;UserDao的构造方法被执行！&quot;);
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println(&quot;UserDao.init()&quot;);
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println(&quot;UserDao.destroy()&quot;);
+    }
+
+}</code></pre><p><strong>注意：如果导入他人的项目，或者本机更换了Tomcat软件，都需要重新勾选项目属性中的Targeted Runtimes中的Tomcat。</strong></p>
+<h4 id="2-4-【重要】自动装配"><a href="#2-4-【重要】自动装配" class="headerlink" title="2.4. 【重要】自动装配"></a>2.4. 【重要】自动装配</h4><p>假设在<code>UserDao</code>中存在<code>public void findUserByUsername()</code>方法，然后，在<code>UserService</code>中声明了<code>private UserDao userDao;</code>属性，并且，存在<code>public void login()</code>方法，在方法内部，调用了<code>userDao</code>的<code>findUserByUsername()</code>方法：</p>
+<pre><code>@Component(&quot;userDao&quot;)
+public class UserDao {
+
+    public void findUserByUsername() {
+        System.out.println(&quot;UserDao.findUserByUsername()&quot;);
+    }
+
+}
+
+@Service
+public class UserService {
+
+    private UserDao userDao;
+
+    public void login() {
+        System.out.println(&quot;UserService.login()&quot;);
+        userDao.findUserByUsername();
+    }
+
+}</code></pre><p>在需要自动装配属性值的属性之前，添加<code>@Autowired</code>注解，就可以实现自动装配：</p>
+<pre><code>@Autowired
+private UserDao userDao;</code></pre><p><strong>注意：使用注解的自动装配不需要为属性添加SET方法！</strong></p>
+<p>添加<code>@Autowired</code>实现自动装配，其装配方式是<code>byType</code>的，所以，在使用时，需要确保“其对应的值在Spring容器中应该是有且仅有1个的”！</p>
+<p>通过<code>@Resource</code>注解也可以实现自动装配！它是优先根据<code>byName</code>实现自动装配，在没有显式的指定bean-id的情况下，如果无法<code>byName</code>装配，则会尝试根据<code>byType</code>实现自动装配。</p>
+<p>在实际使用时，可以自由选取以上2个注解中的任何一个！因为，在实际应用中，命名应该是规范的，并且，匹配类型的也应该是有且仅有1个。</p>
+<p>以上2个注解中，<code>@Autowired</code>是Spring的环境中的注解类，而<code>@Resource</code>是Java EE环境中的注解类。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/AliPay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"><i class="fas fa-tag"></i> Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/" rel="next" title="注入集合类型、注入properties类型、自动装配、Spring表达式">
+                <i class="fa fa-chevron-left"></i> 注入集合类型、注入properties类型、自动装配、Spring表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -395,8 +714,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -517,6 +845,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前2天小结"><span class="nav-number">1.</span> <span class="nav-text">1. 前2天小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Spring注解（Annotation）"><span class="nav-number">2.</span> <span class="nav-text">2. Spring注解（Annotation）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-通过Spring获取对象"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 通过Spring获取对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-作用域与生命周期"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. 作用域与生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-【重要】自动装配"><span class="nav-number">2.4.</span> <span class="nav-text">2.4. 【重要】自动装配</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

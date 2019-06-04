@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="MySQL,">
+  <meta name="keywords" content="Spring,">
 
 
 
@@ -92,18 +92,23 @@
 
 
 
-<meta name="description" content="数据库之前通过流去操作文件保存数据的弊端：  执行效率低 开发成本高 一般只能保存小量数据 只能保存文本数据">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="1. 框架框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。 框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。 框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。 普通的jar包，例如dom4j、mysql-connector等，只是实现了某个">
+<meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库介绍 SQL基础">
-<meta property="og:url" content="http://zhuliming66.com/2019/06/01/数据库介绍-SQL基础/index.html">
+<meta property="og:title" content="Spring简介、对象获取方式、对象生命周期、单例模式、SET注入">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="数据库之前通过流去操作文件保存数据的弊端：  执行效率低 开发成本高 一般只能保存小量数据 只能保存文本数据">
+<meta property="og:description" content="1. 框架框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。 框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。 框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。 普通的jar包，例如dom4j、mysql-connector等，只是实现了某个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T15:59:43.836Z">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/01.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/02.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/03.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/04.png">
+<meta property="og:updated_time" content="2019-06-04T13:04:39.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库介绍 SQL基础">
-<meta name="twitter:description" content="数据库之前通过流去操作文件保存数据的弊端：  执行效率低 开发成本高 一般只能保存小量数据 只能保存文本数据">
+<meta name="twitter:title" content="Spring简介、对象获取方式、对象生命周期、单例模式、SET注入">
+<meta name="twitter:description" content="1. 框架框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。 框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。 框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。 普通的jar包，例如dom4j、mysql-connector等，只是实现了某个">
+<meta name="twitter:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/01.png">
 
 
 
@@ -133,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/2019/06/01/数据库介绍-SQL基础/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/">
 
 
 
 
 
-  <title>数据库介绍 SQL基础 | 阿希、@的博客</title>
+  <title>Spring简介、对象获取方式、对象生命周期、单例模式、SET注入 | 阿希、@的博客</title>
   
 
 
@@ -338,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/01/数据库介绍-SQL基础/">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿希、@">
@@ -355,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据库介绍 SQL基础</h1>
+          <h1 class="post-title" itemprop="name headline">Spring简介、对象获取方式、对象生命周期、单例模式、SET注入</h1>
         
 
         <div class="post-meta">
@@ -367,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T22:47:49+08:00">
-                2019-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T21:02:41+08:00">
+                2019-06-04
               </time>
             
 
@@ -390,8 +395,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
+                  <a href="/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
                   </a>
                 </span>
 
@@ -408,8 +413,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/01/数据库介绍-SQL基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/01/数据库介绍-SQL基础/" itemprop="commentCount"></span>
+                <a href="/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -436,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  2.8k
                 </span>
               
 
@@ -452,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  11
                 </span>
               
             </div>
@@ -473,121 +478,205 @@
       
 
       
-        <h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>之前通过流去操作文件保存数据的弊端：</p>
+        <h2 id="1-框架"><a href="#1-框架" class="headerlink" title="1. 框架"></a>1. 框架</h2><p>框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。</p>
+<p>框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。</p>
+<p>框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。</p>
+<p>普通的jar包，例如<code>dom4j</code>、<code>mysql-connector</code>等，只是实现了某个功能，相当于是一套工具。</p>
+<h2 id="2-课程任务"><a href="#2-课程任务" class="headerlink" title="2. 课程任务"></a>2. 课程任务</h2><ul>
+<li><p>Spring框架</p>
+</li>
+<li><p>SpringMVC框架</p>
+</li>
+<li><p>MyBatis框架</p>
+</li>
+</ul>
+<h2 id="3-Spring框架"><a href="#3-Spring框架" class="headerlink" title="3. Spring框架"></a>3. Spring框架</h2><h3 id="3-1-作用"><a href="#3-1-作用" class="headerlink" title="3.1. 作用"></a>3.1. 作用</h3><p><strong>创建和管理对象</strong>。</p>
+<p>传统的创建对象的方法是：<code>Object obj = new Object();</code></p>
+<p>使用Spring框架后：<code>Object obj = 框架.getXXX();</code></p>
+<p>即：开发者无需关注对象的创建过程，改由框架来创建，当需要对象时，通过框架获取即可。</p>
+<p>传统的管理对象可能有：<code>student.setName(&quot;张三同学&quot;);</code></p>
+<p>使用Spring框架后，无需执行相关代码，通过配置，获取对象时，相关属性就已经有值了。</p>
+<h3 id="3-2-项目准备"><a href="#3-2-项目准备" class="headerlink" title="3.2. 项目准备"></a>3.2. 项目准备</h3><p>先创建Maven项目，勾选<code>Create a simple project</code>，<code>Group Id</code>为<code>cn.tedu.spring</code>，<code>Artifact Id</code>为<code>SPRING-01</code>，<code>Packaging</code>选择<code>war</code>，创建好项目后，默认项目是出错的，需要生成<code>web.xml</code>文件。</p>
+<p>使用Spring之前，需要添加相关依赖，<code>artifactId</code>为<code>spring-webmvc</code>，且<code>groupId</code>是<code>org.springframework</code>，版本通常选择3.2或以上版本，但，目前尚不推荐使用5.x版本。</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+    &lt;version&gt;4.3.9.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>以上代码，应该添加到项目的<code>pom.xml</code>的<code>&lt;dependencies&gt;</code>节点的内部。</p>
+<p>然后，下载得到<code>applicationContext.xml</code>文件，复制到项目中的<code>src\main\resources</code>文件夹下：</p>
+<p><img src="01.png" alt></p>
+<h3 id="3-3-通过Spring获取对象–类中存在无参数构造方法（常用）"><a href="#3-3-通过Spring获取对象–类中存在无参数构造方法（常用）" class="headerlink" title="3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）"></a>3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）</h3><p>在Spring的配置文件（<code>applicationContext.xml</code>）中，添加：</p>
+<pre><code>&lt;bean id=&quot;date&quot; class=&quot;java.util.Date&quot;&gt;
+&lt;/bean&gt;</code></pre><p>以上配置中，<code>class</code>表示“类”，取值应该是类的全名，即包名和类名，<code>id</code>是自定义的名称，通常使用类名并且首字母改为小写，例如类名是<code>Date</code>，则id值为<code>date</code>，如果类名是<code>Student</code>，则<code>id</code>值为<code>student</code>。</p>
+<p>完成配置后，就可以在程序中，通过Spring根据<code>date</code>名称获取<code>java.util.Date</code>的对象，可以在<code>src\main\java</code>中创建可执行的Java类：</p>
+<pre><code>package cn.tedu.spring;
+
+public class SpringTest {
+
+    public static void main(String[] args) {
+
+    }
+
+}</code></pre><p>然后，编写程序：</p>
+<pre><code>public static void main(String[] args) {
+    // 加载Spring的配置文件，获取Spring容器
+    ApplicationContext ac
+        = new ClassPathXmlApplicationContext(
+                &quot;applicationContext.xml&quot;);
+
+    // 通过Spring容器获取对象
+    Date date = (Date) ac.getBean(&quot;date&quot;);
+
+    // 测试输出
+    System.out.println(date);
+}</code></pre><p><img src="02.png" alt></p>
+<blockquote>
+<p>自定义<code>User</code>类，在Spring的配置文件中添加配置，最终，在程序中，获取<code>User</code>类的对象。</p>
+</blockquote>
+<p>以上操作，要求类中存在无参数的构造方法，如果不具备条件，则：</p>
+<pre><code>Exception in thread &quot;main&quot; org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;user&apos; defined in class path resource [applicationContext.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.tedu.spring.User]: No default constructor found; nested exception is java.lang.NoSuchMethodException: cn.tedu.spring.User.&lt;init&gt;()
+
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.tedu.spring.User]: No default constructor found; nested exception is java.lang.NoSuchMethodException: cn.tedu.spring.User.&lt;init&gt;()
+
+Caused by: java.lang.NoSuchMethodException: cn.tedu.spring.User.&lt;init&gt;()</code></pre><p>这种做法对构造方法的访问权限并没有任何要求，即使是<code>private</code>权限，也不影响Spring创建对象！</p>
+<p>此次实现的代码中，关于<code>ac</code>变量，会提示警告：<code>ac is never closed</code>，即：推荐调用<code>ac.close()</code>以释放资源，但是，<code>ApplicationContext</code>接口中并没有声明<code>close()</code>方法，所以，应该将<code>ac</code>的类型声明为<code>AbstractApplicationContext</code>。</p>
+<h3 id="3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）"><a href="#3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）" class="headerlink" title="3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）"></a>3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）</h3><p><strong>工厂方法：</strong>调用后可以返回类的对象的方法，也可以理解为生产对象的方法。</p>
+<p>以<code>Calendar</code>为例，它是一个抽象类，是不可以直接通过<code>new 构造方法()</code>此类语法创建对象的！但是，在这个类中，有<code>static Calendar getInstance()</code>方法，这个方法，就称之为<code>Calendar</code>类的<strong>静态工厂方法</strong>！</p>
+<p>在Spring的配置文件中，配置：</p>
+<pre><code>&lt;bean id=&quot;calendar&quot;
+    class=&quot;java.util.Calendar&quot;
+    factory-method=&quot;getInstance&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-method</code>属性的值是静态工厂方法的名称。</p>
+<p>配置时，无论是类的全名，还是方法的名称，都必须是已知条件。</p>
+<blockquote>
+<p>练习：自定义类HuaWeiPhone，通过静态工厂方法，获取该类的对象！</p>
+</blockquote>
+<p>关于类：</p>
+<pre><code>package cn.tedu.spring;
+
+public class HuaWeiPhone {
+
+    // 使得当前类不存在无参数的构造方法
+    public HuaWeiPhone(Object obj){
+        super();
+    }
+
+    // 静态工厂方法
+    public static HuaWeiPhone create() {
+        return new HuaWeiPhone(null);
+    }
+
+}</code></pre><p>关于配置：</p>
+<pre><code>&lt;bean id=&quot;huaWeiPhone&quot;
+    class=&quot;cn.tedu.spring.HuaWeiPhone&quot;
+    factory-method=&quot;create&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-5-通过Spring获取对象–存在实例工厂方法（不常用）"><a href="#3-5-通过Spring获取对象–存在实例工厂方法（不常用）" class="headerlink" title="3.5. 通过Spring获取对象–存在实例工厂方法（不常用）"></a>3.5. 通过Spring获取对象–存在实例工厂方法（不常用）</h3><p><strong>实例工厂方法</strong>：通过某个实例（对象）调用的方法，并且，这个方法可以返回某个类的对象，是生产对象的方法。</p>
+<p>假设存在某类需要被获取对象，不满足前序的2种条件：</p>
+<pre><code>public class Car {
+    public Car(Object obj) {
+    }
+}</code></pre><p>则需要另一个类中存在工厂方法，可以创建它的对象</p>
+<pre><code>public class CarFactory {
+    public Car makeCar() {
+        return new Car(null);
+    }
+}</code></pre><p>在配置时：</p>
+<pre><code>&lt;bean id=&quot;carFactory&quot; 
+    class=&quot;cn.tedu.spring.CarFactory&quot;&gt;&lt;/bean&gt;
+&lt;bean id=&quot;car&quot; class=&quot;cn.tedu.spring.Car&quot;
+    factory-bean=&quot;carFactory&quot;
+    factory-method=&quot;makeCar&quot;&gt;
+&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-bean</code>的值是工厂类的<code>&lt;bean&gt;</code>节点的<code>id</code>属性值。</p>
+<p><img src="03.png" alt></p>
+<h3 id="3-6-通过Spring获取对象–小结"><a href="#3-6-通过Spring获取对象–小结" class="headerlink" title="3.6. 通过Spring获取对象–小结"></a>3.6. 通过Spring获取对象–小结</h3><p>通过Spring创建对象，然后从Spring容器中获取对象，需要：</p>
 <ol>
-<li>执行效率低</li>
-<li>开发成本高</li>
-<li>一般只能保存小量数据</li>
-<li>只能保存文本数据<a id="more"></a>
-<h4 id="什么是DB"><a href="#什么是DB" class="headerlink" title="什么是DB"></a>什么是DB</h4></li>
-</ol>
-<ul>
-<li>DataBase 数据库： 代表文件集合<h4 id="什么是DBMS"><a href="#什么是DBMS" class="headerlink" title="什么是DBMS"></a>什么是DBMS</h4></li>
-<li>DataBaseManagementSystem 数据库管理系统(软件) ，用于管理保存数据的文件集合，用于和程序员进行交互，常见的DBMS有：Oracle MySQL DB2 SQLServer Sqlite ，DBMS具备网络访问能力</li>
-</ul>
-<h4 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h4><ul>
-<li>Structured Query Language：结构化查询语言，用户程序员和DBMS进行交互，用于程序员告诉DBMS到底对数据进行什么操作的</li>
-</ul>
-<h3 id="数据库的分类（了解）"><a href="#数据库的分类（了解）" class="headerlink" title="数据库的分类（了解）"></a>数据库的分类（了解）</h3><ul>
-<li>关系型数据库：经过数学理论验证可以将现实生活中的各种关系保存到数据库，这种就称为关系型数据库。保存数据以表为单位</li>
-<li>非关系数据库：一般都是为了解决某些特定场景的问题比如：缓存，高并发访问，Redis数据库（以key-value形式保存数据）<h4 id="常见的关系型数据"><a href="#常见的关系型数据" class="headerlink" title="常见的关系型数据"></a>常见的关系型数据</h4></li>
-<li>MySQL: 属于Oracle公司的产品，08被Sun公司收购，09年Sun公司被Oracle收购，开源免费，被收购后发布5.5版本使用Oracle的部分技术，性能提高了30%以上，用户量增多，计划把MySQL闭源 原MySQL程序员离开Oracle创建了MariaDB 老板女儿Maria。市场排名第一</li>
-<li>Oracle: 排名第二，闭源 性能最高 收费最贵</li>
-<li>DB2： IBM公司产品 闭源项目</li>
-<li>SQLServer：微软公司产品  闭源</li>
-<li>Sqlite：轻量级数据库，安装包几十k，应用在嵌入式设备或移动设备上，</li>
-</ul>
-<h3 id="开源和闭源"><a href="#开源和闭源" class="headerlink" title="开源和闭源"></a>开源和闭源</h3><ul>
-<li><p>开源：开放源代码 免费试用，通过卖服务盈利，社会上会有一些大牛程序员会无偿的维护和升级</p>
+<li><p>类中存在无参数的构造方法；</p>
 </li>
-<li><p>闭源：不开放源代码 收费，通过卖产品+服务盈利 ，有大牛会攻击破坏，但是人家养了一群人维护升级</p>
-<h3 id="打开客户端连接MySQL"><a href="#打开客户端连接MySQL" class="headerlink" title="打开客户端连接MySQL"></a>打开客户端连接MySQL</h3></li>
-<li><p>在终端中执行： mysql -uroot -p 回车  如果有密码写密码 回车 如果没有密码则直接回车</p>
+<li><p>类中存在静态的工厂方法；</p>
 </li>
-</ul>
-<hr>
-<h3 id="和数据库相关的SQL"><a href="#和数据库相关的SQL" class="headerlink" title="和数据库相关的SQL"></a>和数据库相关的SQL</h3><h4 id="查询所有数据库"><a href="#查询所有数据库" class="headerlink" title="查询所有数据库"></a>查询所有数据库</h4><ul>
-<li>show databases;<h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4></li>
-<li>create database db1;<h4 id="查看数据库详情"><a href="#查看数据库详情" class="headerlink" title="查看数据库详情"></a>查看数据库详情</h4></li>
-<li>show create database db1;<h4 id="创建数据库指定字符集"><a href="#创建数据库指定字符集" class="headerlink" title="创建数据库指定字符集"></a>创建数据库指定字符集</h4></li>
-<li>create database db2 character set gbk/utf8;<h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4></li>
-<li>drop database db2;<h4 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h4></li>
-<li>use db1;<h3 id="和表相关的SQL"><a href="#和表相关的SQL" class="headerlink" title="和表相关的SQL"></a>和表相关的SQL</h3><h4 id="查询所有表"><a href="#查询所有表" class="headerlink" title="查询所有表"></a>查询所有表</h4></li>
-<li>show tables;<h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4></li>
-<li>create table 表名(字段1名 字段1的类型,字段2名 字段2的类型,…..);<br>  create table person(name varchar(10),age int);</li>
-<li>创建一个学生表（student） 保存学号id,姓名name,年龄age,语文chinese,数学math,英语english<br>   create table student(id int,name varchar(10),age int,chinese int,math int,english int);<h4 id="查看表详情"><a href="#查看表详情" class="headerlink" title="查看表详情"></a>查看表详情</h4></li>
-<li>show create table 表名;<br>  show create table person;<h4 id="创建表时指定表的引擎和字符集"><a href="#创建表时指定表的引擎和字符集" class="headerlink" title="创建表时指定表的引擎和字符集"></a>创建表时指定表的引擎和字符集</h4></li>
-<li>create table t1(name varchar(10)) engine=myisam charset=gbk;</li>
-</ul>
-<h4 id="表的引擎"><a href="#表的引擎" class="headerlink" title="表的引擎"></a>表的引擎</h4><ul>
-<li>innodb：支持数据库的高级操作如：外键、事务等，默认引擎</li>
-<li>myisam：只支持基础的增删改查操作</li>
-</ul>
-<hr>
-<h3 id="SQL格式："><a href="#SQL格式：" class="headerlink" title="SQL格式："></a>SQL格式：</h3><ol>
-<li>可以有换行</li>
-<li>最后以;结尾</li>
-<li>关键字之间需要有空格(可以写多个空格，建议写一个)</li>
-</ol>
-<h4 id="查看表字段"><a href="#查看表字段" class="headerlink" title="查看表字段"></a>查看表字段</h4><ul>
-<li>desc 表名;<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4></li>
-<li>drop table 表名;<h4 id="修改表相关"><a href="#修改表相关" class="headerlink" title="修改表相关"></a>修改表相关</h4><h5 id="修改表名——rename-table-原名-to-新名"><a href="#修改表名——rename-table-原名-to-新名" class="headerlink" title="修改表名——rename table 原名 to 新名;"></a>修改表名——rename table 原名 to 新名;</h5>  rename table student to stu;<h5 id="修改表的引擎和字符集——alter-table-表名-engine-myisam-innodb-charset-utf8-gbk"><a href="#修改表的引擎和字符集——alter-table-表名-engine-myisam-innodb-charset-utf8-gbk" class="headerlink" title="修改表的引擎和字符集——alter table 表名 engine=myisam/innodb charset=utf8/gbk;"></a>修改表的引擎和字符集——alter table 表名 engine=myisam/innodb charset=utf8/gbk;</h5>  alter table stu engine=myisam charset=gbk;<h5 id="添加表字段"><a href="#添加表字段" class="headerlink" title="添加表字段"></a>添加表字段</h5>最后面： alter table 表名 add 字段名 字段类型;<br>最前面： alter table 表名 add 字段名 字段类型 first;<br>xxx的后面: alter table 表名 add 字段名 字段类型 after xxx;<br>  create table hero(name varchar(10));<br>  alter table hero add age int;<br>  alter table hero add id int first;<br>  alter table hero add sal int after name;<h5 id="删除表字段——alter-table-表名-drop-字段名"><a href="#删除表字段——alter-table-表名-drop-字段名" class="headerlink" title="删除表字段——alter table 表名 drop 字段名;"></a>删除表字段——alter table 表名 drop 字段名;</h5>  alter table hero drop sal;<h5 id="修改表字段的名字和类型——alter-table-表名-change-原字段名-新字段名-新字段类型"><a href="#修改表字段的名字和类型——alter-table-表名-change-原字段名-新字段名-新字段类型" class="headerlink" title="修改表字段的名字和类型——alter table 表名 change 原字段名 新字段名 新字段类型;"></a>修改表字段的名字和类型——alter table 表名 change 原字段名 新字段名 新字段类型;</h5>  alter table hero change name heroname varchar(5);<h5 id="修改表字段的类型和位置——alter-table-表名-modify-字段名-类型-位置"><a href="#修改表字段的类型和位置——alter-table-表名-modify-字段名-类型-位置" class="headerlink" title="修改表字段的类型和位置——alter table 表名 modify 字段名 类型 位置;"></a>修改表字段的类型和位置——alter table 表名 modify 字段名 类型 位置;</h5>  alter table hero modify age int first(after xxx);</li>
-</ul>
-<hr>
-<h3 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h3><ol>
-<li>创建数据库newdb并使用， 里面创建员工表t_emp只有name字段 引擎为myisam 字符集为gbk<br> 1). create database newdb;<br> 2). use newdb;<br> 3). create table t_emp(name varchar(10)) engine=myisam charset=gbk;</li>
-<li>修改表名为emp<br> 1). rename table t_emp to emp;</li>
-<li>修改引擎为innodb 字符集为utf8<br> 1). alter table emp engine=innodb charset=utf8;</li>
-<li>添加部门编号字段deptno 在最后面<br> 1). alter table emp add deptno int;</li>
-<li>添加员工编号 empno在最前面<br> 1). alter table emp add empno int first;</li>
-<li>添加salary字段在name的后面<br> 1). alter table emp add salary int after name;</li>
-<li>修改salary字段名字为sal，把sal放在empno的后面<br> 1). alter table emp change salary sal int;<br> 2). alter table emp modify sal int after empno;</li>
-<li>删除sal字段<br> 1).alter table emp drop sal;</li>
-<li>删除表<br> 1).drop table emp;</li>
-<li>删除数据库<br>1).drop database newdb;</li>
-</ol>
-<hr>
-<h3 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h3><h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><pre><code>create table emp(id int,name varchar(10),age int,sal int);</code></pre><ul>
-<li>全表插入数据：<ul>
-<li>insert into emp values(1,’Tom’,18,3000);</li>
-</ul>
+<li><p>存在实例工厂方法。</p>
 </li>
-<li>指定字段插入数据：<ul>
-<li>insert into emp (name,age) values(‘Jerry’,19);</li>
-<li>insert into emp (name) values(‘李白’);</li>
-</ul>
-</li>
-<li>批量插入数据：<br>  insert into emp values(3,’刘备’,28,6000),(4,’张飞’,20,5000),(5,’关羽’,25,9000);<br>  insert into emp (name,age) values(‘悟空’,500),(‘八戒’,400),(‘沙僧’,200);<h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4></li>
-<li>查询全部数据的全部字段信息<br>  select * from emp;</li>
-<li>查询所有员工的姓名和年龄<br>  select name,age from emp;</li>
-<li>查询年龄在25岁以下的员工信息<br>  select * from emp where age&lt;25;</li>
-<li>查询工资3000块钱的员工姓名、年龄、工资<br>  select name,age,sal from emp where sal=3000;<h4 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h4></li>
-<li>修改Tom的工资为3333<br>  update emp set sal=3333 where name=’Tom’;</li>
-<li>修改30岁以下的工资为666<br>  update emp set sal=666 where age&lt;30;</li>
-<li>修改id等于3的名字为吕布 年龄为55 工资为20000<br>  update emp set name=’吕布’, age=55, sal=20000 where id=3;</li>
-<li>修改工资为null的工资为800<br>  update emp set sal=800 where sal is null;<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4></li>
-<li>删除id=1的员工<br>  delete from emp where id=1;</li>
-<li>删除年龄在25岁以下的员工<br>  delete from emp where age&lt;25;</li>
-<li>删除全部数据<br>  delete from emp;</li>
-</ul>
-<p>insert into t1 (字段名1,字段名2) values(值1,值2),(值1,值2);<br>select name,age from t1 where id&lt;5;<br>update t1 set 字段名=值, 字段名=值 where id=5;<br>delete from t1 where id&lt;3;</p>
-<hr>
-<h3 id="练习：-1"><a href="#练习：-1" class="headerlink" title="练习："></a>练习：</h3><ol>
-<li>创建hero表如果存在则先删除再创建， id 姓名name 类型type 金币money</li>
-<li>插入以下数据   1 诸葛亮 法师 18888 ， 2 孙悟空 打野 18888 ，3 小乔 法师 6888，4 黄忠 射手 8888， 5 刘备 战士 6888</li>
-<li>修改所有18888的为28888</li>
-<li>修改所有打野为刺客</li>
-<li>删除价格为6888的英雄</li>
-<li>修改孙悟空为猪八戒</li>
-<li>删除id为1，2，3的英雄</li>
-<li>修改所有英雄的类型为已阵亡</li>
-<li>删除所有数据</li>
-<li>删除表</li>
 </ol>
+<p>以上3种方式中，第2种和第3种的使用频率较低，原因是满足条件的类较少。</p>
+<h3 id="3-7-由Spring管理的对象的作用域"><a href="#3-7-由Spring管理的对象的作用域" class="headerlink" title="3.7. 由Spring管理的对象的作用域"></a>3.7. 由Spring管理的对象的作用域</h3><p><strong>单例</strong>：单一的实例，即在同一时刻，某个类的对象是唯一的！</p>
+<p>由Spring所管理的对象，默认都是单例的，在配置时，通过<code>scope</code>属性可以配置是否单例，默认取值为<code>singleton</code>，当取值为<code>prototype</code>时，是非单例的！</p>
+<pre><code>&lt;bean id=&quot;student&quot;
+    class=&quot;cn.tedu.spring.Student&quot;
+    scope=&quot;prototype&quot;&gt;&lt;/bean&gt;</code></pre><p>单例模式可以区分为：懒汉式、饿汉式。</p>
+<p>默认情况下，由Spring管理的单例对象是饿汉式的，通过<code>lazy-init</code>属性可以调整，该属性的值是布尔类型。</p>
+<pre><code>&lt;bean id=&quot;student&quot;
+    class=&quot;cn.tedu.spring.Student&quot;
+    scope=&quot;singleton&quot;
+    lazy-init=&quot;true&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-8-由Spring管理的对象的生命周期"><a href="#3-8-由Spring管理的对象的生命周期" class="headerlink" title="3.8. 由Spring管理的对象的生命周期"></a>3.8. 由Spring管理的对象的生命周期</h3><p>仅由Spring管理的、单例的对象存在生命周期问题！</p>
+<p>开发者可以在任何自定义的、由Spring管理的类中添加初始化方法和销毁方法，方法必须是<code>void</code>和无参数的，例如：</p>
+<pre><code>public class Stduent {
+
+    // 初始化方法
+    public void init() {
+        System.out.println(&quot;Student.init()&quot;);
+    }
+
+    // 销毁方法
+    public void destroy() {
+        System.out.println(&quot;Student.destroy()&quot;);
+    }
+
+}</code></pre><p>然后，在Spring的配置文件中进行配置：</p>
+<pre><code>&lt;bean id=&quot;student&quot;
+    class=&quot;cn.tedu.spring.Student&quot;
+    init-method=&quot;init&quot;
+    destroy-method=&quot;destroy&quot;&gt;&lt;/bean&gt;</code></pre><p>注意：对于非单例的对象而言，生命周期方法是没有意义的。</p>
+<h3 id="3-9-通过SET方式注入属性的值"><a href="#3-9-通过SET方式注入属性的值" class="headerlink" title="3.9. 通过SET方式注入属性的值"></a>3.9. 通过SET方式注入属性的值</h3><p>基本概念：通过Spring的配置，确定某个类中的某个属性的值，使得最终获取对象时，属性是已经被赋值的。</p>
+<p>假设存在<code>UserDao</code>类，在类中有<code>String username</code>和<code>String password</code>表示访问数据库的用户名和密码：</p>
+<pre><code>public class UserDao {
+
+    // 模拟：访问数据库的用户名
+    String username;
+
+    // 模拟：访问数据库的密码
+    String password;
+
+}</code></pre><p>需要注入值的属性，必须有set方法，即设置它的值的方法，且方法名称必须以<code>set</code>作为前缀：</p>
+<pre><code>public void setUsername(String u) {
+    username = u;
+}</code></pre><p>然后，在Spring的配置文件中：</p>
+<pre><code>&lt;bean id=&quot;userDao&quot; 
+    class=&quot;cn.tedu.spring.UserDao&quot;&gt;
+    &lt;property name=&quot;username&quot; 
+        value=&quot;root&quot;&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;</code></pre><p>即：添加子级<code>&lt;property&gt;</code>节点，在该节点，配置<code>name</code>和<code>value</code>，其中，<code>name</code>表示属性，<code>value</code>表示值。</p>
+<p><strong>注意：在配置<property>的name时，值应该是需要注入的属性的set方法名称中不包含set的部分，且首字母是小写的！</property></strong></p>
+<p><img src="04.png" alt></p>
 <hr>
-<h3 id="中文字符问题"><a href="#中文字符问题" class="headerlink" title="中文字符问题"></a>中文字符问题</h3><ul>
-<li>set names gbk;</li>
-</ul>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="1-关于Maven中依赖出错"><a href="#1-关于Maven中依赖出错" class="headerlink" title="1. 关于Maven中依赖出错"></a>1. 关于Maven中依赖出错</h3><p>在添加依赖后，下载到的jar包文件可能是已损坏的，或数据不完整的，可能表现为：下载的jar包的数量不正确，或者，编写代码时，某个类无法识别等……</p>
+<p>解决方案：</p>
+<ol>
+<li><p>打开Eclipse的设置，找到<code>Maven</code> &gt; <code>User Settings</code>，面板中的<code>Local Repository</code>就是本地仓库文件夹；</p>
+</li>
+<li><p>关闭Eclipse，因为已经打开的项目可能引用了本地仓库文件夹中的某个jar包，如果Eclipse正在运行，可能导致后续的删除操作无法执行；</p>
+</li>
+<li><p>打开本地仓库文件夹，删除出错的jar包文件（通常jar包文件对于新生来说不易于查找，所以，简单的操作方式就是将整个本地仓库文件夹全部删除）；</p>
+</li>
+<li><p>打开Eclipse，找到需要开发的项目，点击右键，选择<code>Maven</code> &gt; <code>Update Project</code>，在弹出的对话框中，选中<code>Force update ...</code>选项，然后，开始更新即可。</p>
+</li>
+</ol>
+<h3 id="2-Resource-leak"><a href="#2-Resource-leak" class="headerlink" title="2. Resource leak"></a>2. Resource leak</h3><p>Resource leak表示“内存溢出”（内存泄露）。</p>
+<p>模拟情景：假设存在<code>D:/a.txt</code>，在程序中，通过<code>FileInputStream fis</code>访问该文件，在访问过程中，如果出现异常，导致程序结束，然后，JVM中垃圾回收机制尝试回收垃圾时，找到了<code>fis</code>，但是，前序<code>fis</code>并没有正常关闭，仍然连接着硬盘上的<code>a.txt</code>文件，在JVM看来，这个<code>fis</code>仍处于使用状态，不是垃圾！但是，以程序员的角度来看，<code>fis</code>是一个变量，当程序崩溃时，这个变量就已经无法继续使用，就是个垃圾！所以，就会出现“已经无法继续使用的对象，却不会被视为垃圾数据，无法被回收！”</p>
+<p>如果以上类似的垃圾数据越来越多，就会导致可用内存越来越少，当达到极端状态时，就会出现“内存溢出”！</p>
+<p>所以，其实，少量的内存溢出，并没有明显的危害！但是，作为开发者，应该尽量的避免任何可能出现的内存溢出！</p>
+<p>解决内存溢出的核心：尽早释放不再使用的资源，例如流、数据库访问的相关对象、XML的读写工具等连接型资源，对于可能抛出异常的代码，应该添加<code>finally</code>代码块，并在其中释放资源。</p>
+<h3 id="3-单例模式示例"><a href="#3-单例模式示例" class="headerlink" title="3. 单例模式示例"></a>3. 单例模式示例</h3><pre><code>public class King {
+    private static King king;
+
+    private King() {
+    }
+
+    public static King getKing() {
+        if (king == null) {
+            king = new King();
+        }
+        return king;
+    }
+}</code></pre><p><strong>以上是懒汉式单例模式的代码，且，没有解释线程安全问题。</strong></p>
 
       
     </div>
@@ -634,7 +723,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"><i class="fas fa-tag"></i> MySQL</a>
+            <a href="/tags/Spring/" rel="tag"><i class="fas fa-tag"></i> Spring</a>
           
         </div>
       
@@ -647,14 +736,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/06/03/HTTP协议/" rel="next" title="HTTP协议">
+                <i class="fa fa-chevron-left"></i> HTTP协议
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/01/主键约束、拆分表、事务、数据类型/" rel="prev" title="主键约束、拆分表、事务、数据类型">
-                主键约束、拆分表、事务、数据类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/" rel="prev" title="注入集合类型、注入properties类型、自动装配、Spring表达式">
+                注入集合类型、注入properties类型、自动装配、Spring表达式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -877,7 +970,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是DB"><span class="nav-number">1.1.</span> <span class="nav-text">什么是DB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是DBMS"><span class="nav-number">1.2.</span> <span class="nav-text">什么是DBMS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL"><span class="nav-number">1.3.</span> <span class="nav-text">SQL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的分类（了解）"><span class="nav-number">2.</span> <span class="nav-text">数据库的分类（了解）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的关系型数据"><span class="nav-number">2.1.</span> <span class="nav-text">常见的关系型数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源和闭源"><span class="nav-number">3.</span> <span class="nav-text">开源和闭源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开客户端连接MySQL"><span class="nav-number">4.</span> <span class="nav-text">打开客户端连接MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和数据库相关的SQL"><span class="nav-number">5.</span> <span class="nav-text">和数据库相关的SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询所有数据库"><span class="nav-number">5.1.</span> <span class="nav-text">查询所有数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库"><span class="nav-number">5.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库详情"><span class="nav-number">5.3.</span> <span class="nav-text">查看数据库详情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库指定字符集"><span class="nav-number">5.4.</span> <span class="nav-text">创建数据库指定字符集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据库"><span class="nav-number">5.5.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用数据库"><span class="nav-number">5.6.</span> <span class="nav-text">使用数据库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和表相关的SQL"><span class="nav-number">6.</span> <span class="nav-text">和表相关的SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询所有表"><span class="nav-number">6.1.</span> <span class="nav-text">查询所有表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表"><span class="nav-number">6.2.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表详情"><span class="nav-number">6.3.</span> <span class="nav-text">查看表详情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表时指定表的引擎和字符集"><span class="nav-number">6.4.</span> <span class="nav-text">创建表时指定表的引擎和字符集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表的引擎"><span class="nav-number">6.5.</span> <span class="nav-text">表的引擎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL格式："><span class="nav-number">7.</span> <span class="nav-text">SQL格式：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表字段"><span class="nav-number">7.1.</span> <span class="nav-text">查看表字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除表"><span class="nav-number">7.2.</span> <span class="nav-text">删除表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表相关"><span class="nav-number">7.3.</span> <span class="nav-text">修改表相关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表名——rename-table-原名-to-新名"><span class="nav-number">7.3.1.</span> <span class="nav-text">修改表名——rename table 原名 to 新名;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表的引擎和字符集——alter-table-表名-engine-myisam-innodb-charset-utf8-gbk"><span class="nav-number">7.3.2.</span> <span class="nav-text">修改表的引擎和字符集——alter table 表名 engine=myisam/innodb charset=utf8/gbk;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加表字段"><span class="nav-number">7.3.3.</span> <span class="nav-text">添加表字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除表字段——alter-table-表名-drop-字段名"><span class="nav-number">7.3.4.</span> <span class="nav-text">删除表字段——alter table 表名 drop 字段名;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表字段的名字和类型——alter-table-表名-change-原字段名-新字段名-新字段类型"><span class="nav-number">7.3.5.</span> <span class="nav-text">修改表字段的名字和类型——alter table 表名 change 原字段名 新字段名 新字段类型;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表字段的类型和位置——alter-table-表名-modify-字段名-类型-位置"><span class="nav-number">7.3.6.</span> <span class="nav-text">修改表字段的类型和位置——alter table 表名 modify 字段名 类型 位置;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习："><span class="nav-number">8.</span> <span class="nav-text">练习：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据相关"><span class="nav-number">9.</span> <span class="nav-text">数据相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入数据"><span class="nav-number">9.1.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询数据"><span class="nav-number">9.2.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据"><span class="nav-number">9.3.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据"><span class="nav-number">9.4.</span> <span class="nav-text">删除数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习：-1"><span class="nav-number">10.</span> <span class="nav-text">练习：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文字符问题"><span class="nav-number">11.</span> <span class="nav-text">中文字符问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-框架"><span class="nav-number">1.</span> <span class="nav-text">1. 框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-课程任务"><span class="nav-number">2.</span> <span class="nav-text">2. 课程任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Spring框架"><span class="nav-number">3.</span> <span class="nav-text">3. Spring框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-作用"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-项目准备"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 项目准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-通过Spring获取对象–类中存在无参数构造方法（常用）"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）"><span class="nav-number">3.4.</span> <span class="nav-text">3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-通过Spring获取对象–存在实例工厂方法（不常用）"><span class="nav-number">3.5.</span> <span class="nav-text">3.5. 通过Spring获取对象–存在实例工厂方法（不常用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-通过Spring获取对象–小结"><span class="nav-number">3.6.</span> <span class="nav-text">3.6. 通过Spring获取对象–小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-由Spring管理的对象的作用域"><span class="nav-number">3.7.</span> <span class="nav-text">3.7. 由Spring管理的对象的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-由Spring管理的对象的生命周期"><span class="nav-number">3.8.</span> <span class="nav-text">3.8. 由Spring管理的对象的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-通过SET方式注入属性的值"><span class="nav-number">3.9.</span> <span class="nav-text">3.9. 通过SET方式注入属性的值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">4.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-关于Maven中依赖出错"><span class="nav-number">4.1.</span> <span class="nav-text">1. 关于Maven中依赖出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Resource-leak"><span class="nav-number">4.2.</span> <span class="nav-text">2. Resource leak</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-单例模式示例"><span class="nav-number">4.3.</span> <span class="nav-text">3. 单例模式示例</span></a></li></ol></li></ol></div>
             
 
           </div>

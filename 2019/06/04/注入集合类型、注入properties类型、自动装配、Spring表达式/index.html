@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Spring,">
 
 
 
@@ -92,18 +92,21 @@
 
 
 
-<meta name="description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
-<meta name="keywords" content="Java SE,HTML,javascript,jquery,MySQL,Spring,SpringMVC,SpringBoot,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://zhuliming66.com/tags/index.html">
+<meta name="description" content="1. 【常用】通过SET方法注入属性的值（续）如果需要注入的属性的值并不是基本值（基本数据类型或String），则值需要配置为一个&amp;lt;bean&amp;gt;，且，注入值时，使用ref=&amp;quot;bean-id&amp;quot;来确定属性的值： ; 小结：为属性注入值时，如果类型是基本型，使用value进行配置，如果类型是引用，需要配置另一个bean来创建值的对象，然后通过ref进行配置。 2. 【不常用">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="注入集合类型、注入properties类型、自动装配、Spring表达式">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta property="og:description" content="1. 【常用】通过SET方法注入属性的值（续）如果需要注入的属性的值并不是基本值（基本数据类型或String），则值需要配置为一个&amp;lt;bean&amp;gt;，且，注入值时，使用ref=&amp;quot;bean-id&amp;quot;来确定属性的值： ; 小结：为属性注入值时，如果类型是基本型，使用value进行配置，如果类型是引用，需要配置另一个bean来创建值的对象，然后通过ref进行配置。 2. 【不常用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T04:29:54.751Z">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/01.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/02.png">
+<meta property="og:updated_time" content="2019-06-04T13:11:48.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta name="twitter:title" content="注入集合类型、注入properties类型、自动装配、Spring表达式">
+<meta name="twitter:description" content="1. 【常用】通过SET方法注入属性的值（续）如果需要注入的属性的值并不是基本值（基本数据类型或String），则值需要配置为一个&amp;lt;bean&amp;gt;，且，注入值时，使用ref=&amp;quot;bean-id&amp;quot;来确定属性的值： ; 小结：为属性注入值时，如果类型是基本型，使用value进行配置，如果类型是引用，需要配置另一个bean来创建值的对象，然后通过ref进行配置。 2. 【不常用">
+<meta name="twitter:image" content="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/01.png">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/tags/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/">
 
 
 
 
 
-  <title>标签 | 阿希、@的博客</title>
+  <title>注入集合类型、注入properties类型、自动装配、Spring表达式 | 阿希、@的博客</title>
   
 
 
@@ -326,40 +329,400 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 4 个标签
+          <h1 class="post-title" itemprop="name headline">注入集合类型、注入properties类型、自动装配、Spring表达式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T21:10:09+08:00">
+                2019-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/HTTP/" style="font-size: 12px; color: #ccc">HTTP</a> <a href="/tags/MySQL/" style="font-size: 21px; color: #6f6f6f">MySQL</a> <a href="/tags/Servlet/" style="font-size: 12px; color: #ccc">Servlet</a> <a href="/tags/Spring/" style="font-size: 30px; color: #111">Spring</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="1-【常用】通过SET方法注入属性的值（续）"><a href="#1-【常用】通过SET方法注入属性的值（续）" class="headerlink" title="1. 【常用】通过SET方法注入属性的值（续）"></a>1. 【常用】通过SET方法注入属性的值（续）</h3><p>如果需要注入的属性的值并不是基本值（基本数据类型或String），则值需要配置为一个<code>&lt;bean&gt;</code>，且，注入值时，使用<code>ref=&quot;bean-id&quot;</code>来确定属性的值：</p>
+<p><img src="01.png" alt>;</p>
+<p><strong>小结：为属性注入值时，如果类型是基本型，使用value进行配置，如果类型是引用，需要配置另一个bean来创建值的对象，然后通过ref进行配置。</strong></p>
+<h3 id="2-【不常用】通过构造方法注入属性的值"><a href="#2-【不常用】通过构造方法注入属性的值" class="headerlink" title="2. 【不常用】通过构造方法注入属性的值"></a>2. 【不常用】通过构造方法注入属性的值</h3><p>首先，类中应该存在带参数的构造方法：</p>
+<pre><code>public class User {
+
+    public String name;
+    public String from;
+
+    public User(String name, String from) {
+        super();
+        this.name = name;
+        this.from = from;
+    }
+
+}</code></pre><p>在配置时，通过<code>&lt;constructor-arg&gt;</code>配置构造方法的参数的值，如果有个参数，则需要多个节点，每个节点配置1个属性，且每个节点都必须添加<code>index</code>属性，表示配置的是第几个参数，取值为从0开始编号的数字，根据值的类型不同，继续配置<code>value</code>或<code>ref</code>来决定属性的值：</p>
+<pre><code>&lt;bean id=&quot;user&quot;
+    class=&quot;cn.tedu.spring.User&quot;&gt;
+    &lt;constructor-arg index=&quot;0&quot;
+        value=&quot;LiuGB&quot;&gt;
+    &lt;/constructor-arg&gt;
+    &lt;constructor-arg index=&quot;1&quot;
+        value=&quot;HeBei&quot;&gt;
+    &lt;/constructor-arg&gt;
+&lt;/bean&gt;</code></pre><h3 id="3-注入集合类型的值"><a href="#3-注入集合类型的值" class="headerlink" title="3. 注入集合类型的值"></a>3. 注入集合类型的值</h3><p>例如存在类：</p>
+<pre><code>public class SampleBean {
+    public List&lt;String&gt; names;
+
+    public void setName(List&lt;String&gt; names) {
+        this.names = names;
+    }
+}</code></pre><p>然后，添加配置：</p>
+<pre><code>&lt;bean id=&quot;sampleBean&quot;
+    class=&quot;cn.tedu.spring.SampleBean&quot;&gt;
+    &lt;property name=&quot;names&quot;&gt;
+        &lt;list&gt;
+            &lt;value&gt;Jame&lt;/value&gt;
+            &lt;value&gt;Lucy&lt;/value&gt;
+            &lt;value&gt;David&lt;/value&gt;
+            &lt;value&gt;Tom&lt;/value&gt;
+            &lt;value&gt;Alex&lt;/value&gt;
+        &lt;/list&gt;
+    &lt;/property&gt;    
+&lt;/bean&gt;</code></pre><p>因为<code>names</code>属性的类型是<code>List</code>，所以，在注入值时，<code>&lt;property&gt;</code>节点中添加子级的<code>&lt;list&gt;</code>节点进行配置，在<code>&lt;list&gt;</code>中的每组<code>&lt;value&gt;</code>节点表示1个值。</p>
+<p>如果属性是<code>Set</code>类型的，则使用<code>&lt;set&gt;</code>节点进行配置即可：</p>
+<pre><code>&lt;property name=&quot;cities&quot;&gt;
+    &lt;set&gt;
+        &lt;value&gt;Hangzhou&lt;/value&gt;
+        &lt;value&gt;Beijing&lt;/value&gt;
+        &lt;value&gt;Shanghai&lt;/value&gt;
+        &lt;value&gt;Shenzhen&lt;/value&gt;
+        &lt;value&gt;Guangzhou&lt;/value&gt;
+    &lt;/set&gt;
+&lt;/property&gt;    </code></pre><p>如果属性是<code>Map</code>类型的，则需要使用<code>&lt;map&gt;</code>及其子级的<code>&lt;entry&gt;</code>节点进行配置：</p>
+<pre><code>&lt;property name=&quot;session&quot;&gt;
+    &lt;map&gt;
+        &lt;entry key=&quot;username&quot; value=&quot;Jack&quot;/&gt;
+        &lt;entry key=&quot;password&quot; value=&quot;1234&quot;/&gt;
+        &lt;entry key=&quot;from&quot; value=&quot;Nanjing&quot;/&gt;
+    &lt;/map&gt;
+&lt;/property&gt;</code></pre><p>还有<code>Properties</code>类型，通常在使用时，会自定义一个<code>???.properties</code>文件，例如：</p>
+<pre><code>url=jdbc:mysql://192.168.0.251:3306/db_name?useUnicode=true&amp;characterEncoding=utf8
+driver=com.mysql.jdbc.Driver
+username=root
+password=root
+initialSize=2
+maxActive=10</code></pre><p>然后，通过Spring框架读取该文件的信息：</p>
+<pre><code>&lt;util:properties id=&quot;config&quot;
+    location=&quot;classpath:db.properties&quot;&gt;
+&lt;/util:properties&gt;</code></pre><p>以上<code>&lt;util:properties&gt;</code>节点本质上也是一个<code>&lt;bean&gt;</code>，在注入值时：</p>
+<pre><code>&lt;property name=&quot;dbConfig&quot;
+    ref=&quot;config&quot;&gt;
+&lt;/property&gt;</code></pre><p>当然，<code>Properties</code>类型的节点是可以直接配置的，例如：</p>
+<pre><code>&lt;property name=&quot;dbConfig&quot;&gt;
+    &lt;props&gt;
+        &lt;prop key=&quot;name&quot;&gt;Jack&lt;/prop&gt;
+    &lt;/props&gt;
+&lt;/property&gt;</code></pre><p>事实上，关于<code>List</code>、<code>Set</code>、<code>Map</code>也存在<code>&lt;util:list&gt;</code>等类似节点，使用频率较低。</p>
+<p>以上2种为<code>Properties</code>类型的数据注入值的做法都是有用的！而为<code>List</code>、<code>Set</code>、<code>Map</code>类型的数据注入值的应用场景相对较少。</p>
+<h3 id="4-自动装配（Auto-wire）"><a href="#4-自动装配（Auto-wire）" class="headerlink" title="4. 自动装配（Auto-wire）"></a>4. 自动装配（Auto-wire）</h3><p>自动装配表示由Spring自动的为属性注入值，即：无需配置各<code>&lt;property&gt;</code>节点！可以解决需要注入多个值时添加多个<code>&lt;property&gt;</code>节点导致的配置项太多的问题！</p>
+<p>当需要自动装配时，为<code>&lt;bean&gt;</code>节点添加<code>autowire</code>属性的配置即可，常用的取值有<code>byName</code>和<code>byType</code>：</p>
+<p><strong>当取值为<code>byName</code>时</strong></p>
+<p>表示“根据名称实现自动装配”，即：当某个<code>&lt;bean&gt;</code>配置了<code>autowire=&quot;byName&quot;</code>时，Spring会检索当前类中的SET系列方法，根据SET方法的名称还原出属性名，并且尝试在Spring容器中找到bean-id相同的对象，如果找到，则自动为这些属性赋值，如果没有找到，也不会报告任何错误，只是相关属性没有被赋值而已！这种做法本质上还是通过SET方式注入的，所以，需要被注入的属性一定要有SET方法！而SET方法的名称一定与值对应的bean-id是匹配的！</p>
+<p><img src="02.png" alt></p>
+<p><strong>当取值为<code>byType</code>时</strong></p>
+<p>顾名思义，当取值为<code>byType</code>时，会“根据类型实现自动装配”，例如<code>private IUserDao userDao;</code>时，会尝试在Spring容器中查询类型符合<code>IUserDao</code>类型的<code>&lt;bean&gt;</code>，如果找到，则自动装配，否则，将跳过。</p>
+<p>使用这种做法时，无需关心各个名称（属性名、方法名、bean-id），但是，需要保证“能匹配的bean只有1个”，否则，会出现<code>NoUniqueBeanDefinitionException</code>，并提示例如：<code>expected single matching bean but found 2: userDao2,userDao</code>。</p>
+<p><strong>小结</strong></p>
+<p>自动装配还有其它模式，暂不需要了解。</p>
+<p>记住<code>byName</code>和<code>byType</code>的意义，及<code>byType</code>的注意事项。</p>
+<p>自动装配虽然简单，但是，存在“是否注入值不明确”的问题，即：只能看到哪些<code>&lt;bean&gt;</code>配置了<code>autowire=&quot;byName&quot;</code>或<code>autowire=&quot;byType&quot;</code>，但是，这些类中的属性是否成功的注入了值、哪些属性是需要注入值的……等问题并不明确，也无从可查，所以，关于这种自动装配的做法是不推荐的！</p>
+<h3 id="5-Spring表达式"><a href="#5-Spring表达式" class="headerlink" title="5. Spring表达式"></a>5. Spring表达式</h3><p>Spring表达式的基本格式是<code>#{名称}</code>，用于表示某个值，甚至，值可以是来自另一个<code>&lt;bean&gt;</code>的某个属性！</p>
+<p>当某个注入的属性值是通过Spring表达式得到的，则应该配置为<code>value=#{}</code>格式。</p>
+<p>关于Spring表达式：</p>
+<ul>
+<li><p>如果获取另一个<code>&lt;bean&gt;</code>中的某属性值，则使用<code>#{bean-id.属性名}</code>；</p>
+</li>
+<li><p>如果获取另一个<code>&lt;bean&gt;</code>中的某List集合中的某个值，则使用<code>#{bean-id.List集合名[索引]}</code>；</p>
+</li>
+<li><p>如果获取另一个<code>&lt;bean&gt;</code>中的某Map集合中的某个值，则使用<code>#{bean-id.Map集合名.key}</code>，还可以是<code>#{bean-id.Map集合名[&#39;key&#39;]}</code>。</p>
+</li>
+</ul>
+<hr>
+<h3 id="1-什么时候需要自定义构造方法？"><a href="#1-什么时候需要自定义构造方法？" class="headerlink" title="1. 什么时候需要自定义构造方法？"></a>1. 什么时候需要自定义构造方法？</h3><p>如果某个类没有显式的添加构造方法，则编译器会自动添加公有的、无参数的构造方法，例如：</p>
+<pre><code>public class User {
+}</code></pre><p>等效于：</p>
+<pre><code>public class User {
+
+    public User() {
+        super();
+    }
+
+}</code></pre><p>如果显式的添加了构造方法，则编译器就不会添加任何构造方法！</p>
+<p>通常，需要自定义构造方法的原因：不允许使用公有的、无参数的构造方法。</p>
+<p>具体的表现：</p>
+<ol>
+<li><p>限制创建对象，例如：单例模式；</p>
+</li>
+<li><p>强制要求得到某数据；</p>
+</li>
+<li><p>快速创建对象、确定某些属性的值。</p>
+</li>
+</ol>
+<h3 id="2-List和Set的特性"><a href="#2-List和Set的特性" class="headerlink" title="2. List和Set的特性"></a>2. List和Set的特性</h3><p>List：顺序的，先存入的数据在前，后存入的数据在后；元素可重复；</p>
+<p>Set：散列的，先存入的数据不一定在前，后存入的数据不一定在后；元素不可重复，如果尝试添加相同的数据，在Set中并不会不多项该元素，关于“是否相同”的评定依据是“2个数据的equals()对比结果为true，并且hashCode()的返回值必须相同”！</p>
+<p><strong>Set的本质是一个只关心key不关心value的Map！</strong></p>
+<p>Model：DAO<br>View：html/jsp<br>Controller：Servlet</p>
+<p>View &gt; Controller &gt; Model（Service + DAO）</p>
+<pre><code>Service：登录
+Service：注册
+    DAO：根据用户名查询用户信息</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/AliPay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"><i class="fas fa-tag"></i> Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/" rel="next" title="Spring简介、对象获取方式、对象生命周期、单例模式、SET注入">
+                <i class="fa fa-chevron-left"></i> Spring简介、对象获取方式、对象生命周期、单例模式、SET注入
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/04/Spring组件扫描、注解/" rel="prev" title="Spring组件扫描、注解">
+                Spring组件扫描、注解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -395,8 +758,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -517,6 +889,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-【常用】通过SET方法注入属性的值（续）"><span class="nav-number">1.</span> <span class="nav-text">1. 【常用】通过SET方法注入属性的值（续）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-【不常用】通过构造方法注入属性的值"><span class="nav-number">2.</span> <span class="nav-text">2. 【不常用】通过构造方法注入属性的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-注入集合类型的值"><span class="nav-number">3.</span> <span class="nav-text">3. 注入集合类型的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-自动装配（Auto-wire）"><span class="nav-number">4.</span> <span class="nav-text">4. 自动装配（Auto-wire）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Spring表达式"><span class="nav-number">5.</span> <span class="nav-text">5. Spring表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么时候需要自定义构造方法？"><span class="nav-number">6.</span> <span class="nav-text">1. 什么时候需要自定义构造方法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-List和Set的特性"><span class="nav-number">7.</span> <span class="nav-text">2. List和Set的特性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
