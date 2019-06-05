@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="SpringMVC,ssm,">
 
 
 
@@ -92,17 +92,27 @@
 
 
 
-<meta name="description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
-<meta name="keywords" content="Java SE,HTML,javascript,jquery,MySQL,Spring,SpringMVC,SpringBoot,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿希、@的博客">
-<meta property="og:url" content="http://zhuliming66.com/archives/index.html">
+<meta name="description" content="SpringMVC框架1. 作用解决了V-C的交互问题，即视图与控制器的交互问题。 在原生的Java EE技术中，使用Servlet作为项目中的控制器，用于接收用户的请求，并给予响应结果。这种做法最大的问题在于：在常规做法中，每个Servlet对应1个请求路径，例如LoginServlet处理login.do的请求，而RegisterServlet处理register.do的请求，所以，会导致Se">
+<meta name="keywords" content="SpringMVC,ssm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMVC概念及执行流程">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta property="og:description" content="SpringMVC框架1. 作用解决了V-C的交互问题，即视图与控制器的交互问题。 在原生的Java EE技术中，使用Servlet作为项目中的控制器，用于接收用户的请求，并给予响应结果。这种做法最大的问题在于：在常规做法中，每个Servlet对应1个请求路径，例如LoginServlet处理login.do的请求，而RegisterServlet处理register.do的请求，所以，会导致Se">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc-helloworld-1.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc-helloworld-2.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc-helloworld-3.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc-helloworld-4.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc-helloworld-5.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc-helloworld-6.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc-helloworld-7.png">
+<meta property="og:updated_time" content="2019-06-05T15:09:36.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿希、@的博客">
-<meta name="twitter:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta name="twitter:title" content="SpringMVC概念及执行流程">
+<meta name="twitter:description" content="SpringMVC框架1. 作用解决了V-C的交互问题，即视图与控制器的交互问题。 在原生的Java EE技术中，使用Servlet作为项目中的控制器，用于接收用户的请求，并给予响应结果。这种做法最大的问题在于：在常规做法中，每个Servlet对应1个请求路径，例如LoginServlet处理login.do的请求，而RegisterServlet处理register.do的请求，所以，会导致Se">
+<meta name="twitter:image" content="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/springmvc.png">
 
 
 
@@ -132,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/archives/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/">
 
 
 
 
 
-  <title>归档 | 阿希、@的博客</title>
+  <title>SpringMVC概念及执行流程 | 阿希、@的博客</title>
   
 
 
@@ -157,7 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
       <a href="https://github.com/zhuliming66" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -323,317 +333,405 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/05/SpringMVC概念及执行流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">SpringMVC概念及执行流程</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T22:54:53+08:00">
+                2019-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 8 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringMVC/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringMVC</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/05/SpringMVC概念及执行流程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/05/SpringMVC概念及执行流程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/05/SpringMVC概念及执行流程/" itemprop="url">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">SpringMVC概念及执行流程</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-05T22:54:53+08:00" content="2019-06-05">
-          06-05
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/04/Spring组件扫描、注解/" itemprop="url">
-              
-                <span itemprop="name">Spring组件扫描、注解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T21:16:22+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/" itemprop="url">
-              
-                <span itemprop="name">注入集合类型、注入properties类型、自动装配、Spring表达式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T21:10:09+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <h2 id="SpringMVC框架"><a href="#SpringMVC框架" class="headerlink" title="SpringMVC框架"></a>SpringMVC框架</h2><h3 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h3><p>解决了V-C的交互问题，即视图与控制器的交互问题。</p>
+<p>在原生的Java EE技术中，使用<code>Servlet</code>作为项目中的控制器，用于接收用户的请求，并给予响应结果。这种做法最大的问题在于：<strong>在常规做法中，每个Servlet对应1个请求路径</strong>，例如<code>LoginServlet</code>处理<code>login.do</code>的请求，而<code>RegisterServlet</code>处理<code>register.do</code>的请求，所以，会导致<code>Servlet</code>数量太多，不便于管理（无论从源文件的数量，还是从配置文件的内容），且对象太多进而占用大量内存空间的问题！</p>
+<p>并且，在请求的处理过程中，还存在许多操作不简便的做法！</p>
+<h3 id="1-2-SpringMVC核心组件"><a href="#1-2-SpringMVC核心组件" class="headerlink" title="1.2. SpringMVC核心组件"></a>1.2. SpringMVC核心组件</h3><ol>
+<li>DispatcherServlet</li>
+</ol>
+<p>前端控制器，主要职责是接收所有请求（根据配置文件来决定），并将请求转发给对应的控制器，接收控制器的处理结果，确定最终由哪个视图完成响应！</p>
+<ol start="2">
+<li>HandlerMapping</li>
+</ol>
+<p>处理请求路径与控制器的映射关系。</p>
+<ol start="3">
+<li>Controller</li>
+</ol>
+<p>实际处理请求的组件，例如接收请求参数，决定最终是转发或重定向的方式来响应。</p>
+<ol start="4">
+<li>ModelAndView</li>
+</ol>
+<p>控制器的处理结果，其中的Model表示转发的数据（如果是重定向，则Model没有意义），而View表示最终负责响应的视图组件的名称。</p>
+<ol start="5">
+<li>ViewResolver</li>
+</ol>
+<p>根据视图组件的名称，确定具体使用的是哪个视图组件。</p>
+<p><img src="springmvc.png" alt></p>
+<h3 id="1-3-SpringMVC-HelloWorld"><a href="#1-3-SpringMVC-HelloWorld" class="headerlink" title="1.3. SpringMVC-HelloWorld"></a>1.3. SpringMVC-HelloWorld</h3><h4 id="1-3-1-创建项目"><a href="#1-3-1-创建项目" class="headerlink" title="1.3.1. 创建项目"></a>1.3.1. 创建项目</h4><p>创建<code>Maven Project</code>，勾选<code>Create a simple project</code>，然后，<code>Group Id</code>值为<code>cn.tedu.spring</code>，<code>Artifact Id</code>值为<code>SPRINGMVC-01-HELLOWORLD</code>，<code>Packaging</code>选择<code>war</code>：</p>
+<p><img src="springmvc-helloworld-1.png" alt></p>
+<p>接下来，需要执行4个步骤（以后每次创建项目时都需要做的事情）：</p>
+<ol>
+<li>生成<code>web.xml</code>文件；</li>
+<li>添加依赖：在此前的项目中找到<code>pom.xml</code>，将其中的依赖的代码复制到当前项目中，关于依赖的jar包，会越用越多，学习时，只加不减；</li>
+<li>复制<code>spring.xml</code>文件到当前项目中，并删除其中的配置，除非你确定这些配置是当前项目中必须使用的；</li>
+<li>为项目添加Tomcat运行环境；</li>
+</ol>
+<h4 id="1-3-2-配置DispatcherServlet"><a href="#1-3-2-配置DispatcherServlet" class="headerlink" title="1.3.2. 配置DispatcherServlet"></a>1.3.2. 配置DispatcherServlet</h4><p>由于需要<code>DispatcherServlet</code>接收所有请求，所以，首先必须在<code>web.xml</code>配置它：</p>
+<pre><code>&lt;!-- 配置DispatcherServlet --&gt;
+&lt;servlet&gt;
+    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
 
-        
-        
-        
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</code></pre><p>经过以上配置，则任何以<code>.do</code>作为后缀的请求，都将由<code>DispatcherServlet</code>来处理！</p>
+<p>由于项目是基于Spring的，希望项目启动时就加载Spring的配置文件，并使得<code>DispatcherServlet</code>已经完成初始化可以随时接收请求，所以，还需进一步的配置：</p>
+<pre><code>&lt;!-- 配置DispatcherServlet --&gt;
+&lt;servlet&gt;
+    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;!-- 配置spring的配置文件 --&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:spring.xml&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;!-- 启动Tomcat时即初始化该Servlet --&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
 
-        
-        
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</code></pre><p>至此，当项目启动时，就会初始化<code>DispatcherServlet</code>，并且，在初始化过程中，会加载Spring的配置文件。</p>
+<p><strong>测试</strong></p>
+<p>如果Spring能正常工作，则配置是成功的！</p>
+<p>在<code>src\main\java</code>中创建一个测试类<code>cn.tedu.spring.test.Test</code>，并且，显式的添加构造方法，并输出内容：</p>
+<pre><code>@Component
+public class Test {
 
-        
+    public Test() {
+        System.out.println(&quot;已经加载Spring配置文件！&quot;);
+    }
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+}</code></pre><p>然后，在Spring的配置文件中添加组件扫描：</p>
+<pre><code>&lt;context:component-scan base-package=&quot;cn.tedu.spring&quot; /&gt;</code></pre><p>最终，把项目部署到Tomcat，并启动Tomcat，在启动日志中如果能够看到以上输出语句，则成功！</p>
+<p><img src="springmvc-helloworld-2.png" alt></p>
+<h4 id="1-3-3-设计目标"><a href="#1-3-3-设计目标" class="headerlink" title="1.3.3. 设计目标"></a>1.3.3. 设计目标</h4><p>发出请求<code>http://localhost:8080/项目名称/hello.do</code>，要求在界面中显示<code>HelloWorld</code>字样。</p>
+<h4 id="1-3-4-处理请求"><a href="#1-3-4-处理请求" class="headerlink" title="1.3.4. 处理请求"></a>1.3.4. 处理请求</h4><p>以上完成了流程中的第1步，接下来，如果发出<code>hello.do</code>请求，就会被<code>DispatcherServlet</code>接收得到，然后，<code>DispatcherServlet</code>应该根据<code>hello.do</code>请求路径去询问<code>HandlerMapping</code>得知由哪个控制器去处理请求，原始的实现方式是使用<code>SimpleUrlHandlerMapping</code>类去进行配置，不过，这种配置方式非常麻烦，而且，对应关系不明确（所有的路径与控制器的配置都在同一个配置文件中，导致不便于管理），所以，后续都是使用注解完成相关配置，则在开发过程中，跳过第2步和第3步（只是开发时不用关注，框架的执行流程不变）。</p>
+<p>为了确保有控制器处理请求，所以，创建<code>HelloController</code>：</p>
+<p><img src="springmvc-helloworld-3.png" alt></p>
+<p>所有的控制器都应该是由Spring管理的，所以，需要为控制器类添加<code>@Controller</code>注解：</p>
+<pre><code>@Controller
+public class HelloController {
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/" itemprop="url">
-              
-                <span itemprop="name">Spring简介、对象获取方式、对象生命周期、单例模式、SET注入</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T21:02:41+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+}</code></pre><p>然后，在类中自定义处理请求的方法，方法的访问权限是<code>public</code>的，返回值暂时使用<code>String</code>，方法的名称可以自由定义，方法的参数暂时留空：</p>
+<pre><code>public String showHello() {
+}</code></pre><p>在SpringMVC中，请求对应的可以是某个方法，而不一定每个请求对应一个控制器类，如果请求对应的是以上方法，则需要在方法的声明之前添加<code>@RequestMapping(&quot;/hello.do&quot;)</code>：</p>
+<pre><code>@RequestMapping(&quot;/hello.do&quot;)
+public String showHello() {
+}</code></pre><p>完成以上步骤后，即表示：路径为<code>/hello.do</code>的请求将触发<code>showHello()</code>方法被执行！</p>
+<p><strong>测试</strong></p>
+<p>在以上方法中输出任意语句，然后，启动项目，请求对应的路径，观察控制台输出：</p>
+<pre><code>@RequestMapping(&quot;/hello.do&quot;)
+public String showHello() {
+    System.out.println(
+        &quot;HelloController.showHello()&quot;);
+    return null;
+}</code></pre><p>实际运行效果是：页面会显示错误：</p>
+<p><img src="springmvc-helloworld-4.png" alt></p>
+<p>控制台可以看到输出语句：</p>
+<p><img src="springmvc-helloworld-5.png" alt></p>
+<h4 id="1-3-5-显示页面"><a href="#1-3-5-显示页面" class="headerlink" title="1.3.5. 显示页面"></a>1.3.5. 显示页面</h4><p>至此，执行流程已经完成前4步，接下来，控制器应该向<code>DispatcherServlet</code>返回结果：</p>
+<pre><code>@RequestMapping(&quot;/hello.do&quot;)
+public String showHello() {
+    // 测试
+    System.out.println(
+        &quot;HelloController.showHello()&quot;);
+    // 返回视图组件的名称
+    return &quot;helloworld&quot;;
+}</code></pre><p>以上返回的字符串表示最终负责显示的视图组件的名称，但是，并不表示是哪个文件！</p>
+<p>接下来，需要配置<code>ViewResolver</code>，使得<code>DispatcherServlet</code>通过它可以知道刚才控制器返回的<code>&quot;helloworld&quot;</code>到底是哪个页面！</p>
+<p>实际使用的<code>ViewResolver</code>是<code>InternalResourceViewResolver</code>，需要在<code>spring.xml</code>进行配置：</p>
+<pre><code>&lt;!-- 配置视图解析器ViewResolver --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+&lt;/bean&gt;</code></pre><p><code>InternalResourceViewResolver</code>的工作方式是以项目的根路径为参考（在开发时，对应的是<code>webapp</code>文件夹），使用<strong>前缀+视图组件名+后缀</strong>得到视图文件的位置，例如实际存在的jsp文件是<code>webapp/WEB-INF/helloworld.jsp</code>，由于它本身使用<code>webapp</code>作为根级，所以，前缀是<code>/WEB-INF/</code>，后缀是<code>.jsp</code>，结合控制器返回的<code>&quot;helloworld&quot;</code>进行拼接，就可以得到以上路径，从而确定视图组件的位置，例如配置为：</p>
+<pre><code>&lt;!-- 配置视图解析器ViewResolver --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;!-- 配置前缀 --&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/&quot; /&gt;
+    &lt;!-- 配置后缀 --&gt;
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
+    &lt;!-- 经过以上配置后， --&gt;
+    &lt;!-- 当前项目中的jsp文件都应该放在/WEB-INF/下 --&gt;
+&lt;/bean&gt;</code></pre><p>基于视图解析器的前缀是<code>/WEB-INF/</code>，后缀是<code>.jsp</code>，结合控制器返回的<code>&quot;helloworld&quot;</code>字符串，则需要在<code>WEB-INF</code>文件夹下创建名为<code>helloworld.jsp</code>的文件完成最终的显示：</p>
+<p><img src="springmvc-helloworld-6.png" alt></p>
+<p>通过浏览器再次访问，实际效果应该是：</p>
+<p><img src="springmvc-helloworld-7.png" alt></p>
+<h4 id="1-3-6-小结"><a href="#1-3-6-小结" class="headerlink" title="1.3.6. 小结"></a>1.3.6. 小结</h4><ol>
+<li><p>本案例中关于<code>web.xml</code>中的<code>DispatcherServlet</code>的配置，和<code>spring.xml</code>中的<code>InternalResourceViewResolver</code>的配置，是相对固定的配置，在后续的项目开发时，可以直接复制使用，但是，注意理解配置的值的意义；</p>
+</li>
+<li><p>处理请求的方法的声明语句应该例如：<code>public String xx()</code></p>
+</li>
+<li><p>处理请求的方法的返回值可以理解为JSP文件的文件名；</p>
+</li>
+</ol>
+<h1 id="——————————–"><a href="#——————————–" class="headerlink" title="——————————–"></a>——————————–</h1><h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><h4 id="1-把笔记中HelloWorld的开发流程读一遍"><a href="#1-把笔记中HelloWorld的开发流程读一遍" class="headerlink" title="1. 把笔记中HelloWorld的开发流程读一遍"></a>1. 把笔记中HelloWorld的开发流程读一遍</h4><h4 id="2-参考springmvc-png流程图，口述SpringMVC的工作流程"><a href="#2-参考springmvc-png流程图，口述SpringMVC的工作流程" class="headerlink" title="2. 参考springmvc.png流程图，口述SpringMVC的工作流程"></a>2. 参考springmvc.png流程图，口述SpringMVC的工作流程</h4><h4 id="3-创建新项目-SPRINGMVC-02-USER，要求对-reg-do和-login-do-能作出响应，响应方式是显示-reg-jsp-和-login-jsp-页面，并且，注册页（reg-jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login-jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！"><a href="#3-创建新项目-SPRINGMVC-02-USER，要求对-reg-do和-login-do-能作出响应，响应方式是显示-reg-jsp-和-login-jsp-页面，并且，注册页（reg-jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login-jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！" class="headerlink" title="3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！"></a>3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！</h4>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/03/HTTP协议/" itemprop="url">
-              
-                <span itemprop="name">HTTP协议</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T11:17:28+08:00" content="2019-06-03">
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/" itemprop="url">
-              
-                <span itemprop="name">Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T11:03:38+08:00" content="2019-06-03">
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/01/主键约束、拆分表、事务、数据类型/" itemprop="url">
-              
-                <span itemprop="name">主键约束、拆分表、事务、数据类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-01T22:47:49+08:00" content="2019-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/01/数据库介绍-SQL基础/" itemprop="url">
-              
-                <span itemprop="name">数据库介绍 SQL基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-01T22:47:49+08:00" content="2019-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/AliPay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringMVC/" rel="tag"><i class="fas fa-tag"></i> SpringMVC</a>
+          
+            <a href="/tags/ssm/" rel="tag"><i class="fas fa-tag"></i> ssm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/04/Spring组件扫描、注解/" rel="next" title="Spring组件扫描、注解">
+                <i class="fa fa-chevron-left"></i> Spring组件扫描、注解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -641,6 +739,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -661,8 +766,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -783,6 +897,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC框架"><span class="nav-number">1.</span> <span class="nav-text">SpringMVC框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-作用"><span class="nav-number">1.1.</span> <span class="nav-text">1. 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-SpringMVC核心组件"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. SpringMVC核心组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-SpringMVC-HelloWorld"><span class="nav-number">1.3.</span> <span class="nav-text">1.3. SpringMVC-HelloWorld</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-创建项目"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1. 创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2-配置DispatcherServlet"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2. 配置DispatcherServlet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-3-设计目标"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3. 设计目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-4-处理请求"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.3.4. 处理请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-5-显示页面"><span class="nav-number">1.3.5.</span> <span class="nav-text">1.3.5. 显示页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-6-小结"><span class="nav-number">1.3.6.</span> <span class="nav-text">1.3.6. 小结</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#——————————–"><span class="nav-number"></span> <span class="nav-text">——————————–</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业"><span class="nav-number"></span> <span class="nav-text">作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-把笔记中HelloWorld的开发流程读一遍"><span class="nav-number">0.0.1.</span> <span class="nav-text">1. 把笔记中HelloWorld的开发流程读一遍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-参考springmvc-png流程图，口述SpringMVC的工作流程"><span class="nav-number">0.0.2.</span> <span class="nav-text">2. 参考springmvc.png流程图，口述SpringMVC的工作流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建新项目-SPRINGMVC-02-USER，要求对-reg-do和-login-do-能作出响应，响应方式是显示-reg-jsp-和-login-jsp-页面，并且，注册页（reg-jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login-jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！"><span class="nav-number">0.0.3.</span> <span class="nav-text">3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -950,6 +1080,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

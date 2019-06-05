@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/02.png">
 <meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/03.png">
 <meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/04.png">
-<meta property="og:updated_time" content="2019-06-04T13:04:39.897Z">
+<meta property="og:updated_time" content="2019-06-04T13:40:19.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring简介、对象获取方式、对象生命周期、单例模式、SET注入">
 <meta name="twitter:description" content="1. 框架框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。 框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。 框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。 普通的jar包，例如dom4j、mysql-connector等，只是实现了某个">
@@ -506,8 +506,7 @@
 <p>然后，下载得到<code>applicationContext.xml</code>文件，复制到项目中的<code>src\main\resources</code>文件夹下：</p>
 <p><img src="01.png" alt></p>
 <h3 id="3-3-通过Spring获取对象–类中存在无参数构造方法（常用）"><a href="#3-3-通过Spring获取对象–类中存在无参数构造方法（常用）" class="headerlink" title="3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）"></a>3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）</h3><p>在Spring的配置文件（<code>applicationContext.xml</code>）中，添加：</p>
-<pre><code>&lt;bean id=&quot;date&quot; class=&quot;java.util.Date&quot;&gt;
-&lt;/bean&gt;</code></pre><p>以上配置中，<code>class</code>表示“类”，取值应该是类的全名，即包名和类名，<code>id</code>是自定义的名称，通常使用类名并且首字母改为小写，例如类名是<code>Date</code>，则id值为<code>date</code>，如果类名是<code>Student</code>，则<code>id</code>值为<code>student</code>。</p>
+<pre><code>&lt;bean id=&quot;date&quot; class=&quot;java.util.Date&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>class</code>表示“类”，取值应该是类的全名，即包名和类名，<code>id</code>是自定义的名称，通常使用类名并且首字母改为小写，例如类名是<code>Date</code>，则id值为<code>date</code>，如果类名是<code>Student</code>，则<code>id</code>值为<code>student</code>。</p>
 <p>完成配置后，就可以在程序中，通过Spring根据<code>date</code>名称获取<code>java.util.Date</code>的对象，可以在<code>src\main\java</code>中创建可执行的Java类：</p>
 <pre><code>package cn.tedu.spring;
 
@@ -520,9 +519,7 @@ public class SpringTest {
 }</code></pre><p>然后，编写程序：</p>
 <pre><code>public static void main(String[] args) {
     // 加载Spring的配置文件，获取Spring容器
-    ApplicationContext ac
-        = new ClassPathXmlApplicationContext(
-                &quot;applicationContext.xml&quot;);
+    ApplicationContext ac = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
 
     // 通过Spring容器获取对象
     Date date = (Date) ac.getBean(&quot;date&quot;);
@@ -543,9 +540,7 @@ Caused by: java.lang.NoSuchMethodException: cn.tedu.spring.User.&lt;init&gt;()</
 <h3 id="3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）"><a href="#3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）" class="headerlink" title="3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）"></a>3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）</h3><p><strong>工厂方法：</strong>调用后可以返回类的对象的方法，也可以理解为生产对象的方法。</p>
 <p>以<code>Calendar</code>为例，它是一个抽象类，是不可以直接通过<code>new 构造方法()</code>此类语法创建对象的！但是，在这个类中，有<code>static Calendar getInstance()</code>方法，这个方法，就称之为<code>Calendar</code>类的<strong>静态工厂方法</strong>！</p>
 <p>在Spring的配置文件中，配置：</p>
-<pre><code>&lt;bean id=&quot;calendar&quot;
-    class=&quot;java.util.Calendar&quot;
-    factory-method=&quot;getInstance&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-method</code>属性的值是静态工厂方法的名称。</p>
+<pre><code>&lt;bean id=&quot;calendar&quot; class=&quot;java.util.Calendar&quot; factory-method=&quot;getInstance&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-method</code>属性的值是静态工厂方法的名称。</p>
 <p>配置时，无论是类的全名，还是方法的名称，都必须是已知条件。</p>
 <blockquote>
 <p>练习：自定义类HuaWeiPhone，通过静态工厂方法，获取该类的对象！</p>
@@ -566,9 +561,7 @@ public class HuaWeiPhone {
     }
 
 }</code></pre><p>关于配置：</p>
-<pre><code>&lt;bean id=&quot;huaWeiPhone&quot;
-    class=&quot;cn.tedu.spring.HuaWeiPhone&quot;
-    factory-method=&quot;create&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-5-通过Spring获取对象–存在实例工厂方法（不常用）"><a href="#3-5-通过Spring获取对象–存在实例工厂方法（不常用）" class="headerlink" title="3.5. 通过Spring获取对象–存在实例工厂方法（不常用）"></a>3.5. 通过Spring获取对象–存在实例工厂方法（不常用）</h3><p><strong>实例工厂方法</strong>：通过某个实例（对象）调用的方法，并且，这个方法可以返回某个类的对象，是生产对象的方法。</p>
+<pre><code>&lt;bean id=&quot;huaWeiPhone&quot; class=&quot;cn.tedu.spring.HuaWeiPhone&quot; factory-method=&quot;create&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-5-通过Spring获取对象–存在实例工厂方法（不常用）"><a href="#3-5-通过Spring获取对象–存在实例工厂方法（不常用）" class="headerlink" title="3.5. 通过Spring获取对象–存在实例工厂方法（不常用）"></a>3.5. 通过Spring获取对象–存在实例工厂方法（不常用）</h3><p><strong>实例工厂方法</strong>：通过某个实例（对象）调用的方法，并且，这个方法可以返回某个类的对象，是生产对象的方法。</p>
 <p>假设存在某类需要被获取对象，不满足前序的2种条件：</p>
 <pre><code>public class Car {
     public Car(Object obj) {
@@ -579,12 +572,8 @@ public class HuaWeiPhone {
         return new Car(null);
     }
 }</code></pre><p>在配置时：</p>
-<pre><code>&lt;bean id=&quot;carFactory&quot; 
-    class=&quot;cn.tedu.spring.CarFactory&quot;&gt;&lt;/bean&gt;
-&lt;bean id=&quot;car&quot; class=&quot;cn.tedu.spring.Car&quot;
-    factory-bean=&quot;carFactory&quot;
-    factory-method=&quot;makeCar&quot;&gt;
-&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-bean</code>的值是工厂类的<code>&lt;bean&gt;</code>节点的<code>id</code>属性值。</p>
+<pre><code>&lt;bean id=&quot;carFactory&quot; class=&quot;cn.tedu.spring.CarFactory&quot;&gt;&lt;/bean&gt;
+&lt;bean id=&quot;car&quot; class=&quot;cn.tedu.spring.Car&quot; factory-bean=&quot;carFactory&quot; factory-method=&quot;makeCar&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-bean</code>的值是工厂类的<code>&lt;bean&gt;</code>节点的<code>id</code>属性值。</p>
 <p><img src="03.png" alt></p>
 <h3 id="3-6-通过Spring获取对象–小结"><a href="#3-6-通过Spring获取对象–小结" class="headerlink" title="3.6. 通过Spring获取对象–小结"></a>3.6. 通过Spring获取对象–小结</h3><p>通过Spring创建对象，然后从Spring容器中获取对象，需要：</p>
 <ol>
@@ -598,14 +587,9 @@ public class HuaWeiPhone {
 <p>以上3种方式中，第2种和第3种的使用频率较低，原因是满足条件的类较少。</p>
 <h3 id="3-7-由Spring管理的对象的作用域"><a href="#3-7-由Spring管理的对象的作用域" class="headerlink" title="3.7. 由Spring管理的对象的作用域"></a>3.7. 由Spring管理的对象的作用域</h3><p><strong>单例</strong>：单一的实例，即在同一时刻，某个类的对象是唯一的！</p>
 <p>由Spring所管理的对象，默认都是单例的，在配置时，通过<code>scope</code>属性可以配置是否单例，默认取值为<code>singleton</code>，当取值为<code>prototype</code>时，是非单例的！</p>
-<pre><code>&lt;bean id=&quot;student&quot;
-    class=&quot;cn.tedu.spring.Student&quot;
-    scope=&quot;prototype&quot;&gt;&lt;/bean&gt;</code></pre><p>单例模式可以区分为：懒汉式、饿汉式。</p>
+<pre><code>&lt;bean id=&quot;student&quot; class=&quot;cn.tedu.spring.Student&quot; scope=&quot;prototype&quot;&gt;&lt;/bean&gt;</code></pre><p>单例模式可以区分为：懒汉式、饿汉式。</p>
 <p>默认情况下，由Spring管理的单例对象是饿汉式的，通过<code>lazy-init</code>属性可以调整，该属性的值是布尔类型。</p>
-<pre><code>&lt;bean id=&quot;student&quot;
-    class=&quot;cn.tedu.spring.Student&quot;
-    scope=&quot;singleton&quot;
-    lazy-init=&quot;true&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-8-由Spring管理的对象的生命周期"><a href="#3-8-由Spring管理的对象的生命周期" class="headerlink" title="3.8. 由Spring管理的对象的生命周期"></a>3.8. 由Spring管理的对象的生命周期</h3><p>仅由Spring管理的、单例的对象存在生命周期问题！</p>
+<pre><code>&lt;bean id=&quot;student&quot; class=&quot;cn.tedu.spring.Student&quot; scope=&quot;singleton&quot; lazy-init=&quot;true&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-8-由Spring管理的对象的生命周期"><a href="#3-8-由Spring管理的对象的生命周期" class="headerlink" title="3.8. 由Spring管理的对象的生命周期"></a>3.8. 由Spring管理的对象的生命周期</h3><p>仅由Spring管理的、单例的对象存在生命周期问题！</p>
 <p>开发者可以在任何自定义的、由Spring管理的类中添加初始化方法和销毁方法，方法必须是<code>void</code>和无参数的，例如：</p>
 <pre><code>public class Stduent {
 
@@ -620,10 +604,7 @@ public class HuaWeiPhone {
     }
 
 }</code></pre><p>然后，在Spring的配置文件中进行配置：</p>
-<pre><code>&lt;bean id=&quot;student&quot;
-    class=&quot;cn.tedu.spring.Student&quot;
-    init-method=&quot;init&quot;
-    destroy-method=&quot;destroy&quot;&gt;&lt;/bean&gt;</code></pre><p>注意：对于非单例的对象而言，生命周期方法是没有意义的。</p>
+<pre><code>&lt;bean id=&quot;student&quot; class=&quot;cn.tedu.spring.Student&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot;&gt;&lt;/bean&gt;</code></pre><p>注意：对于非单例的对象而言，生命周期方法是没有意义的。</p>
 <h3 id="3-9-通过SET方式注入属性的值"><a href="#3-9-通过SET方式注入属性的值" class="headerlink" title="3.9. 通过SET方式注入属性的值"></a>3.9. 通过SET方式注入属性的值</h3><p>基本概念：通过Spring的配置，确定某个类中的某个属性的值，使得最终获取对象时，属性是已经被赋值的。</p>
 <p>假设存在<code>UserDao</code>类，在类中有<code>String username</code>和<code>String password</code>表示访问数据库的用户名和密码：</p>
 <pre><code>public class UserDao {
@@ -638,11 +619,8 @@ public class HuaWeiPhone {
 <pre><code>public void setUsername(String u) {
     username = u;
 }</code></pre><p>然后，在Spring的配置文件中：</p>
-<pre><code>&lt;bean id=&quot;userDao&quot; 
-    class=&quot;cn.tedu.spring.UserDao&quot;&gt;
-    &lt;property name=&quot;username&quot; 
-        value=&quot;root&quot;&gt;
-    &lt;/property&gt;
+<pre><code>&lt;bean id=&quot;userDao&quot; class=&quot;cn.tedu.spring.UserDao&quot;&gt;
+    &lt;property name=&quot;username&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
 &lt;/bean&gt;</code></pre><p>即：添加子级<code>&lt;property&gt;</code>节点，在该节点，配置<code>name</code>和<code>value</code>，其中，<code>name</code>表示属性，<code>value</code>表示值。</p>
 <p><strong>注意：在配置<property>的name时，值应该是需要注入的属性的set方法名称中不包含set的部分，且首字母是小写的！</property></strong></p>
 <p><img src="04.png" alt></p>
@@ -856,7 +834,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -867,7 +845,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -878,7 +856,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

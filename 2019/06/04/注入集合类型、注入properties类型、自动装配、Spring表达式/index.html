@@ -102,7 +102,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/01.png">
 <meta property="og:image" content="http://zhuliming66.com/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/02.png">
-<meta property="og:updated_time" content="2019-06-04T13:11:48.559Z">
+<meta property="og:updated_time" content="2019-06-04T13:37:34.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="注入集合类型、注入properties类型、自动装配、Spring表达式">
 <meta name="twitter:description" content="1. 【常用】通过SET方法注入属性的值（续）如果需要注入的属性的值并不是基本值（基本数据类型或String），则值需要配置为一个&amp;lt;bean&amp;gt;，且，注入值时，使用ref=&amp;quot;bean-id&amp;quot;来确定属性的值： ; 小结：为属性注入值时，如果类型是基本型，使用value进行配置，如果类型是引用，需要配置另一个bean来创建值的对象，然后通过ref进行配置。 2. 【不常用">
@@ -492,14 +492,11 @@
     }
 
 }</code></pre><p>在配置时，通过<code>&lt;constructor-arg&gt;</code>配置构造方法的参数的值，如果有个参数，则需要多个节点，每个节点配置1个属性，且每个节点都必须添加<code>index</code>属性，表示配置的是第几个参数，取值为从0开始编号的数字，根据值的类型不同，继续配置<code>value</code>或<code>ref</code>来决定属性的值：</p>
-<pre><code>&lt;bean id=&quot;user&quot;
-    class=&quot;cn.tedu.spring.User&quot;&gt;
+<pre><code>&lt;bean id=&quot;user&quot; class=&quot;cn.tedu.spring.User&quot;&gt;
     &lt;constructor-arg index=&quot;0&quot;
         value=&quot;LiuGB&quot;&gt;
     &lt;/constructor-arg&gt;
-    &lt;constructor-arg index=&quot;1&quot;
-        value=&quot;HeBei&quot;&gt;
-    &lt;/constructor-arg&gt;
+    &lt;constructor-arg index=&quot;1&quot; value=&quot;HeBei&quot;&gt;&lt;/constructor-arg&gt;
 &lt;/bean&gt;</code></pre><h3 id="3-注入集合类型的值"><a href="#3-注入集合类型的值" class="headerlink" title="3. 注入集合类型的值"></a>3. 注入集合类型的值</h3><p>例如存在类：</p>
 <pre><code>public class SampleBean {
     public List&lt;String&gt; names;
@@ -508,8 +505,7 @@
         this.names = names;
     }
 }</code></pre><p>然后，添加配置：</p>
-<pre><code>&lt;bean id=&quot;sampleBean&quot;
-    class=&quot;cn.tedu.spring.SampleBean&quot;&gt;
+<pre><code>&lt;bean id=&quot;sampleBean&quot; class=&quot;cn.tedu.spring.SampleBean&quot;&gt;
     &lt;property name=&quot;names&quot;&gt;
         &lt;list&gt;
             &lt;value&gt;Jame&lt;/value&gt;
@@ -543,9 +539,7 @@ username=root
 password=root
 initialSize=2
 maxActive=10</code></pre><p>然后，通过Spring框架读取该文件的信息：</p>
-<pre><code>&lt;util:properties id=&quot;config&quot;
-    location=&quot;classpath:db.properties&quot;&gt;
-&lt;/util:properties&gt;</code></pre><p>以上<code>&lt;util:properties&gt;</code>节点本质上也是一个<code>&lt;bean&gt;</code>，在注入值时：</p>
+<pre><code>&lt;util:properties id=&quot;config&quot; location=&quot;classpath:db.properties&quot;&gt;&lt;/util:properties&gt;</code></pre><p>以上<code>&lt;util:properties&gt;</code>节点本质上也是一个<code>&lt;bean&gt;</code>，在注入值时：</p>
 <pre><code>&lt;property name=&quot;dbConfig&quot;
     ref=&quot;config&quot;&gt;
 &lt;/property&gt;</code></pre><p>当然，<code>Properties</code>类型的节点是可以直接配置的，例如：</p>
@@ -785,7 +779,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -796,7 +790,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -807,7 +801,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

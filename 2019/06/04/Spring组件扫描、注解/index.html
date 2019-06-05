@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="阿希、@的博客">
 <meta property="og:description" content="1. 前2天小结 【理解】通过Spring获取对象的3种条件：无参构造方法、静态工厂方法、实例方法；  【理解】由Spring管理的对象的作用域及生命周期：单例、懒加载、生命周期方法；  【重要】通过SET方式注入属性的值，理解value和ref的使用；  【了解】通过构造方法注入属性的值；  【了解】注入集合类型的属性的值，包括：List / Set / Map；  【重要】注入Properti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-04T13:17:26.059Z">
+<meta property="og:updated_time" content="2019-06-04T13:35:58.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring组件扫描、注解">
 <meta name="twitter:description" content="1. 前2天小结 【理解】通过Spring获取对象的3种条件：无参构造方法、静态工厂方法、实例方法；  【理解】由Spring管理的对象的作用域及生命周期：单例、懒加载、生命周期方法；  【重要】通过SET方式注入属性的值，理解value和ref的使用；  【了解】通过构造方法注入属性的值；  【了解】注入集合类型的属性的值，包括：List / Set / Map；  【重要】注入Properti">
@@ -507,8 +507,7 @@
 <p>这些注解是添加在类的声明之前的，表示这个类是一个“组件”，是希望由Spring进行管理的！</p>
 <p>以上4个注解中，<code>@Component</code>表示“通用组件类”，<code>@Controller</code>表示“控制器类”，<code>@Service</code>表示“业务类”，<code>@Repository</code>表示“数据访问类/持久层处理的类”，这4个注解只有语义的区别，从功能和用法上来说，是完全一样的！即，如果愿意的话，可以用<code>@Service</code>注解添加在控制器类的声明之前，但是，不推荐这样做。</p>
 <p>仅仅只是添加注解是不够的，还需要在Spring的配置文件中开启组件扫描：</p>
-<pre><code>&lt;context:component-scan 
-    base-package=&quot;cn.tedu.spring.dao&quot; /&gt;</code></pre><p>以上配置中，<code>base-package</code>表示根包，即当配置为<code>cn.tedu.spring</code>时，其子级包例如<code>cn.tedu.spring.dao</code>或<code>cn.tedu.spring.service</code>等都在扫描范围之内！</p>
+<pre><code>&lt;context:component-scan base-package=&quot;cn.tedu.spring.dao&quot; /&gt;</code></pre><p>以上配置中，<code>base-package</code>表示根包，即当配置为<code>cn.tedu.spring</code>时，其子级包例如<code>cn.tedu.spring.dao</code>或<code>cn.tedu.spring.service</code>等都在扫描范围之内！</p>
 <p>如果没有显式的指定bean-id，默认为使用类名且首字母改为小写，例如<code>UserDao</code>类的bean-id就是<code>userDao</code>。</p>
 <p>以上注解都可以添加配置，例如<code>@Service(&quot;bean-id&quot;)</code>。</p>
 <p><strong>小结：通用注解共4个，其功能、用法都是完全相同的，只是表达的语义不同，添加的注解的类，并且在组件扫描范围之内，就会被Spring所管理，在配置组件扫描时，配置的包是“根包”，其范围不宜过大，在添加注解时，还可以自定义bean-id。</strong></p>
@@ -635,6 +634,10 @@ private UserDao userDao;</code></pre><p><strong>注意：使用注解的自动�
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/06/05/SpringMVC概念及执行流程/" rel="prev" title="SpringMVC概念及执行流程">
+                SpringMVC概念及执行流程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -741,7 +744,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -752,7 +755,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -763,7 +766,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
