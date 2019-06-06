@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Servlet,Jsp,">
 
 
 
@@ -92,18 +92,20 @@
 
 
 
-<meta name="description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
-<meta name="keywords" content="Java SE,HTML,javascript,jquery,MySQL,Spring,SpringMVC,SpringBoot,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://zhuliming66.com/tags/index.html">
+<meta name="description" content="1.jsp(1)jsp是什么?sun公司制订的一种服务器端动态页面技术规范。 注：     虽然使用Servlet也可以生成动态页面，但是过于 繁琐(需要使用out.println语句)，并且不利于页面的 维护(比如，要修改页面就必须修改java代码),所以,sun 才制订了jsp技术规范。     jsp其实是一个以.jsp为后缀的文件，主要内容是 html和少量的java代码。容器会将jsp文">
+<meta name="keywords" content="Servlet,Jsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta property="og:description" content="1.jsp(1)jsp是什么?sun公司制订的一种服务器端动态页面技术规范。 注：     虽然使用Servlet也可以生成动态页面，但是过于 繁琐(需要使用out.println语句)，并且不利于页面的 维护(比如，要修改页面就必须修改java代码),所以,sun 才制订了jsp技术规范。     jsp其实是一个以.jsp为后缀的文件，主要内容是 html和少量的java代码。容器会将jsp文">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T04:29:54.751Z">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/pageEncoding.png">
+<meta property="og:updated_time" content="2019-06-06T08:49:08.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta name="twitter:title" content="JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP">
+<meta name="twitter:description" content="1.jsp(1)jsp是什么?sun公司制订的一种服务器端动态页面技术规范。 注：     虽然使用Servlet也可以生成动态页面，但是过于 繁琐(需要使用out.println语句)，并且不利于页面的 维护(比如，要修改页面就必须修改java代码),所以,sun 才制订了jsp技术规范。     jsp其实是一个以.jsp为后缀的文件，主要内容是 html和少量的java代码。容器会将jsp文">
+<meta name="twitter:image" content="http://zhuliming66.com/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/pageEncoding.png">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/tags/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/">
 
 
 
 
 
-  <title>标签 | 阿希、@的博客</title>
+  <title>JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP | 阿希、@的博客</title>
   
 
 
@@ -326,40 +328,297 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 8 个标签
+          <h1 class="post-title" itemprop="name headline">JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T16:45:48+08:00">
+                2019-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Servlet/" itemprop="url" rel="index">
+                    <span itemprop="name">Servlet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  515
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Dao/" style="font-size: 12px; color: #ccc">Dao</a> <a href="/tags/HTTP/" style="font-size: 12px; color: #ccc">HTTP</a> <a href="/tags/Jsp/" style="font-size: 12px; color: #ccc">Jsp</a> <a href="/tags/MySQL/" style="font-size: 21px; color: #6f6f6f">MySQL</a> <a href="/tags/Servlet/" style="font-size: 30px; color: #111">Servlet</a> <a href="/tags/Spring/" style="font-size: 30px; color: #111">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 12px; color: #ccc">SpringMVC</a> <a href="/tags/ssm/" style="font-size: 12px; color: #ccc">ssm</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="1-jsp"><a href="#1-jsp" class="headerlink" title="1.jsp"></a>1.jsp</h1><h2 id="1-jsp是什么"><a href="#1-jsp是什么" class="headerlink" title="(1)jsp是什么?"></a>(1)jsp是什么?</h2><p>sun公司制订的一种服务器端动态页面技术规范。</p>
+<pre><code>注：
+    虽然使用Servlet也可以生成动态页面，但是过于
+繁琐(需要使用out.println语句)，并且不利于页面的
+维护(比如，要修改页面就必须修改java代码),所以,sun
+才制订了jsp技术规范。
+    jsp其实是一个以.jsp为后缀的文件，主要内容是
+html和少量的java代码。容器会将jsp文件转换成一个对应的servlet然后执行。
+    jsp的本质就是一个servlet。</code></pre><h2 id="2-如何写一个jsp文件"><a href="#2-如何写一个jsp文件" class="headerlink" title="(2)如何写一个jsp文件?"></a>(2)如何写一个jsp文件?</h2><p>step1.　添加一个以.jsp为后缀的文件。</p>
+<p>step2. 在该文件里面，可以使用如下元素:</p>
+<h3 id="1-html-css-javascript"><a href="#1-html-css-javascript" class="headerlink" title="1)html(css,javascript)"></a>1)html(css,javascript)</h3><pre><code>直接写即可。</code></pre><h3 id="2-java代码"><a href="#2-java代码" class="headerlink" title="2)java代码"></a>2)java代码</h3><pre><code>方式一　java代码片断
+&lt;% java代码  %&gt;
+方式二  jsp表达式
+&lt;%= java表达式 %&gt;</code></pre><h3 id="3-隐含对象"><a href="#3-隐含对象" class="headerlink" title="3)隐含对象"></a>3)隐含对象</h3><pre><code>a.什么是隐含对象?
+直接可以使用的对象，比如out、request、response。
+b.为什么可以直接使用这些隐含对象?
+因为容器会自动添加获得这些对象的语句。</code></pre><h3 id="4-指令"><a href="#4-指令" class="headerlink" title="4)指令"></a>4)指令</h3><pre><code>a.什么是指令?
+通知容器，在将jsp文件转换成一个Servlet类时，
+做一些的额外的处理，比如导包。
+b.指令的语法
+&lt;%@ 指令名　属性=值 %&gt;
+c.page指令
+    import属性：用于指定要导的包名。
+    比如　
+&lt;%@ page import=&quot;java.util.*,java.text.*&quot;%&gt;
+    contentType属性：设置response.setContentType方法的内容。
+    pageEncoding属性:告诉容器，在读取jsp文件的内容时，使用指定的字符集来解码。</code></pre><p><img src="pageEncoding.png" alt></p>
+<h2 id="3-jsp是如何执行的"><a href="#3-jsp是如何执行的" class="headerlink" title="(3)jsp是如何执行的?"></a>(3)jsp是如何执行的?</h2><h3 id="1-阶段一-容器将-jsp文件转换成一个Servlet类。"><a href="#1-阶段一-容器将-jsp文件转换成一个Servlet类。" class="headerlink" title="1)阶段一　容器将.jsp文件转换成一个Servlet类。"></a>1)阶段一　容器将.jsp文件转换成一个Servlet类。</h3><pre><code>html(css,js) ----&gt; service方法里面，使用out.write输出。
+&lt;%       %&gt;  -----&gt; service方法里面，照搬。
+&lt;%=      %&gt;  -----&gt; service方法里面，使用out.print输出。</code></pre><h3 id="2-阶段二-容器调用该Servlet"><a href="#2-阶段二-容器调用该Servlet" class="headerlink" title="2)阶段二　容器调用该Servlet"></a>2)阶段二　容器调用该Servlet</h3><pre><code>需要编译、实例化、然后调用service方法。</code></pre><h1 id="练习-写一个date-jsp，输出当前的系统日期，比如"><a href="#练习-写一个date-jsp，输出当前的系统日期，比如" class="headerlink" title="练习　写一个date.jsp，输出当前的系统日期，比如"></a>练习　写一个date.jsp，输出当前的系统日期，比如</h1><pre><code>输出 &quot;2018-10-31&quot;    </code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/AliPay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Servlet/" rel="tag"><i class="fas fa-tag"></i> Servlet</a>
+          
+            <a href="/tags/Jsp/" rel="tag"><i class="fas fa-tag"></i> Jsp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/06/重定向、DAO的概念及编写/" rel="next" title="重定向、DAO的概念及编写">
+                <i class="fa fa-chevron-left"></i> 重定向、DAO的概念及编写
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -395,8 +654,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -517,6 +785,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-jsp"><span class="nav-number">1.</span> <span class="nav-text">1.jsp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-jsp是什么"><span class="nav-number">1.1.</span> <span class="nav-text">(1)jsp是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-如何写一个jsp文件"><span class="nav-number">1.2.</span> <span class="nav-text">(2)如何写一个jsp文件?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-html-css-javascript"><span class="nav-number">1.2.1.</span> <span class="nav-text">1)html(css,javascript)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-java代码"><span class="nav-number">1.2.2.</span> <span class="nav-text">2)java代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-隐含对象"><span class="nav-number">1.2.3.</span> <span class="nav-text">3)隐含对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-指令"><span class="nav-number">1.2.4.</span> <span class="nav-text">4)指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-jsp是如何执行的"><span class="nav-number">1.3.</span> <span class="nav-text">(3)jsp是如何执行的?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-阶段一-容器将-jsp文件转换成一个Servlet类。"><span class="nav-number">1.3.1.</span> <span class="nav-text">1)阶段一　容器将.jsp文件转换成一个Servlet类。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-阶段二-容器调用该Servlet"><span class="nav-number">1.3.2.</span> <span class="nav-text">2)阶段二　容器调用该Servlet</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习-写一个date-jsp，输出当前的系统日期，比如"><span class="nav-number">2.</span> <span class="nav-text">练习　写一个date.jsp，输出当前的系统日期，比如</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
