@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Spring,">
+  <meta name="keywords" content="SpringMVC,ssm,">
 
 
 
@@ -92,23 +92,18 @@
 
 
 
-<meta name="description" content="1. 框架框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。 框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。 框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。 普通的jar包，例如dom4j、mysql-connector等，只是实现了某个">
-<meta name="keywords" content="Spring">
+<meta name="description" content="【回顾】作业3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！1">
+<meta name="keywords" content="SpringMVC,ssm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring简介、对象获取方式、对象生命周期、单例模式、SET注入">
-<meta property="og:url" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/index.html">
+<meta property="og:title" content="SpringMVC转发与重定向、Session、注解详解">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/06/SpringMVC转发与重定向、Session、注解详解/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="1. 框架框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。 框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。 框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。 普通的jar包，例如dom4j、mysql-connector等，只是实现了某个">
+<meta property="og:description" content="【回顾】作业3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/01.png">
-<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/02.png">
-<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/03.png">
-<meta property="og:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/04.png">
-<meta property="og:updated_time" content="2019-06-04T13:40:19.047Z">
+<meta property="og:updated_time" content="2019-06-06T11:12:03.216Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring简介、对象获取方式、对象生命周期、单例模式、SET注入">
-<meta name="twitter:description" content="1. 框架框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。 框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。 框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。 普通的jar包，例如dom4j、mysql-connector等，只是实现了某个">
-<meta name="twitter:image" content="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/01.png">
+<meta name="twitter:title" content="SpringMVC转发与重定向、Session、注解详解">
+<meta name="twitter:description" content="【回顾】作业3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！1">
 
 
 
@@ -138,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/06/SpringMVC转发与重定向、Session、注解详解/">
 
 
 
 
 
-  <title>Spring简介、对象获取方式、对象生命周期、单例模式、SET注入 | 阿希、@的博客</title>
+  <title>SpringMVC转发与重定向、Session、注解详解 | 阿希、@的博客</title>
   
 
 
@@ -343,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/06/SpringMVC转发与重定向、Session、注解详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿希、@">
@@ -360,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring简介、对象获取方式、对象生命周期、单例模式、SET注入</h1>
+          <h1 class="post-title" itemprop="name headline">SpringMVC转发与重定向、Session、注解详解</h1>
         
 
         <div class="post-meta">
@@ -372,8 +367,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T21:02:41+08:00">
-                2019-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T19:09:27+08:00">
+                2019-06-06
               </time>
             
 
@@ -395,8 +390,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring</span>
+                  <a href="/categories/SpringMVC/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringMVC</span>
                   </a>
                 </span>
 
@@ -413,8 +408,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/04/Spring简介、对象获取方式、对象生命周期、单例模式、SET注入/" itemprop="commentCount"></span>
+                <a href="/2019/06/06/SpringMVC转发与重定向、Session、注解详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/06/SpringMVC转发与重定向、Session、注解详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -441,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.8k
+                  3.7k
                 </span>
               
 
@@ -457,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  14
                 </span>
               
             </div>
@@ -478,183 +473,159 @@
       
 
       
-        <h2 id="1-框架"><a href="#1-框架" class="headerlink" title="1. 框架"></a>1. 框架</h2><p>框架是一套已经编写好的程序结构，开发者在使用框架之后，可以在此基础之上进行开发，而不必关心偏底层的问题。</p>
-<p>框架通常可以提高开发效率，一定程度上还解决了一些其它的问题，可能是性能的问题，或者数据安全的问题，或者程度的可维护性的问题等等。</p>
-<p>框架具体的表现就是一系列的jar包，并且，可能改变原有的编程方式或流程。</p>
-<p>普通的jar包，例如<code>dom4j</code>、<code>mysql-connector</code>等，只是实现了某个功能，相当于是一套工具。</p>
-<h2 id="2-课程任务"><a href="#2-课程任务" class="headerlink" title="2. 课程任务"></a>2. 课程任务</h2><ul>
-<li><p>Spring框架</p>
+        <h3 id="【回顾】作业"><a href="#【回顾】作业" class="headerlink" title="【回顾】作业"></a>【回顾】作业</h3><h4 id="3-创建新项目-SPRINGMVC-02-USER，要求对-reg-do和-login-do-能作出响应，响应方式是显示-reg-jsp-和-login-jsp-页面，并且，注册页（reg-jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login-jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！"><a href="#3-创建新项目-SPRINGMVC-02-USER，要求对-reg-do和-login-do-能作出响应，响应方式是显示-reg-jsp-和-login-jsp-页面，并且，注册页（reg-jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login-jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！" class="headerlink" title="3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！"></a>3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！</h4><h2 id="1-接收请求参数"><a href="#1-接收请求参数" class="headerlink" title="1. 接收请求参数"></a>1. 接收请求参数</h2><h3 id="1-1-【不推荐】通过HttpServletRequest"><a href="#1-1-【不推荐】通过HttpServletRequest" class="headerlink" title="1.1. 【不推荐】通过HttpServletRequest"></a>1.1. 【不推荐】通过HttpServletRequest</h3><p>在处理请求的方法中，添加<code>HttpServletRequest</code>对象作为参数，在方法体中，直接调用参数对象的<code>getParameter()</code>或类似功能的方法，即可获取请求参数：</p>
+<pre><code>@RequestMapping(&quot;handle_reg.do&quot;)
+public String handleReg(
+        HttpServletRequest request) {
+    System.out.println(&quot;UserController.handleReg()&quot;);
+
+    String username
+        = request.getParameter(&quot;username&quot;);
+    String password
+        = request.getParameter(&quot;password&quot;);
+    Integer age
+        = Integer.valueOf(request.getParameter(&quot;age&quot;));
+    String phone
+        = request.getParameter(&quot;phone&quot;);
+    String email
+        = request.getParameter(&quot;email&quot;);
+
+    System.out.println(&quot;username=&quot; + username);
+    System.out.println(&quot;password=&quot; + password);
+    System.out.println(&quot;age=&quot; + age);
+    System.out.println(&quot;phone=&quot; + phone);
+    System.out.println(&quot;email=&quot; + email);
+
+    return null;
+}</code></pre><h3 id="1-2-【推荐】在处理请求的方法中声明同名参数"><a href="#1-2-【推荐】在处理请求的方法中声明同名参数" class="headerlink" title="1.2. 【推荐】在处理请求的方法中声明同名参数"></a>1.2. 【推荐】在处理请求的方法中声明同名参数</h3><p>假设用户提交的参数是<code>username=root</code>，则参数名是<code>username</code>，当需要获取这个参数的值时，直接在处理请求的方法中声明<code>String username</code>即可，框架会把<code>root</code>值直接用于调用处理请求的方法，即<code>String username</code>的值就已经是<code>root</code>了：</p>
+<pre><code>@RequestMapping(&quot;handle_reg.do&quot;)
+public String handleReg(
+        String username, String password, 
+        Integer age, String phone, String email) {
+
+    System.out.println(&quot;[2] username=&quot; + username);
+    System.out.println(&quot;[2] password=&quot; + password);
+    System.out.println(&quot;[2] age=&quot; + (age + 1));
+    System.out.println(&quot;[2] phone=&quot; + phone);
+    System.out.println(&quot;[2] email=&quot; + email);    
+
+    return null;
+}</code></pre><p>使用这种做法时，可以无视数据类型，例如希望<code>age</code>是<code>Integer</code>类型的，则直接声明为<code>Integer</code>类型即可，无须自行转换！</p>
+<p>使用这种做法时，必须保证提交的请求参数的名称，与处理请求的方法中的参数名称是一致的！如果不一致，则处理请求的方法中，对应的参数值会是<code>null</code>值！</p>
+<blockquote>
+<p>如果参数名称无法统一，后续有解决方案。</p>
+</blockquote>
+<p>这种做法最大的缺陷是：不适用于数据项目太多的表单！否则，会导致处理请求的方法中需要添加大量的参数！</p>
+<h3 id="1-3-【推荐】使用自定义类型获取多项数据"><a href="#1-3-【推荐】使用自定义类型获取多项数据" class="headerlink" title="1.3. 【推荐】使用自定义类型获取多项数据"></a>1.3. 【推荐】使用自定义类型获取多项数据</h3><p>假设请求参数中包含多项数据，例如：<code>username=admin&amp;password=123456&amp;age=22&amp;phone=13900139001&amp;email=admin%40tedu.cn</code>，而这些数据都可以封装在同一个类型中，则直接使用该类型作为处理请求的参数即可：</p>
+<pre><code>@RequestMapping(&quot;handle_reg.do&quot;)
+public String handleReg(User user) {
+
+    System.out.println(&quot;[3] username=&quot; + user.getUsername());
+    System.out.println(&quot;[3] password=&quot; + user.getPassword());
+    System.out.println(&quot;[3] age=&quot; + (1 + user.getAge()));
+    System.out.println(&quot;[3] phone=&quot; + user.getPhone());
+    System.out.println(&quot;[3] email=&quot; + user.getEmail());    
+
+    return null;
+}</code></pre><p>这种做法，适用于请求参数较多的场合！</p>
+<p><strong>注意：如果请求参数的参数名称，与类中的属性名称不一致，则类对象中对应的属性值为<code>null</code>！</strong></p>
+<p><strong>注意：这种做法可以与前序介绍的第2种做法组合来使用！</strong></p>
+<h3 id="1-4-小结"><a href="#1-4-小结" class="headerlink" title="1.4. 小结"></a>1.4. 小结</h3><p>关于获取请求参数，首先，并不推荐使用<code>HttpServletRequest</code>，主要原因是相对比较原始，编码比较繁琐！而声明同名参数，或声明对象，都是推荐的做法，至于使用哪一种，可以根据参数的数量及数据是否适合被封装到同一个类中，综合评定，并且，这2种做法可以组合使用！</p>
+<h2 id="2-控制器的响应"><a href="#2-控制器的响应" class="headerlink" title="2. 控制器的响应"></a>2. 控制器的响应</h2><h3 id="2-1-常见的响应方式"><a href="#2-1-常见的响应方式" class="headerlink" title="2.1. 常见的响应方式"></a>2.1. 常见的响应方式</h3><p>【转发】在转发过程中，客户端只发出过1次请求！在浏览器的地址栏中，也只会显示第1次请求的路径！转发是在服务器内部完成的，可以传递数据！</p>
+<p>【重定向】当服务器响应重定向时，客户端会发出第2次请求！最终，在浏览器的地址栏中，会显示第2次请求的路径！由于是2次不同的请求，基于Http协议是无状态协议，没有经过特殊处理（Session/Cookie/数据库存取……）的数据是无法在2次请求之间传递的！</p>
+<h3 id="2-2-常见的响应码"><a href="#2-2-常见的响应码" class="headerlink" title="2.2. 常见的响应码"></a>2.2. 常见的响应码</h3><p>被服务器接收到的每个请求，在最终响应时，服务器端都会给出一个响应码，例如<code>200</code>、<code>404</code>等。通常：</p>
+<ul>
+<li>2xx：正确的响应，例如<code>200</code>、<code>206</code>等……</li>
+<li>3xx：重定向，例如<code>302</code>、<code>301</code>等……</li>
+<li>4xx：请求错误，例如请求的资源不存在，或者请求类型错误、或者请求参数错误等等，例如<code>400</code>、<code>404</code>、<code>405</code>、<code>406</code>等……</li>
+<li>5xx：服务器内部错误，通常可能是出现某种异常，例如<code>500</code>等……</li>
+</ul>
+<h2 id="3-转发数据"><a href="#3-转发数据" class="headerlink" title="3. 转发数据"></a>3. 转发数据</h2><h3 id="3-1-【不推荐】将转发的数据封装在HttpServletRequest对象中"><a href="#3-1-【不推荐】将转发的数据封装在HttpServletRequest对象中" class="headerlink" title="3.1. 【不推荐】将转发的数据封装在HttpServletRequest对象中"></a>3.1. 【不推荐】将转发的数据封装在HttpServletRequest对象中</h3><p>可以为处理请求的方法添加<code>HttpServletRequest request</code>参数，当需要转发数据时，将数据封装在<code>request</code>中即可，后续也不需要显式的执行转发，在SpringMVC的控制器中，默认的响应方式就是转发。</p>
+<pre><code>@RequestMapping(&quot;handle_reg.do&quot;)
+public String handleReg(User user,
+        HttpServletRequest request) {
+    // 假定输入的用户名已经被占用
+    // 提示：您输入的用户名XXX已经被占用
+    request.setAttribute(&quot;msg&quot;, 
+        &quot;您输入的用户名&quot; + user.getUsername() + &quot;已经被占用！&quot;);
+
+    // 返回视图名，也可以理解为文件的文件名
+    return &quot;error&quot;; // 页面：/WEB-INF/error.jsp
+} </code></pre><h3 id="3-2-【不推荐】使用ModelAndView"><a href="#3-2-【不推荐】使用ModelAndView" class="headerlink" title="3.2. 【不推荐】使用ModelAndView"></a>3.2. 【不推荐】使用ModelAndView</h3><p>可以将处理请求的方法的返回值设置为<code>ModelAndView</code>类型，该类型的常用构造方法有：</p>
+<pre><code>ModelAndView()
+ModelAndView(String viewName)
+ModelAndView(String viewName, Map&lt;String, ?&gt; model)</code></pre><p>当需要转发数据时，可以使用以上3种中的最后一种：</p>
+<pre><code>@RequestMapping(&quot;handle_reg.do&quot;)
+public ModelAndView handleReg(String username) {
+    String viewName = &quot;error&quot;;
+    Map&lt;String, Object&gt; model
+        = new HashMap&lt;String, Object&gt;();
+    model.put(&quot;msg&quot;, 
+            &quot;[2] 您输入的用户名&quot; + username + &quot;已经被占用！&quot;);
+    ModelAndView mav
+        = new ModelAndView(viewName, model);
+    return mav;
+}</code></pre><p>由于这种方式使用相对比较复杂，所以，一般不推荐使用这种做法！</p>
+<h3 id="3-3-【推荐】使用ModelMap封装需要转发的数据"><a href="#3-3-【推荐】使用ModelMap封装需要转发的数据" class="headerlink" title="3.3. 【推荐】使用ModelMap封装需要转发的数据"></a>3.3. 【推荐】使用ModelMap封装需要转发的数据</h3><p>使用<code>ModelMap</code>的流程与使用<code>HttpServletRequest</code>完全相同，即：方法的返回值依然使用<code>String</code>类型，在方法中声明该参数，然后在方法体中直接封装数据，最后，返回视图名：</p>
+<pre><code>@RequestMapping(&quot;handle_reg.do&quot;)
+public String handleReg(String username,
+        ModelMap modelMap) {
+    modelMap.addAttribute(&quot;msg&quot;, 
+        &quot;[3] 您输入的用户名&quot; + username + &quot;已经被占用！&quot;);
+    return &quot;error&quot;;
+}</code></pre><h3 id="3-4-小结"><a href="#3-4-小结" class="headerlink" title="3.4. 小结"></a>3.4. 小结</h3><p>在SpringMVC中，转发数据共有3种做法，第1种使用<code>HttpServletRequest</code>的做法简单直接，但是，并不推荐这样处理，主要是因为框架已经帮我们处理了request需要执行的任务，而我们在编写代码时应该尽量不干预框架的处理过程，第2种使用<code>ModelAndView</code>，是框架的核心处理方式，但是，因为使用方式过于麻烦，所以，也不推荐这样使用，第3种使用<code>ModelMap</code>，使用简洁，推荐使用。</p>
+<h3 id="3-5-附：重定向"><a href="#3-5-附：重定向" class="headerlink" title="3.5. 附：重定向"></a>3.5. 附：重定向</h3><p>在SpringMVC中，当需要重定向时，首先，应该保证处理请求的方法的返回值是<code>String</code>类型（与转发一样），然后，返回值使用<code>redirect:</code>作为前缀即可，例如：</p>
+<pre><code>@RequestMapping(&quot;handle_reg.do&quot;)
+public String handleReg() {
+    // 假设注册成功，需要登录
+    return &quot;redirect:login.do&quot;;
+}</code></pre><p>需要注意的是：在<code>redirect:</code>右侧的不是视图名，而是重定向的目标的路径，可以是绝对路径，也可以是相对路径。</p>
+<p><strong>当处理的请求的返回值类型是String时，如果返回值使用redirect:作为前缀，是重定向，否则，是转发！</strong></p>
+<h2 id="4-关于-RequestMapping注解"><a href="#4-关于-RequestMapping注解" class="headerlink" title="4. 关于@RequestMapping注解"></a>4. 关于@RequestMapping注解</h2><p>通过配置<code>@RequestMapping</code>，可以绑定请求路径与处理请求的方法，例如：</p>
+<pre><code>@RequestMapping(&quot;login.do&quot;)
+public String showLogin() { ...</code></pre><p>即：通过以上配置，当接收到<code>login.do</code>请求时，SpringMVC会自动调用<code>showLogin()</code>方法。</p>
+<p>除了在方法之前添加该注解以外，该注解还可以添加在控制器类的声明之前，例如：</p>
+<pre><code>@RequestMapping(&quot;user&quot;)
+@Controller
+public class UserControler { ...</code></pre><p>当方法之前添加了该注解之后，方法内配置的所有请求路径，在最终访问时都必须添加<code>user</code>路径，例如：<code>http://localhost:8080/SPRINGMVC-02-USER/user/reg.do</code>。</p>
+<p>通常，推荐在类之前也添加该注解，方便管理路径，例如在某个新闻管理的应用中，可能存在<code>news_list.do</code>、<code>news_info.do</code>的请求，而在这个应用中，也会有用户数据，就存在<code>user_list.do</code>、<code>user_info.do</code>，可以发现，为了保证请求路径是唯一的，都需要在路径之前添加<code>xxx_</code>作为前缀，这样的管理方式是非常不方便的，在类之前添加<code>@RequestMapping</code>注解就可以很好的解决这个问题，每个路径之前根本就不需要配置前缀字符，也不会发生冲突！</p>
+<p>在<code>@RequestMapping</code>的使用过程中，路径可以使用<code>/</code>作为第1个字符，也可以不需要这个字符，例如：</p>
+<pre><code>/user        /login.do
+user        login.do
+/user        login.do
+user        /login.do</code></pre><p>以上4种配置都是正确的！通常，推荐使用<code>/</code>作为第1个字符，即以上第1种方式！</p>
+<p>除了配置请求路径以外，使用<code>@RequestMapping</code>还可以限制请求方式，即某个路径可以设置为只允许<code>POST</code>请求，而不接收<code>GET</code>请求！</p>
+<p>【GET】会将请求的参数与值体现在URL中；请求的参数与值会受到URL长度限制，不适用于传递大量的数据；</p>
+<p>【POST】请求的参数与值不会体现在URL中；可以传递大量的数据；</p>
+<p>【选取】请求的参数与值涉及隐私（例如密码）则必须使用POST；数据量可能较大时必须使用POST；需要共享URL且其中包含参数时必须使用GET；支持页面刷新必须使用GET。</p>
+<p>【复杂度】如果要发出POST请求，只能通过<code>&lt;form&gt;</code>中的<code>&lt;input type=&quot;submit&quot; /&gt;</code>或<code>&lt;button /&gt;</code>，或者通过JS技术，否则，在Web领域无法发出POST请求，而这2种方式也都可以用于发出GET请求，除此以外，直接在浏览器中输入某个URL发出的也是GET请求，总的来说，发GET请求要简单得多。</p>
+<p>【小结】参考以上“选取”原则，选择请求方式，如果两者均可，则使用GET即可。</p>
+<p>在<code>@RequestMapping</code>中配置<code>method</code>属性可以限制请求类型：</p>
+<pre><code>@RequestMapping(value=&quot;handle_reg.do&quot;,
+        method=RequestMethod.POST)
+public String handleReg() {</code></pre><p>例如以上代码限制了<code>handle_reg.do</code>必须通过POST方式来请求，如果使用GET方式，则会返回405错误！</p>
+<p><strong>只有需要限定请求方式时，才需要显式的配置value=”handle_reg.do”，否则，直接将”handle_reg.do”配置在注解中即可！</strong></p>
+<p>小结：关于<code>@RequestMapping</code>注解，主要作用是配置请求路径，推荐在控制器类和处理请求的方法之前都添加该注解，类之前的注解是用于配置请求路径中的层次，方法之前的注解是用于配置请求的资源，关于路径的配置是该属性的<code>value</code>属性，如果只配置请求路径，可以不用显式的声明这是配置<code>value</code>属性，而是直接把值写出来即可，例如不需要写成<code>@RequestMapping(values=&quot;login.do&quot;)</code>，而可以直接写成<code>@RequestMapping(&quot;login.do&quot;)</code>，在配置路径时，推荐使用<code>/</code>作为第1个字符，例如<code>@RequestMapping(&quot;/login.do&quot;)</code>，如果还需要限制请求方式，则必须显式的声明路径为<code>value</code>属性的值，并且添加配置<code>method</code>属性，例如：<code>@RequestMapping(value=&quot;handle_reg.do&quot;, method=RequestMethod.POST)</code>。</p>
+<h2 id="5-关于-RequestParam注解"><a href="#5-关于-RequestParam注解" class="headerlink" title="5. 关于@RequestParam注解"></a>5. 关于@RequestParam注解</h2><p>使用<code>@RequestParam</code>注解，可以解决请求参数名称与处理请求的方法的参数名称不一致的问题，例如：</p>
+<pre><code>public String handleLogin(
+    @RequestParam(&quot;name&quot;) String username, 
+        String password) { ...</code></pre><p>则请求参数的名称是<code>name</code>，而处理请求的方法中的参数名称却是<code>username</code>，这是可以正常运行的！</p>
+<p>一旦使用了<code>@RequestParam</code>注解，默认情况下，参数就是必须的！例如配置了<code>@RequestParam(&quot;passwd&quot;) String password</code>后，如果请求中并不存在名为<code>passwd</code>的参数，则会出现400错误：</p>
+<pre><code>HTTP Status 400 - Required String parameter &apos;passwd&apos; is not present</code></pre><p><strong>没有提交名为passwd的参数，与提交了空值，是两码事！即：如果提交了passwd参数却没有值（例如输入框中没有输入值），在服务器将得到空字符串（””），程序并不会出现错误！如果根本就没有提交名为passwd的参数，则会导致400错误！</strong></p>
+<p>如果使用了<code>@RequestParam</code>注解，却又不想设置为<strong>必须提交该参数</strong>，可以：</p>
+<pre><code>@RequestParam(value=&quot;name&quot;, required=false)</code></pre><p>则将根据<code>name</code>去接收参数，如果有值，会正确接收，如果没有（没有提交该名称的参数），则会是null值！</p>
+<p>当<code>required=false</code>时，意味着可以不必提交该参数，还可以多配置一项<code>defaultValue</code>属性(<code>The default value to use as a fallback when the request parameter value is not provided or empty. Supplying a default value implicitly sets required() to false.</code>)，表示<strong>如果请求中没有提交该参数，则默认值是多少！</strong>例如：</p>
+<pre><code>@RequestParam(value=&quot;passwd&quot;, required=false, defaultValue=&quot;888999&quot;) String password</code></pre><p>以上代码表示：希望请求中包含名为<code>passwd</code>的参数，如果有，则值用于方法的<code>String password</code>的参数，如果没有，也不是必须要提供（<code>required=false</code>），并且使用<code>&quot;888999&quot;</code>作为默认值（<code>defaultValue=&quot;888999&quot;</code>），即：在这种情况下，<code>String password</code>的值是<code>&quot;888999&quot;</code>。</p>
+<p>小结：<code>@RequestParam</code>注解是用于处理请求的方法中的参数之前，可以配置3项属性，分别是<code>value</code>表示请求参数名称，<code>required</code>表示请求中是否必须包含该参数，<code>defaultValue</code>表示参数的默认值，当有以上任何一种需求时，都需要配置该注解，即：请求参数名称与处理请求的方法的参数名称不一致；强制必须提交某个参数；为某个参数配置默认值。</p>
+<h1 id="————————————"><a href="#————————————" class="headerlink" title="————————————"></a>————————————</h1><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>在今天的案例基础之上，实现：</p>
+<ul>
+<li><p>如果注册时，提交的用户名是<code>root</code>，将视为用户名已经被占用，提示错误页面；</p>
 </li>
-<li><p>SpringMVC框架</p>
+<li><p>如果注册成功，跳转到登录页面；</p>
 </li>
-<li><p>MyBatis框架</p>
+<li><p>如果登录时，提交的用户名是<code>root</code>，且密码是<code>1234</code>，则跳转到主页（请求路径为<code>/main/index.do</code>，显示的页面是<code>index.jsp</code>），如果登录错误，根据错误类型在错误页面提示“用户名不存在”或“密码错误”</p>
 </li>
 </ul>
-<h2 id="3-Spring框架"><a href="#3-Spring框架" class="headerlink" title="3. Spring框架"></a>3. Spring框架</h2><h3 id="3-1-作用"><a href="#3-1-作用" class="headerlink" title="3.1. 作用"></a>3.1. 作用</h3><p><strong>创建和管理对象</strong>。</p>
-<p>传统的创建对象的方法是：<code>Object obj = new Object();</code></p>
-<p>使用Spring框架后：<code>Object obj = 框架.getXXX();</code></p>
-<p>即：开发者无需关注对象的创建过程，改由框架来创建，当需要对象时，通过框架获取即可。</p>
-<p>传统的管理对象可能有：<code>student.setName(&quot;张三同学&quot;);</code></p>
-<p>使用Spring框架后，无需执行相关代码，通过配置，获取对象时，相关属性就已经有值了。</p>
-<h3 id="3-2-项目准备"><a href="#3-2-项目准备" class="headerlink" title="3.2. 项目准备"></a>3.2. 项目准备</h3><p>先创建Maven项目，勾选<code>Create a simple project</code>，<code>Group Id</code>为<code>cn.tedu.spring</code>，<code>Artifact Id</code>为<code>SPRING-01</code>，<code>Packaging</code>选择<code>war</code>，创建好项目后，默认项目是出错的，需要生成<code>web.xml</code>文件。</p>
-<p>使用Spring之前，需要添加相关依赖，<code>artifactId</code>为<code>spring-webmvc</code>，且<code>groupId</code>是<code>org.springframework</code>，版本通常选择3.2或以上版本，但，目前尚不推荐使用5.x版本。</p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
-    &lt;version&gt;4.3.9.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;</code></pre><p>以上代码，应该添加到项目的<code>pom.xml</code>的<code>&lt;dependencies&gt;</code>节点的内部。</p>
-<p>然后，下载得到<code>applicationContext.xml</code>文件，复制到项目中的<code>src\main\resources</code>文件夹下：</p>
-<p><img src="01.png" alt></p>
-<h3 id="3-3-通过Spring获取对象–类中存在无参数构造方法（常用）"><a href="#3-3-通过Spring获取对象–类中存在无参数构造方法（常用）" class="headerlink" title="3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）"></a>3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）</h3><p>在Spring的配置文件（<code>applicationContext.xml</code>）中，添加：</p>
-<pre><code>&lt;bean id=&quot;date&quot; class=&quot;java.util.Date&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>class</code>表示“类”，取值应该是类的全名，即包名和类名，<code>id</code>是自定义的名称，通常使用类名并且首字母改为小写，例如类名是<code>Date</code>，则id值为<code>date</code>，如果类名是<code>Student</code>，则<code>id</code>值为<code>student</code>。</p>
-<p>完成配置后，就可以在程序中，通过Spring根据<code>date</code>名称获取<code>java.util.Date</code>的对象，可以在<code>src\main\java</code>中创建可执行的Java类：</p>
-<pre><code>package cn.tedu.spring;
-
-public class SpringTest {
-
-    public static void main(String[] args) {
-
-    }
-
-}</code></pre><p>然后，编写程序：</p>
-<pre><code>public static void main(String[] args) {
-    // 加载Spring的配置文件，获取Spring容器
-    ApplicationContext ac = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
-
-    // 通过Spring容器获取对象
-    Date date = (Date) ac.getBean(&quot;date&quot;);
-
-    // 测试输出
-    System.out.println(date);
-}</code></pre><p><img src="02.png" alt></p>
-<blockquote>
-<p>自定义<code>User</code>类，在Spring的配置文件中添加配置，最终，在程序中，获取<code>User</code>类的对象。</p>
-</blockquote>
-<p>以上操作，要求类中存在无参数的构造方法，如果不具备条件，则：</p>
-<pre><code>Exception in thread &quot;main&quot; org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;user&apos; defined in class path resource [applicationContext.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.tedu.spring.User]: No default constructor found; nested exception is java.lang.NoSuchMethodException: cn.tedu.spring.User.&lt;init&gt;()
-
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [cn.tedu.spring.User]: No default constructor found; nested exception is java.lang.NoSuchMethodException: cn.tedu.spring.User.&lt;init&gt;()
-
-Caused by: java.lang.NoSuchMethodException: cn.tedu.spring.User.&lt;init&gt;()</code></pre><p>这种做法对构造方法的访问权限并没有任何要求，即使是<code>private</code>权限，也不影响Spring创建对象！</p>
-<p>此次实现的代码中，关于<code>ac</code>变量，会提示警告：<code>ac is never closed</code>，即：推荐调用<code>ac.close()</code>以释放资源，但是，<code>ApplicationContext</code>接口中并没有声明<code>close()</code>方法，所以，应该将<code>ac</code>的类型声明为<code>AbstractApplicationContext</code>。</p>
-<h3 id="3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）"><a href="#3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）" class="headerlink" title="3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）"></a>3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）</h3><p><strong>工厂方法：</strong>调用后可以返回类的对象的方法，也可以理解为生产对象的方法。</p>
-<p>以<code>Calendar</code>为例，它是一个抽象类，是不可以直接通过<code>new 构造方法()</code>此类语法创建对象的！但是，在这个类中，有<code>static Calendar getInstance()</code>方法，这个方法，就称之为<code>Calendar</code>类的<strong>静态工厂方法</strong>！</p>
-<p>在Spring的配置文件中，配置：</p>
-<pre><code>&lt;bean id=&quot;calendar&quot; class=&quot;java.util.Calendar&quot; factory-method=&quot;getInstance&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-method</code>属性的值是静态工厂方法的名称。</p>
-<p>配置时，无论是类的全名，还是方法的名称，都必须是已知条件。</p>
-<blockquote>
-<p>练习：自定义类HuaWeiPhone，通过静态工厂方法，获取该类的对象！</p>
-</blockquote>
-<p>关于类：</p>
-<pre><code>package cn.tedu.spring;
-
-public class HuaWeiPhone {
-
-    // 使得当前类不存在无参数的构造方法
-    public HuaWeiPhone(Object obj){
-        super();
-    }
-
-    // 静态工厂方法
-    public static HuaWeiPhone create() {
-        return new HuaWeiPhone(null);
-    }
-
-}</code></pre><p>关于配置：</p>
-<pre><code>&lt;bean id=&quot;huaWeiPhone&quot; class=&quot;cn.tedu.spring.HuaWeiPhone&quot; factory-method=&quot;create&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-5-通过Spring获取对象–存在实例工厂方法（不常用）"><a href="#3-5-通过Spring获取对象–存在实例工厂方法（不常用）" class="headerlink" title="3.5. 通过Spring获取对象–存在实例工厂方法（不常用）"></a>3.5. 通过Spring获取对象–存在实例工厂方法（不常用）</h3><p><strong>实例工厂方法</strong>：通过某个实例（对象）调用的方法，并且，这个方法可以返回某个类的对象，是生产对象的方法。</p>
-<p>假设存在某类需要被获取对象，不满足前序的2种条件：</p>
-<pre><code>public class Car {
-    public Car(Object obj) {
-    }
-}</code></pre><p>则需要另一个类中存在工厂方法，可以创建它的对象</p>
-<pre><code>public class CarFactory {
-    public Car makeCar() {
-        return new Car(null);
-    }
-}</code></pre><p>在配置时：</p>
-<pre><code>&lt;bean id=&quot;carFactory&quot; class=&quot;cn.tedu.spring.CarFactory&quot;&gt;&lt;/bean&gt;
-&lt;bean id=&quot;car&quot; class=&quot;cn.tedu.spring.Car&quot; factory-bean=&quot;carFactory&quot; factory-method=&quot;makeCar&quot;&gt;&lt;/bean&gt;</code></pre><p>以上配置中，<code>factory-bean</code>的值是工厂类的<code>&lt;bean&gt;</code>节点的<code>id</code>属性值。</p>
-<p><img src="03.png" alt></p>
-<h3 id="3-6-通过Spring获取对象–小结"><a href="#3-6-通过Spring获取对象–小结" class="headerlink" title="3.6. 通过Spring获取对象–小结"></a>3.6. 通过Spring获取对象–小结</h3><p>通过Spring创建对象，然后从Spring容器中获取对象，需要：</p>
-<ol>
-<li><p>类中存在无参数的构造方法；</p>
-</li>
-<li><p>类中存在静态的工厂方法；</p>
-</li>
-<li><p>存在实例工厂方法。</p>
-</li>
-</ol>
-<p>以上3种方式中，第2种和第3种的使用频率较低，原因是满足条件的类较少。</p>
-<h3 id="3-7-由Spring管理的对象的作用域"><a href="#3-7-由Spring管理的对象的作用域" class="headerlink" title="3.7. 由Spring管理的对象的作用域"></a>3.7. 由Spring管理的对象的作用域</h3><p><strong>单例</strong>：单一的实例，即在同一时刻，某个类的对象是唯一的！</p>
-<p>由Spring所管理的对象，默认都是单例的，在配置时，通过<code>scope</code>属性可以配置是否单例，默认取值为<code>singleton</code>，当取值为<code>prototype</code>时，是非单例的！</p>
-<pre><code>&lt;bean id=&quot;student&quot; class=&quot;cn.tedu.spring.Student&quot; scope=&quot;prototype&quot;&gt;&lt;/bean&gt;</code></pre><p>单例模式可以区分为：懒汉式、饿汉式。</p>
-<p>默认情况下，由Spring管理的单例对象是饿汉式的，通过<code>lazy-init</code>属性可以调整，该属性的值是布尔类型。</p>
-<pre><code>&lt;bean id=&quot;student&quot; class=&quot;cn.tedu.spring.Student&quot; scope=&quot;singleton&quot; lazy-init=&quot;true&quot;&gt;&lt;/bean&gt;</code></pre><h3 id="3-8-由Spring管理的对象的生命周期"><a href="#3-8-由Spring管理的对象的生命周期" class="headerlink" title="3.8. 由Spring管理的对象的生命周期"></a>3.8. 由Spring管理的对象的生命周期</h3><p>仅由Spring管理的、单例的对象存在生命周期问题！</p>
-<p>开发者可以在任何自定义的、由Spring管理的类中添加初始化方法和销毁方法，方法必须是<code>void</code>和无参数的，例如：</p>
-<pre><code>public class Stduent {
-
-    // 初始化方法
-    public void init() {
-        System.out.println(&quot;Student.init()&quot;);
-    }
-
-    // 销毁方法
-    public void destroy() {
-        System.out.println(&quot;Student.destroy()&quot;);
-    }
-
-}</code></pre><p>然后，在Spring的配置文件中进行配置：</p>
-<pre><code>&lt;bean id=&quot;student&quot; class=&quot;cn.tedu.spring.Student&quot; init-method=&quot;init&quot; destroy-method=&quot;destroy&quot;&gt;&lt;/bean&gt;</code></pre><p>注意：对于非单例的对象而言，生命周期方法是没有意义的。</p>
-<h3 id="3-9-通过SET方式注入属性的值"><a href="#3-9-通过SET方式注入属性的值" class="headerlink" title="3.9. 通过SET方式注入属性的值"></a>3.9. 通过SET方式注入属性的值</h3><p>基本概念：通过Spring的配置，确定某个类中的某个属性的值，使得最终获取对象时，属性是已经被赋值的。</p>
-<p>假设存在<code>UserDao</code>类，在类中有<code>String username</code>和<code>String password</code>表示访问数据库的用户名和密码：</p>
-<pre><code>public class UserDao {
-
-    // 模拟：访问数据库的用户名
-    String username;
-
-    // 模拟：访问数据库的密码
-    String password;
-
-}</code></pre><p>需要注入值的属性，必须有set方法，即设置它的值的方法，且方法名称必须以<code>set</code>作为前缀：</p>
-<pre><code>public void setUsername(String u) {
-    username = u;
-}</code></pre><p>然后，在Spring的配置文件中：</p>
-<pre><code>&lt;bean id=&quot;userDao&quot; class=&quot;cn.tedu.spring.UserDao&quot;&gt;
-    &lt;property name=&quot;username&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
-&lt;/bean&gt;</code></pre><p>即：添加子级<code>&lt;property&gt;</code>节点，在该节点，配置<code>name</code>和<code>value</code>，其中，<code>name</code>表示属性，<code>value</code>表示值。</p>
-<p><strong>注意：在配置<property>的name时，值应该是需要注入的属性的set方法名称中不包含set的部分，且首字母是小写的！</property></strong></p>
-<p><img src="04.png" alt></p>
-<hr>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="1-关于Maven中依赖出错"><a href="#1-关于Maven中依赖出错" class="headerlink" title="1. 关于Maven中依赖出错"></a>1. 关于Maven中依赖出错</h3><p>在添加依赖后，下载到的jar包文件可能是已损坏的，或数据不完整的，可能表现为：下载的jar包的数量不正确，或者，编写代码时，某个类无法识别等……</p>
-<p>解决方案：</p>
-<ol>
-<li><p>打开Eclipse的设置，找到<code>Maven</code> &gt; <code>User Settings</code>，面板中的<code>Local Repository</code>就是本地仓库文件夹；</p>
-</li>
-<li><p>关闭Eclipse，因为已经打开的项目可能引用了本地仓库文件夹中的某个jar包，如果Eclipse正在运行，可能导致后续的删除操作无法执行；</p>
-</li>
-<li><p>打开本地仓库文件夹，删除出错的jar包文件（通常jar包文件对于新生来说不易于查找，所以，简单的操作方式就是将整个本地仓库文件夹全部删除）；</p>
-</li>
-<li><p>打开Eclipse，找到需要开发的项目，点击右键，选择<code>Maven</code> &gt; <code>Update Project</code>，在弹出的对话框中，选中<code>Force update ...</code>选项，然后，开始更新即可。</p>
-</li>
-</ol>
-<h3 id="2-Resource-leak"><a href="#2-Resource-leak" class="headerlink" title="2. Resource leak"></a>2. Resource leak</h3><p>Resource leak表示“内存溢出”（内存泄露）。</p>
-<p>模拟情景：假设存在<code>D:/a.txt</code>，在程序中，通过<code>FileInputStream fis</code>访问该文件，在访问过程中，如果出现异常，导致程序结束，然后，JVM中垃圾回收机制尝试回收垃圾时，找到了<code>fis</code>，但是，前序<code>fis</code>并没有正常关闭，仍然连接着硬盘上的<code>a.txt</code>文件，在JVM看来，这个<code>fis</code>仍处于使用状态，不是垃圾！但是，以程序员的角度来看，<code>fis</code>是一个变量，当程序崩溃时，这个变量就已经无法继续使用，就是个垃圾！所以，就会出现“已经无法继续使用的对象，却不会被视为垃圾数据，无法被回收！”</p>
-<p>如果以上类似的垃圾数据越来越多，就会导致可用内存越来越少，当达到极端状态时，就会出现“内存溢出”！</p>
-<p>所以，其实，少量的内存溢出，并没有明显的危害！但是，作为开发者，应该尽量的避免任何可能出现的内存溢出！</p>
-<p>解决内存溢出的核心：尽早释放不再使用的资源，例如流、数据库访问的相关对象、XML的读写工具等连接型资源，对于可能抛出异常的代码，应该添加<code>finally</code>代码块，并在其中释放资源。</p>
-<h3 id="3-单例模式示例"><a href="#3-单例模式示例" class="headerlink" title="3. 单例模式示例"></a>3. 单例模式示例</h3><pre><code>public class King {
-    private static King king;
-
-    private King() {
-    }
-
-    public static King getKing() {
-        if (king == null) {
-            king = new King();
-        }
-        return king;
-    }
-}</code></pre><p><strong>以上是懒汉式单例模式的代码，且，没有解释线程安全问题。</strong></p>
 
       
     </div>
@@ -701,7 +672,9 @@ public class HuaWeiPhone {
       
         <div class="post-tags">
           
-            <a href="/tags/Spring/" rel="tag"><i class="fas fa-tag"></i> Spring</a>
+            <a href="/tags/SpringMVC/" rel="tag"><i class="fas fa-tag"></i> SpringMVC</a>
+          
+            <a href="/tags/ssm/" rel="tag"><i class="fas fa-tag"></i> ssm</a>
           
         </div>
       
@@ -714,8 +687,8 @@ public class HuaWeiPhone {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/03/HTTP协议/" rel="next" title="HTTP协议">
-                <i class="fa fa-chevron-left"></i> HTTP协议
+              <a href="/2019/06/06/JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP/" rel="next" title="JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP">
+                <i class="fa fa-chevron-left"></i> JSP概念、JAVA代码片段、隐含对象、指令、JSP表达式、日期输出、HTML转换JSP
               </a>
             
           </div>
@@ -723,10 +696,6 @@ public class HuaWeiPhone {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/04/注入集合类型、注入properties类型、自动装配、Spring表达式/" rel="prev" title="注入集合类型、注入properties类型、自动装配、Spring表达式">
-                注入集合类型、注入properties类型、自动装配、Spring表达式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -948,7 +917,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-框架"><span class="nav-number">1.</span> <span class="nav-text">1. 框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-课程任务"><span class="nav-number">2.</span> <span class="nav-text">2. 课程任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Spring框架"><span class="nav-number">3.</span> <span class="nav-text">3. Spring框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-作用"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-项目准备"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 项目准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-通过Spring获取对象–类中存在无参数构造方法（常用）"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 通过Spring获取对象–类中存在无参数构造方法（常用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-通过Spring获取对象–类中存在静态工厂方法（不常用）"><span class="nav-number">3.4.</span> <span class="nav-text">3.4. 通过Spring获取对象–类中存在静态工厂方法（不常用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-通过Spring获取对象–存在实例工厂方法（不常用）"><span class="nav-number">3.5.</span> <span class="nav-text">3.5. 通过Spring获取对象–存在实例工厂方法（不常用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-通过Spring获取对象–小结"><span class="nav-number">3.6.</span> <span class="nav-text">3.6. 通过Spring获取对象–小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-由Spring管理的对象的作用域"><span class="nav-number">3.7.</span> <span class="nav-text">3.7. 由Spring管理的对象的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-由Spring管理的对象的生命周期"><span class="nav-number">3.8.</span> <span class="nav-text">3.8. 由Spring管理的对象的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-通过SET方式注入属性的值"><span class="nav-number">3.9.</span> <span class="nav-text">3.9. 通过SET方式注入属性的值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">4.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-关于Maven中依赖出错"><span class="nav-number">4.1.</span> <span class="nav-text">1. 关于Maven中依赖出错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Resource-leak"><span class="nav-number">4.2.</span> <span class="nav-text">2. Resource leak</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-单例模式示例"><span class="nav-number">4.3.</span> <span class="nav-text">3. 单例模式示例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【回顾】作业"><span class="nav-number">1.</span> <span class="nav-text">【回顾】作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建新项目-SPRINGMVC-02-USER，要求对-reg-do和-login-do-能作出响应，响应方式是显示-reg-jsp-和-login-jsp-页面，并且，注册页（reg-jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login-jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！"><span class="nav-number">1.1.</span> <span class="nav-text">3. 创建新项目 SPRINGMVC-02-USER，要求对 /reg.do和 /login.do 能作出响应，响应方式是显示 reg.jsp 和 login.jsp 页面，并且，注册页（reg.jsp）要求有用户名、密码、年龄、手机、邮箱这5个输入项和1个提交按钮，而登录页（login.jsp）要求有用户名、密码这2个输入项和1个提交按钮，不要求页面之间可以跳转。注意：代码请排版！</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#1-接收请求参数"><span class="nav-number"></span> <span class="nav-text">1. 接收请求参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-【不推荐】通过HttpServletRequest"><span class="nav-number">1.</span> <span class="nav-text">1.1. 【不推荐】通过HttpServletRequest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-【推荐】在处理请求的方法中声明同名参数"><span class="nav-number">2.</span> <span class="nav-text">1.2. 【推荐】在处理请求的方法中声明同名参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-【推荐】使用自定义类型获取多项数据"><span class="nav-number">3.</span> <span class="nav-text">1.3. 【推荐】使用自定义类型获取多项数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-小结"><span class="nav-number">4.</span> <span class="nav-text">1.4. 小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-控制器的响应"><span class="nav-number"></span> <span class="nav-text">2. 控制器的响应</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-常见的响应方式"><span class="nav-number">1.</span> <span class="nav-text">2.1. 常见的响应方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-常见的响应码"><span class="nav-number">2.</span> <span class="nav-text">2.2. 常见的响应码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-转发数据"><span class="nav-number"></span> <span class="nav-text">3. 转发数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-【不推荐】将转发的数据封装在HttpServletRequest对象中"><span class="nav-number">1.</span> <span class="nav-text">3.1. 【不推荐】将转发的数据封装在HttpServletRequest对象中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-【不推荐】使用ModelAndView"><span class="nav-number">2.</span> <span class="nav-text">3.2. 【不推荐】使用ModelAndView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-【推荐】使用ModelMap封装需要转发的数据"><span class="nav-number">3.</span> <span class="nav-text">3.3. 【推荐】使用ModelMap封装需要转发的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-小结"><span class="nav-number">4.</span> <span class="nav-text">3.4. 小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-附：重定向"><span class="nav-number">5.</span> <span class="nav-text">3.5. 附：重定向</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-关于-RequestMapping注解"><span class="nav-number"></span> <span class="nav-text">4. 关于@RequestMapping注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-关于-RequestParam注解"><span class="nav-number"></span> <span class="nav-text">5. 关于@RequestParam注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#————————————"><span class="nav-number"></span> <span class="nav-text">————————————</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作业"><span class="nav-number"></span> <span class="nav-text">作业</span></a></li></ol></li></div>
             
 
           </div>
