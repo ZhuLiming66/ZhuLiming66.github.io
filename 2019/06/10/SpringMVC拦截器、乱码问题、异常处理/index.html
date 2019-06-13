@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="阿希、@的博客">
 <meta property="og:description" content="【回顾】作业在今天的案例基础之上，实现：  如果注册时，提交的用户名是root，将视为用户名已经被占用，提示错误页面；  如果注册成功，跳转到登录页面；  如果登录时，提交的用户名是root，且密码是1234，则跳转到主页（请求路径为/main/index.do，显示的页面是index.jsp），如果登录错误，根据错误类型在错误页面提示“用户名不存在”或“密码错误”   练习 设计/user/in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-10T13:26:11.087Z">
+<meta property="og:updated_time" content="2019-06-13T05:48:59.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC拦截器、乱码问题、异常处理">
 <meta name="twitter:description" content="【回顾】作业在今天的案例基础之上，实现：  如果注册时，提交的用户名是root，将视为用户名已经被占用，提示错误页面；  如果注册成功，跳转到登录页面；  如果登录时，提交的用户名是root，且密码是1234，则跳转到主页（请求路径为/main/index.do，显示的页面是index.jsp），如果登录错误，根据错误类型在错误页面提示“用户名不存在”或“密码错误”   练习 设计/user/in">
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.8k
+                  3.5k
                 </span>
               
 
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  13
                 </span>
               
             </div>
@@ -624,6 +624,45 @@
         &lt;/props&gt;
     &lt;/property&gt;
 &lt;/bean&gt;</code></pre><p>这种方式处理异常非常的简单，但是，也有一个比较大的问题：无法提示更详细的信息！例如出现<code>ArrayIndexOutOfBoundsException</code>时，其实，异常对象中还封装了详细的错误信息，即：越界值是多少。</p>
+<h3 id="3-3-处理异常-ExceptionHandler"><a href="#3-3-处理异常-ExceptionHandler" class="headerlink" title="3.3 处理异常-@ExceptionHandler"></a>3.3 处理异常-@ExceptionHandler</h3><p>可以在控制器类中自定义一个处理异常的方法，在方法之前添加<code>@ExceptionHandler</code>，然后，凡是约定范围内的异常，都可以由该方法来决定如何处理：</p>
+<pre><code>@ExceptionHandler
+public String handleException(Exception e) {
+    System.out.println(
+        &quot;ExceptionController.handleException()&quot;);
+
+    if (e instanceof NullPointerException) {
+        return &quot;null&quot;;
+    } else if (e instanceof ArrayIndexOutOfBoundsException) {
+        return &quot;index&quot;;
+    }
+
+    return &quot;runtime&quot;;
+}</code></pre><p>在处理异常时，如果需要转发数据，可以将返回值修改为<code>ModelAndView</code>，或者，在处理异常的方法参数列表中添加<code>HttpServletRequest</code>，但是，却不可以使用<code>ModelMap</code>来封装转发的数据：</p>
+<pre><code>@ExceptionHandler
+public String handleException(Exception e,
+        HttpServletRequest request) {
+    System.out.println(
+        &quot;ExceptionController.handleException()&quot;);
+
+    if (e instanceof NullPointerException) {
+        return &quot;null&quot;;
+    } else if (e instanceof ArrayIndexOutOfBoundsException) {
+        request.setAttribute(&quot;msg&quot;, e.getMessage());
+        return &quot;index&quot;;
+    }
+
+    return &quot;runtime&quot;;
+}</code></pre><p>思考：是否可以在类中添加3个处理异常的方法，分别只处理<code>NullPointerException</code>和<code>ArrayIndexOutOfBoundsException</code>和<code>RuntimeException</code>？</p>
+<p><strong>答案：可以！允许使用多个不同的方法来处理异常！</strong></p>
+<p>思考：假设处理异常的方法在A控制器中，而B控制器中处理请求时出现异常，会被处理吗？</p>
+<p><strong>答案：不可以！通常，可以创建一个BaseController，作为当前项目的控制器类的基类，然后，把处理异常的代码编写在这个类中即可！</strong></p>
+<p>关于<code>@ExceptionHandler</code>，还可以用于限制其对应的方法处理的异常的种类！例如：</p>
+<pre><code>@ExceptionHandler(IndexOutOfBoundsException.class)</code></pre><p>以上代码表示接下来的方法只处理<code>IndexOutOfBoundsException</code>及其子孙类异常，而其它的异常并不处理！</p>
+<h3 id="3-4-小结"><a href="#3-4-小结" class="headerlink" title="3.4 小结"></a>3.4 小结</h3><p>处理异常的本质并不可以“撤消”异常，无法让已经出现的问题还原到没有问题！所以，处理异常的本质应该是尽量的补救已经出现的问题，并且，尝试通过提示信息等方式告之使用者，尽量执行正确的操作，避免后续再次出现同样的问题！</p>
+<p>并且，对于开发者而言，应该处理每一个可能出现的异常，因为，如果没有处理，就会继续抛出，最终被Tomcat捕获，而Tomcat处理的方式是把异常的跟踪信息显示在页面上，是极为不合适的！</p>
+<p>在SpringMVC中，处理异常有2种方式，第1种是通过<code>SimpleMappingExceptionResolver</code>设置异常与转发目标的对应关系，第2种是使用<code>@ExceptionHandler</code>为处理异常的方法进行注解，推荐使用第2种方式。</p>
+<p>通常，会把处理异常的方法写在项目的控制器类的基类中，即写在<code>BaseController</code>中，在使用<code>@ExceptionHandler</code>时，可以明确的指定所处理的异常类型，例如：<code>@ExceptionHandler(NullPointerException)</code>，且，在控制器类中，可以编写多个处理异常的方法！</p>
+<p>关于处理异常的方法，应该是<code>public</code>方法，返回值类型与处理请求的方式相同，可以是<code>String</code>或<code>ModelAndView</code>或其它允许的类型，方法的名称可以自定义，参数列表中必须包括<code>Exception</code>类型的参数，还允许存在<code>HttpServletRequest</code>、<code>HttpServletResponse</code>，不允许使用<code>ModelMap</code>。</p>
 
       
     </div>
@@ -915,7 +954,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【回顾】作业"><span class="nav-number">1.</span> <span class="nav-text">【回顾】作业</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">2.</span> <span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-SpringMVC中的拦截器（Interceptor）"><span class="nav-number">3.</span> <span class="nav-text">1. SpringMVC中的拦截器（Interceptor）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-作用"><span class="nav-number">3.1.</span> <span class="nav-text">1.1. 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-基本使用"><span class="nav-number">3.2.</span> <span class="nav-text">1.2. 基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-乱码"><span class="nav-number">4.</span> <span class="nav-text">2. 乱码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-关于乱码"><span class="nav-number">4.1.</span> <span class="nav-text">2.1. 关于乱码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-解决控制器中接收请求参数的乱码"><span class="nav-number">4.2.</span> <span class="nav-text">2.2. 解决控制器中接收请求参数的乱码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-拦截器与过滤器有什么区别"><span class="nav-number">4.3.</span> <span class="nav-text">2.3. 拦截器与过滤器有什么区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-异常"><span class="nav-number">5.</span> <span class="nav-text">3. 异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-基本概念"><span class="nav-number">5.1.</span> <span class="nav-text">3.1. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-处理异常-SimpleMappingExceptionResolver"><span class="nav-number">5.2.</span> <span class="nav-text">3.2 处理异常-SimpleMappingExceptionResolver</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【回顾】作业"><span class="nav-number">1.</span> <span class="nav-text">【回顾】作业</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习"><span class="nav-number">2.</span> <span class="nav-text">练习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-SpringMVC中的拦截器（Interceptor）"><span class="nav-number">3.</span> <span class="nav-text">1. SpringMVC中的拦截器（Interceptor）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-作用"><span class="nav-number">3.1.</span> <span class="nav-text">1.1. 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-基本使用"><span class="nav-number">3.2.</span> <span class="nav-text">1.2. 基本使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-乱码"><span class="nav-number">4.</span> <span class="nav-text">2. 乱码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-关于乱码"><span class="nav-number">4.1.</span> <span class="nav-text">2.1. 关于乱码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-解决控制器中接收请求参数的乱码"><span class="nav-number">4.2.</span> <span class="nav-text">2.2. 解决控制器中接收请求参数的乱码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-拦截器与过滤器有什么区别"><span class="nav-number">4.3.</span> <span class="nav-text">2.3. 拦截器与过滤器有什么区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-异常"><span class="nav-number">5.</span> <span class="nav-text">3. 异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-基本概念"><span class="nav-number">5.1.</span> <span class="nav-text">3.1. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-处理异常-SimpleMappingExceptionResolver"><span class="nav-number">5.2.</span> <span class="nav-text">3.2 处理异常-SimpleMappingExceptionResolver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-处理异常-ExceptionHandler"><span class="nav-number">5.3.</span> <span class="nav-text">3.3 处理异常-@ExceptionHandler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-小结"><span class="nav-number">5.4.</span> <span class="nav-text">3.4 小结</span></a></li></ol></li></ol></div>
             
 
           </div>
