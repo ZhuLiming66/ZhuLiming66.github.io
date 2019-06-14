@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="MySQL,">
+  <meta name="keywords" content="MyBatis,ssm,">
 
 
 
@@ -92,18 +92,23 @@
 
 
 
-<meta name="description" content="数据库之前通过流去操作文件保存数据的弊端：  执行效率低 开发成本高 一般只能保存小量数据 只能保存文本数据">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="1. MyBatis1.1. 作用MyBatis是持久层框架，它是支持JDBC的！简化了持久层开发！ 使用MyBatis时，只需要通过接口指定数据操作的抽象方法，然后配置与之关联的SQL语句，即可完成！  持久化存储：在程序运行过程中，数据都是在内存（RAM，即内存条）中的，内存中的数据不是永久存储的，例如程序可以对这些数据进行销毁，或者由于断电也会导致内存中所有数据丢失！而把数据存储到硬盘中的某">
+<meta name="keywords" content="MyBatis,ssm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库介绍 SQL基础">
-<meta property="og:url" content="http://zhuliming66.com/2019/06/01/数据库介绍-SQL基础/index.html">
+<meta property="og:title" content="MyBatis概念、配置连接、配置映射、查询操作">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="数据库之前通过流去操作文件保存数据的弊端：  执行效率低 开发成本高 一般只能保存小量数据 只能保存文本数据">
+<meta property="og:description" content="1. MyBatis1.1. 作用MyBatis是持久层框架，它是支持JDBC的！简化了持久层开发！ 使用MyBatis时，只需要通过接口指定数据操作的抽象方法，然后配置与之关联的SQL语句，即可完成！  持久化存储：在程序运行过程中，数据都是在内存（RAM，即内存条）中的，内存中的数据不是永久存储的，例如程序可以对这些数据进行销毁，或者由于断电也会导致内存中所有数据丢失！而把数据存储到硬盘中的某">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T15:59:43.836Z">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/01.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/03.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/02.png">
+<meta property="og:image" content="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/04.png">
+<meta property="og:updated_time" content="2019-06-13T08:59:34.888Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库介绍 SQL基础">
-<meta name="twitter:description" content="数据库之前通过流去操作文件保存数据的弊端：  执行效率低 开发成本高 一般只能保存小量数据 只能保存文本数据">
+<meta name="twitter:title" content="MyBatis概念、配置连接、配置映射、查询操作">
+<meta name="twitter:description" content="1. MyBatis1.1. 作用MyBatis是持久层框架，它是支持JDBC的！简化了持久层开发！ 使用MyBatis时，只需要通过接口指定数据操作的抽象方法，然后配置与之关联的SQL语句，即可完成！  持久化存储：在程序运行过程中，数据都是在内存（RAM，即内存条）中的，内存中的数据不是永久存储的，例如程序可以对这些数据进行销毁，或者由于断电也会导致内存中所有数据丢失！而把数据存储到硬盘中的某">
+<meta name="twitter:image" content="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/01.png">
 
 
 
@@ -133,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/2019/06/01/数据库介绍-SQL基础/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/">
 
 
 
 
 
-  <title>数据库介绍 SQL基础 | 阿希、@的博客</title>
+  <title>MyBatis概念、配置连接、配置映射、查询操作 | 阿希、@的博客</title>
   
 
 
@@ -338,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/01/数据库介绍-SQL基础/">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿希、@">
@@ -355,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据库介绍 SQL基础</h1>
+          <h1 class="post-title" itemprop="name headline">MyBatis概念、配置连接、配置映射、查询操作</h1>
         
 
         <div class="post-meta">
@@ -367,8 +372,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T22:47:49+08:00">
-                2019-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-13T16:53:11+08:00">
+                2019-06-13
               </time>
             
 
@@ -390,8 +395,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
+                  <a href="/categories/MyBatis/" itemprop="url" rel="index">
+                    <span itemprop="name">MyBatis</span>
                   </a>
                 </span>
 
@@ -408,8 +413,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/01/数据库介绍-SQL基础/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/01/数据库介绍-SQL基础/" itemprop="commentCount"></span>
+                <a href="/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -436,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  3k
                 </span>
               
 
@@ -452,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  12
                 </span>
               
             </div>
@@ -473,121 +478,232 @@
       
 
       
-        <h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>之前通过流去操作文件保存数据的弊端：</p>
+        <h2 id="1-MyBatis"><a href="#1-MyBatis" class="headerlink" title="1. MyBatis"></a>1. MyBatis</h2><h3 id="1-1-作用"><a href="#1-1-作用" class="headerlink" title="1.1. 作用"></a>1.1. 作用</h3><p>MyBatis是持久层框架，它是支持JDBC的！简化了持久层开发！</p>
+<p>使用MyBatis时，只需要通过接口指定数据操作的抽象方法，然后配置与之关联的SQL语句，即可完成！</p>
+<blockquote>
+<p>持久化存储：在程序运行过程中，数据都是在内存（RAM，即内存条）中的，内存中的数据不是永久存储的，例如程序可以对这些数据进行销毁，或者由于断电也会导致内存中所有数据丢失！而把数据存储到硬盘中的某个文件中，会使得这些数据永久的存储下来，常见做法是存储到数据库中，当然，也可以使用其它技术把数据存储到文本文件、XML文件等其它文件中！</p>
+</blockquote>
+<h3 id="1-2-基本使用"><a href="#1-2-基本使用" class="headerlink" title="1.2. 基本使用"></a>1.2. 基本使用</h3><h4 id="1-2-1-创建项目"><a href="#1-2-1-创建项目" class="headerlink" title="1.2.1. 创建项目"></a>1.2.1. 创建项目</h4><p>使用此前相同的创建流程即可！注意：请检查有没有多余的配置，如果有，请删除，例如在<code>spring.xml</code>是否存在拦截器的配置！</p>
+<p>此次使用MyBatis框架，所以，需要添加新的依赖：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+    &lt;version&gt;3.4.6&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><blockquote>
+<p>如果下载的依赖jar包是损坏的，应该先关闭Eclipse，然后删除对应的jar包文件，再次启动Eclipse，对项目点击右键，选择Maven &gt; Update Project，并且在弹出的对话框中勾选<code>Force Update ...</code>选项即可。</p>
+</blockquote>
+<p>MyBatis是一个独立的框架，即只添加该依赖就可以实现持久层编程，但是，开发过程相对比较繁琐，而实际应用中，通常会与Spring、SpringMVC一起使用，整合使用时，可以简化大量的配置，使得开发更加简便！整合时，还需要添加相关依赖：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+    &lt;version&gt;1.3.2&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>整合的SSM框架是基于JDBC的，所以，还需要添加spring-jdbc的依赖：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+    &lt;version&gt;3.2.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p><strong>添加以上依赖时，直接将此前的spring-webmvc的依赖代码复制一次，将spring-webmvc改成spring-jdbc即可！凡是Spring官方（Group ID是org.springframework）推出的以spring-作为前缀的依赖，必须使用相同的版本，否则，可能存在不兼容的风险！</strong></p>
+<p>在实现过程中，肯定得先建立与数据库的连接，然后再继续编程，所以，还应该添加数据源管理的依赖，即数据库连接池的依赖：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;
+    &lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;
+    &lt;version&gt;1.4&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>由于本次将使用MySQL数据库，所以，还需要该数据库的连接驱动的依赖：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><h4 id="1-2-2-创建数据库与数据表"><a href="#1-2-2-创建数据库与数据表" class="headerlink" title="1.2.2. 创建数据库与数据表"></a>1.2.2. 创建数据库与数据表</h4><p>创建数据库<code>tedu_mybatis</code>：</p>
+<pre><code>CREATE DATABASE tedu_mybatis;</code></pre><p>创建数据表<code>t_user</code>：</p>
+<pre><code>CREATE TABLE t_user(
+    id INT AUTO_INCREMENT,
+    username VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    age INT,
+    phone VARCHAR(20)    ,
+    email VARCHAR(30),
+    PRIMARY KEY(id)
+) DEFAULT CHARSET=UTF8;</code></pre><h4 id="1-2-3-配置数据源"><a href="#1-2-3-配置数据源" class="headerlink" title="1.2.3. 配置数据源"></a>1.2.3. 配置数据源</h4><p>在<code>src\main\resources</code>下创建<code>db.properties</code>文件，用于配置与数据库连接相关的信息：</p>
+<pre><code>url=jdbc:mysql://localhost:3306/tedu_mybatis?useUnicode=true&amp;characterEncoding=utf8
+driver=com.mysql.jdbc.Driver
+username=root
+password=root
+initialSize=2
+maxActive=10</code></pre><p><strong>以上配置的值以自己使用的数据库为准！</strong></p>
+<p>以上配置需要被应用到项目中，则在Spring的配置中通过<code>&lt;util:properties /&gt;</code>可以读取该文件：</p>
+<pre><code>&lt;!-- 读取db.properties --&gt;
+&lt;util:properties id=&quot;dbconfig&quot;
+    location=&quot;classpath:db.properties&quot; /&gt;</code></pre><p>最后，需要把这些配置应用到数据源（数据库连接池）中，当前项目使用的是Apache的<code>commons-dbcp</code>，则对应的数据源是<code>BasicDataSource</code>类：</p>
+<pre><code>&lt;!-- 配置数据源 --&gt;
+&lt;bean id=&quot;dataSource&quot; 
+    class=&quot;org.apache.commons.dbcp.BasicDataSource&quot;&gt;
+    &lt;property name=&quot;url&quot; 
+        value=&quot;#{dbconfig.url}&quot; /&gt;
+    &lt;property name=&quot;driverClassName&quot; 
+        value=&quot;#{dbconfig.driver}&quot; /&gt;
+    &lt;property name=&quot;username&quot; 
+        value=&quot;#{dbconfig.username}&quot; /&gt;
+    &lt;property name=&quot;password&quot; 
+        value=&quot;#{dbconfig.password}&quot; /&gt;
+    &lt;property name=&quot;initialSize&quot; 
+        value=&quot;#{dbconfig.initialSize}&quot; /&gt;
+    &lt;property name=&quot;maxActive&quot; 
+        value=&quot;#{dbconfig.maxActive}&quot; /&gt;
+&lt;/bean&gt;</code></pre><p>完成以上配置后，可以测试到目前为止的配置是否正确，做法就是：获取<code>BasicDataSource</code>的对象，调用它的<code>getConnection()</code>方法，尝试在Java程序中获取与数据库的连接，如果能够正常连接，则配置无误，如配置有误，将无法获取连接：</p>
+<pre><code>@Test
+public void getConnection() throws SQLException {
+    AbstractApplicationContext ac
+        = new ClassPathXmlApplicationContext(
+            &quot;spring.xml&quot;);
+
+    BasicDataSource ds
+        = ac.getBean(&quot;dataSource&quot;, BasicDataSource.class);
+
+    Connection conn = ds.getConnection();
+    System.out.println(conn);
+
+    ac.close();
+}</code></pre><h4 id="1-2-4-通过MyBatis插入数据"><a href="#1-2-4-通过MyBatis插入数据" class="headerlink" title="1.2.4. 通过MyBatis插入数据"></a>1.2.4. 通过MyBatis插入数据</h4><p>MyBatis的编码模式是：</p>
 <ol>
-<li>执行效率低</li>
-<li>开发成本高</li>
-<li>一般只能保存小量数据</li>
-<li>只能保存文本数据<a id="more"></a>
-<h4 id="什么是DB"><a href="#什么是DB" class="headerlink" title="什么是DB"></a>什么是DB</h4></li>
+<li>创建接口，并声明数据访问的抽象方法；</li>
+<li>配置与抽象方法对应的XML映射。</li>
 </ol>
+<p>首先，创建<code>cn.tedu.mybatis.entity.User</code>实体类，并添加与<code>t_user</code>数据表匹配的属性。<br>在实体类中，  </p>
 <ul>
-<li>DataBase 数据库： 代表文件集合<h4 id="什么是DBMS"><a href="#什么是DBMS" class="headerlink" title="什么是DBMS"></a>什么是DBMS</h4></li>
-<li>DataBaseManagementSystem 数据库管理系统(软件) ，用于管理保存数据的文件集合，用于和程序员进行交互，常见的DBMS有：Oracle MySQL DB2 SQLServer Sqlite ，DBMS具备网络访问能力</li>
+<li>有相同数量的属性  </li>
+<li>数据类型应该保持一致 </li>
+<li>属性名称与字段名应该一一对应（在Java中的属性名称应该采用驼峰命名法，而数据库领域中并不区分大小写）  </li>
+<li>所有的属性都应该是私有的  </li>
+<li>且都存在公有的SET/GET方法  </li>
+<li>整个实体类应该是实现了<code>Serializable</code>接口的！</li>
 </ul>
-<h4 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h4><ul>
-<li>Structured Query Language：结构化查询语言，用户程序员和DBMS进行交互，用于程序员告诉DBMS到底对数据进行什么操作的</li>
-</ul>
-<h3 id="数据库的分类（了解）"><a href="#数据库的分类（了解）" class="headerlink" title="数据库的分类（了解）"></a>数据库的分类（了解）</h3><ul>
-<li>关系型数据库：经过数学理论验证可以将现实生活中的各种关系保存到数据库，这种就称为关系型数据库。保存数据以表为单位</li>
-<li>非关系数据库：一般都是为了解决某些特定场景的问题比如：缓存，高并发访问，Redis数据库（以key-value形式保存数据）<h4 id="常见的关系型数据"><a href="#常见的关系型数据" class="headerlink" title="常见的关系型数据"></a>常见的关系型数据</h4></li>
-<li>MySQL: 属于Oracle公司的产品，08被Sun公司收购，09年Sun公司被Oracle收购，开源免费，被收购后发布5.5版本使用Oracle的部分技术，性能提高了30%以上，用户量增多，计划把MySQL闭源 原MySQL程序员离开Oracle创建了MariaDB 老板女儿Maria。市场排名第一</li>
-<li>Oracle: 排名第二，闭源 性能最高 收费最贵</li>
-<li>DB2： IBM公司产品 闭源项目</li>
-<li>SQLServer：微软公司产品  闭源</li>
-<li>Sqlite：轻量级数据库，安装包几十k，应用在嵌入式设备或移动设备上，</li>
-</ul>
-<h3 id="开源和闭源"><a href="#开源和闭源" class="headerlink" title="开源和闭源"></a>开源和闭源</h3><ul>
-<li><p>开源：开放源代码 免费试用，通过卖服务盈利，社会上会有一些大牛程序员会无偿的维护和升级</p>
-</li>
-<li><p>闭源：不开放源代码 收费，通过卖产品+服务盈利 ，有大牛会攻击破坏，但是人家养了一群人维护升级</p>
-<h3 id="打开客户端连接MySQL"><a href="#打开客户端连接MySQL" class="headerlink" title="打开客户端连接MySQL"></a>打开客户端连接MySQL</h3></li>
-<li><p>在终端中执行： mysql -uroot -p 回车  如果有密码写密码 回车 如果没有密码则直接回车</p>
-</li>
-</ul>
-<hr>
-<h3 id="和数据库相关的SQL"><a href="#和数据库相关的SQL" class="headerlink" title="和数据库相关的SQL"></a>和数据库相关的SQL</h3><h4 id="查询所有数据库"><a href="#查询所有数据库" class="headerlink" title="查询所有数据库"></a>查询所有数据库</h4><ul>
-<li>show databases;<h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4></li>
-<li>create database db1;<h4 id="查看数据库详情"><a href="#查看数据库详情" class="headerlink" title="查看数据库详情"></a>查看数据库详情</h4></li>
-<li>show create database db1;<h4 id="创建数据库指定字符集"><a href="#创建数据库指定字符集" class="headerlink" title="创建数据库指定字符集"></a>创建数据库指定字符集</h4></li>
-<li>create database db2 character set gbk/utf8;<h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4></li>
-<li>drop database db2;<h4 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h4></li>
-<li>use db1;<h3 id="和表相关的SQL"><a href="#和表相关的SQL" class="headerlink" title="和表相关的SQL"></a>和表相关的SQL</h3><h4 id="查询所有表"><a href="#查询所有表" class="headerlink" title="查询所有表"></a>查询所有表</h4></li>
-<li>show tables;<h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4></li>
-<li>create table 表名(字段1名 字段1的类型,字段2名 字段2的类型,…..);<br>  create table person(name varchar(10),age int);</li>
-<li>创建一个学生表（student） 保存学号id,姓名name,年龄age,语文chinese,数学math,英语english<br>   create table student(id int,name varchar(10),age int,chinese int,math int,english int);<h4 id="查看表详情"><a href="#查看表详情" class="headerlink" title="查看表详情"></a>查看表详情</h4></li>
-<li>show create table 表名;<br>  show create table person;<h4 id="创建表时指定表的引擎和字符集"><a href="#创建表时指定表的引擎和字符集" class="headerlink" title="创建表时指定表的引擎和字符集"></a>创建表时指定表的引擎和字符集</h4></li>
-<li>create table t1(name varchar(10)) engine=myisam charset=gbk;</li>
-</ul>
-<h4 id="表的引擎"><a href="#表的引擎" class="headerlink" title="表的引擎"></a>表的引擎</h4><ul>
-<li>innodb：支持数据库的高级操作如：外键、事务等，默认引擎</li>
-<li>myisam：只支持基础的增删改查操作</li>
-</ul>
-<hr>
-<h3 id="SQL格式："><a href="#SQL格式：" class="headerlink" title="SQL格式："></a>SQL格式：</h3><ol>
-<li>可以有换行</li>
-<li>最后以;结尾</li>
-<li>关键字之间需要有空格(可以写多个空格，建议写一个)</li>
+<blockquote>
+<p>通常，每张数据表都有一个与之匹配的实体类！</p>
+</blockquote>
+<p>创建<code>cn.tedu.mybatis.mapper.UserMapper</code>接口，并在接口中声明抽象方法：</p>
+<pre><code>Integer insert(User user);</code></pre><p><strong>在MyBatis中，执行insert/update/delete操作时，均返回受影响的行数，所以，设计抽象方法时，如果对应的是这几种操作，返回值均设计为Integer类型。</strong></p>
+<p>通常，一个完整的项目中，会存在许多MyBatis的映射文件，为了便于管理，会在<code>src\main\resources</code>下创建一个名为<code>mappers</code>的文件夹，然后，下载共享的<code>SomeMapper.zip</code>，将解压得到的XML文件复制到刚才创建的<code>mappers</code>文件夹中：</p>
+<p><img src="01.png" alt></p>
+<p>其实，在<code>mappers</code>下的映射文件的名称并不重要！但是，为了便于管理，通常会使用与接口对应的名称，所以，将<code>SomeMapper.xml</code>重命名为<code>UserMapper.xml</code>。</p>
+<p>所有映射文件中，根节点都是<code>&lt;mapper&gt;</code>节点，且该节点必须配置名为<code>namespace</code>的属性，属性值是对应的Java接口，例如：</p>
+<pre><code>&lt;mapper namespace=&quot;cn.tedu.mybatis.mapper.UserMapper&quot;&gt;
+&lt;/mapper&gt;</code></pre><p>经过以上配置，指定了XML映射文件与接口文件的对应关系。</p>
+<p>然后，在该文件内部，使用各级子节点配置与抽象方法的对应关系，子节点名称的选取，取决于要执行的操作的类型，例如要执行的数据操作是insert类型，则使用<code>&lt;insert&gt;</code>节点，这些节点都必须指定id属性，属性值是与之对应的抽象方法的方法名：</p>
+<pre><code>&lt;!-- id：抽象方法的名称 --&gt;
+&lt;insert id=&quot;insert&quot;&gt;
+&lt;/insert&gt;</code></pre><p>在<code>&lt;insert&gt;</code>节点中，添加<code>parameterType</code>属性，用于指定参数的类型，即抽象方法中的参数类型：</p>
+<pre><code>&lt;!-- id：抽象方法的名称 --&gt;
+&lt;!-- parameterType：抽象方法中的参数的类型 --&gt;
+&lt;insert id=&quot;insert&quot;
+    parameterType=&quot;cn.tedu.mybatis.entity.User&quot;&gt;
+&lt;/insert&gt;</code></pre><p><img src="03.png" alt></p>
+<p>然后，在节点内部，编写需要执行的SQL语句：</p>
+<pre><code>&lt;!-- id：抽象方法的名称 --&gt;
+&lt;!-- parameterType：抽象方法中的参数的类型 --&gt;
+&lt;insert id=&quot;insert&quot;
+    parameterType=&quot;cn.tedu.mybatis.entity.User&quot;&gt;
+    INSERT INTO t_user (
+        username, password, 
+        age, phone, email
+    ) VALUES (
+        #{username}, #{password}, 
+        #{age}, #{phone}, #{email}
+    )
+&lt;/insert&gt;</code></pre><p>执行SQL语句时的参数值均使用<code>#{}</code>类似的语法，其中的名称是<code>User</code>类中的属性名：</p>
+<p><img src="02.png" alt></p>
+<h4 id="1-2-5-最后的配置"><a href="#1-2-5-最后的配置" class="headerlink" title="1.2.5. 最后的配置"></a>1.2.5. 最后的配置</h4><p>首先，需要配置<code>SqlSessionFactoryBean</code>，通过它指定数据源与XML映射的文件位置：</p>
+<pre><code>&lt;!-- SqlSessionFactoryBean --&gt;
+&lt;bean class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+    &lt;!-- 指定数据源，值为以上配置的数据源 --&gt;
+    &lt;property name=&quot;dataSource&quot;
+        ref=&quot;dataSource&quot; /&gt;
+    &lt;!-- 指定XML映射文件的位置 --&gt;
+    &lt;property name=&quot;mapperLocations&quot;
+        value=&quot;classpath:mappers/*.xml&quot; /&gt;
+&lt;/bean&gt;</code></pre><p>以上配置中，XML映射文件的位置使用了<code>mappers/*.xml</code>，即：在<code>mappers</code>文件夹下的所有XML文件都应该是MyBatis的映射文件，所以，后续使用时，不可以在这个文件夹中存放其它XML文件。</p>
+<p>然后，还需要配置<code>MapperScannerConfigurer</code>，用于指定接口文件在哪里：</p>
+<pre><code>&lt;!-- MapperScannerConfigurer --&gt;
+&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;!-- 指定接口文件的位置 --&gt;
+    &lt;property name=&quot;basePackage&quot;
+        value=&quot;cn.tedu.mybatis.mapper&quot; /&gt;
+&lt;/bean&gt;</code></pre><p><img src="04.png" alt></p>
+<p>至此，配置完成！</p>
+<h4 id="1-2-6-执行单元测试"><a href="#1-2-6-执行单元测试" class="headerlink" title="1.2.6. 执行单元测试"></a>1.2.6. 执行单元测试</h4><p>在<code>src\test\java</code>下创建测试类，并添加测试方法，以执行测试：</p>
+<pre><code>@Test
+public void insert() {
+    // 加载Spring配置文件，获取Spring容器
+    AbstractApplicationContext ac
+        = new ClassPathXmlApplicationContext(
+            &quot;spring.xml&quot;);
+
+    // 从Spring容器中获取对象
+    // bean-id与接口名一致，首字母为小写
+    UserMapper userMapper
+        = ac.getBean(&quot;userMapper&quot;, UserMapper.class);
+
+    // 测试功能
+    User user = new User();
+    user.setUsername(&quot;root&quot;);
+    user.setPassword(&quot;1234&quot;);
+    Integer rows = userMapper.insert(user);
+    System.out.println(&quot;rows=&quot; + rows);
+
+    // 释放资源
+    ac.close();
+}</code></pre><h4 id="1-2-7-小结"><a href="#1-2-7-小结" class="headerlink" title="1.2.7. 小结"></a>1.2.7. 小结</h4><p><strong>关于配置</strong></p>
+<p>使用MyBatis添加了一些新的依赖，及一些配置，这些属于固定的一次性操作，在后续的项目中，每个项目中只需要做1次即可。</p>
+<p>关于这些配置，需要记住配置的作用，及可能需要修改的位置，至少包括：</p>
+<ol>
+<li>db.properties的文件名，因为<code>&lt;util:properties&gt;</code>需要使用它；</li>
+<li>在db.properties中配置的值，重点是数据库名称、访问数据库的密码，在更换项目或更换计算机后都可能需要调整；</li>
+<li>在配置<code>SqlSessionFactoryBean</code>时指定的映射文件的位置；</li>
+<li>在配置<code>MapperScannerConfigurer</code>时指定的接口文件所在的包；</li>
 </ol>
-<h4 id="查看表字段"><a href="#查看表字段" class="headerlink" title="查看表字段"></a>查看表字段</h4><ul>
-<li>desc 表名;<h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4></li>
-<li>drop table 表名;<h4 id="修改表相关"><a href="#修改表相关" class="headerlink" title="修改表相关"></a>修改表相关</h4><h5 id="修改表名——rename-table-原名-to-新名"><a href="#修改表名——rename-table-原名-to-新名" class="headerlink" title="修改表名——rename table 原名 to 新名;"></a>修改表名——rename table 原名 to 新名;</h5>  rename table student to stu;<h5 id="修改表的引擎和字符集——alter-table-表名-engine-myisam-innodb-charset-utf8-gbk"><a href="#修改表的引擎和字符集——alter-table-表名-engine-myisam-innodb-charset-utf8-gbk" class="headerlink" title="修改表的引擎和字符集——alter table 表名 engine=myisam/innodb charset=utf8/gbk;"></a>修改表的引擎和字符集——alter table 表名 engine=myisam/innodb charset=utf8/gbk;</h5>  alter table stu engine=myisam charset=gbk;<h5 id="添加表字段"><a href="#添加表字段" class="headerlink" title="添加表字段"></a>添加表字段</h5>最后面： alter table 表名 add 字段名 字段类型;<br>最前面： alter table 表名 add 字段名 字段类型 first;<br>xxx的后面: alter table 表名 add 字段名 字段类型 after xxx;<br>  create table hero(name varchar(10));<br>  alter table hero add age int;<br>  alter table hero add id int first;<br>  alter table hero add sal int after name;<h5 id="删除表字段——alter-table-表名-drop-字段名"><a href="#删除表字段——alter-table-表名-drop-字段名" class="headerlink" title="删除表字段——alter table 表名 drop 字段名;"></a>删除表字段——alter table 表名 drop 字段名;</h5>  alter table hero drop sal;<h5 id="修改表字段的名字和类型——alter-table-表名-change-原字段名-新字段名-新字段类型"><a href="#修改表字段的名字和类型——alter-table-表名-change-原字段名-新字段名-新字段类型" class="headerlink" title="修改表字段的名字和类型——alter table 表名 change 原字段名 新字段名 新字段类型;"></a>修改表字段的名字和类型——alter table 表名 change 原字段名 新字段名 新字段类型;</h5>  alter table hero change name heroname varchar(5);<h5 id="修改表字段的类型和位置——alter-table-表名-modify-字段名-类型-位置"><a href="#修改表字段的类型和位置——alter-table-表名-modify-字段名-类型-位置" class="headerlink" title="修改表字段的类型和位置——alter table 表名 modify 字段名 类型 位置;"></a>修改表字段的类型和位置——alter table 表名 modify 字段名 类型 位置;</h5>  alter table hero modify age int first(after xxx);</li>
-</ul>
-<hr>
-<h3 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h3><ol>
-<li>创建数据库newdb并使用， 里面创建员工表t_emp只有name字段 引擎为myisam 字符集为gbk<br> 1). create database newdb;<br> 2). use newdb;<br> 3). create table t_emp(name varchar(10)) engine=myisam charset=gbk;</li>
-<li>修改表名为emp<br> 1). rename table t_emp to emp;</li>
-<li>修改引擎为innodb 字符集为utf8<br> 1). alter table emp engine=innodb charset=utf8;</li>
-<li>添加部门编号字段deptno 在最后面<br> 1). alter table emp add deptno int;</li>
-<li>添加员工编号 empno在最前面<br> 1). alter table emp add empno int first;</li>
-<li>添加salary字段在name的后面<br> 1). alter table emp add salary int after name;</li>
-<li>修改salary字段名字为sal，把sal放在empno的后面<br> 1). alter table emp change salary sal int;<br> 2). alter table emp modify sal int after empno;</li>
-<li>删除sal字段<br> 1).alter table emp drop sal;</li>
-<li>删除表<br> 1).drop table emp;</li>
-<li>删除数据库<br>1).drop database newdb;</li>
+<p><strong>关于开发</strong></p>
+<ol>
+<li>每张数据表，都应该有1个与之对应的实体类；</li>
+<li>每种数据（视为每个实体类）的处理都应该有对应的接口文件，例如项目中有<code>User</code>实体类，则应该有<code>UserMapper</code>接口；</li>
+<li>在接口中声明抽象方法时，如果最终将执行insert/delete/update操作，返回值类型应该是<code>Integer</code>；</li>
+<li>每个持久层接口，都应该有对应的XML映射文件，例如有<code>UserMapper.java</code>接口，就应该有<code>UserMapper.xml</code>文件；</li>
+<li>在配置XML文件内部，根据执行操作选择节点，如果执行的是insert操作，则通过<code>&lt;insert&gt;</code>节点进行配置；</li>
+<li>在XML映射中，每个节点都必须配置<code>id</code>属性，取值是接口中抽象方法的名称，由于id具有唯一的特性，所以，在接口中声明抽象方法时，不要使用重载；</li>
+<li>在配置SQL语句时，使用<code>#{}</code>表示预编译时的<code>?</code>对应的值，括号中的名称是参数名称，或参数对象中的属性名称；</li>
+<li>当执行delete/update时，配置的节点不需要指定<code>parameterType</code>属性。</li>
 </ol>
-<hr>
-<h3 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h3><h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><pre><code>create table emp(id int,name varchar(10),age int,sal int);</code></pre><ul>
-<li>全表插入数据：<ul>
-<li>insert into emp values(1,’Tom’,18,3000);</li>
-</ul>
-</li>
-<li>指定字段插入数据：<ul>
-<li>insert into emp (name,age) values(‘Jerry’,19);</li>
-<li>insert into emp (name) values(‘李白’);</li>
-</ul>
-</li>
-<li>批量插入数据：<br>  insert into emp values(3,’刘备’,28,6000),(4,’张飞’,20,5000),(5,’关羽’,25,9000);<br>  insert into emp (name,age) values(‘悟空’,500),(‘八戒’,400),(‘沙僧’,200);<h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4></li>
-<li>查询全部数据的全部字段信息<br>  select * from emp;</li>
-<li>查询所有员工的姓名和年龄<br>  select name,age from emp;</li>
-<li>查询年龄在25岁以下的员工信息<br>  select * from emp where age&lt;25;</li>
-<li>查询工资3000块钱的员工姓名、年龄、工资<br>  select name,age,sal from emp where sal=3000;<h4 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h4></li>
-<li>修改Tom的工资为3333<br>  update emp set sal=3333 where name=’Tom’;</li>
-<li>修改30岁以下的工资为666<br>  update emp set sal=666 where age&lt;30;</li>
-<li>修改id等于3的名字为吕布 年龄为55 工资为20000<br>  update emp set name=’吕布’, age=55, sal=20000 where id=3;</li>
-<li>修改工资为null的工资为800<br>  update emp set sal=800 where sal is null;<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4></li>
-<li>删除id=1的员工<br>  delete from emp where id=1;</li>
-<li>删除年龄在25岁以下的员工<br>  delete from emp where age&lt;25;</li>
-<li>删除全部数据<br>  delete from emp;</li>
-</ul>
-<p>insert into t1 (字段名1,字段名2) values(值1,值2),(值1,值2);<br>select name,age from t1 where id&lt;5;<br>update t1 set 字段名=值, 字段名=值 where id=5;<br>delete from t1 where id&lt;3;</p>
-<hr>
-<h3 id="练习：-1"><a href="#练习：-1" class="headerlink" title="练习："></a>练习：</h3><ol>
-<li>创建hero表如果存在则先删除再创建， id 姓名name 类型type 金币money</li>
-<li>插入以下数据   1 诸葛亮 法师 18888 ， 2 孙悟空 打野 18888 ，3 小乔 法师 6888，4 黄忠 射手 8888， 5 刘备 战士 6888</li>
-<li>修改所有18888的为28888</li>
-<li>修改所有打野为刺客</li>
-<li>删除价格为6888的英雄</li>
-<li>修改孙悟空为猪八戒</li>
-<li>删除id为1，2，3的英雄</li>
-<li>修改所有英雄的类型为已阵亡</li>
-<li>删除所有数据</li>
-<li>删除表</li>
+<h4 id="1-2-7-删除指定的数据"><a href="#1-2-7-删除指定的数据" class="headerlink" title="1.2.7. 删除指定的数据"></a>1.2.7. 删除指定的数据</h4><p>设置目标为<strong>根据id删除指定的数据</strong>。</p>
+<p>先在接口中声明抽象方法：</p>
+<pre><code>Integer deleteUserById(Integer id);</code></pre><p>然后，在XML映射中配置以上方法对应的节点：</p>
+<pre><code>&lt;delete id=&quot;deleteUserById&quot;&gt;
+    DELETE FROM t_user WHERE id=#{id}
+&lt;/delete&gt;</code></pre><p>然后，执行单元测试：</p>
+<pre><code>@Test
+public void deleteUserById() {
+    // 加载Spring配置文件，获取Spring容器
+    AbstractApplicationContext ac
+        = new ClassPathXmlApplicationContext(
+            &quot;spring.xml&quot;);
+
+    // 从Spring容器中获取对象
+    // bean-id与接口名一致，首字母为小写
+    UserMapper userMapper
+        = ac.getBean(&quot;userMapper&quot;, UserMapper.class);
+
+    // 测试功能
+    Integer id = 3;
+    Integer rows = userMapper.deleteUserById(id);
+    System.out.println(&quot;rows=&quot; + rows);
+
+    // 释放资源
+    ac.close();
+}</code></pre><h1 id="——————————"><a href="#——————————" class="headerlink" title="——————————-"></a>——————————-</h1><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<li>完成<strong>根据用户名删除数据</strong>的功能；</li>
+<li>完成<strong>将所有用户的密码设置为某个值</strong>的功能；</li>
+<li>完成<strong>删除用户表中所有数据</strong>的功能。</li>
 </ol>
-<hr>
-<h3 id="中文字符问题"><a href="#中文字符问题" class="headerlink" title="中文字符问题"></a>中文字符问题</h3><ul>
-<li>set names gbk;</li>
-</ul>
+<blockquote>
+<p>在MyBatis中，默认不允许添加2个参数，否则会报错，解决方案待续。</p>
+</blockquote>
 
       
     </div>
@@ -634,7 +750,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"><i class="fas fa-tag"></i> MySQL</a>
+            <a href="/tags/MyBatis/" rel="tag"><i class="fas fa-tag"></i> MyBatis</a>
+          
+            <a href="/tags/ssm/" rel="tag"><i class="fas fa-tag"></i> ssm</a>
           
         </div>
       
@@ -647,8 +765,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/01/主键约束、拆分表、事务、数据类型/" rel="next" title="主键约束、拆分表、事务、数据类型">
-                <i class="fa fa-chevron-left"></i> 主键约束、拆分表、事务、数据类型
+              <a href="/2019/06/10/SpringMVC拦截器、乱码问题、异常处理/" rel="next" title="SpringMVC拦截器、乱码问题、异常处理">
+                <i class="fa fa-chevron-left"></i> SpringMVC拦截器、乱码问题、异常处理
               </a>
             
           </div>
@@ -656,10 +774,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/03/Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式/" rel="prev" title="Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式">
-                Servlet简介、Servlet开发步骤、Servlet运行流程、常见问题及解决方式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -881,7 +995,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是DB"><span class="nav-number">1.1.</span> <span class="nav-text">什么是DB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是DBMS"><span class="nav-number">1.2.</span> <span class="nav-text">什么是DBMS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL"><span class="nav-number">1.3.</span> <span class="nav-text">SQL</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的分类（了解）"><span class="nav-number">2.</span> <span class="nav-text">数据库的分类（了解）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的关系型数据"><span class="nav-number">2.1.</span> <span class="nav-text">常见的关系型数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源和闭源"><span class="nav-number">3.</span> <span class="nav-text">开源和闭源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开客户端连接MySQL"><span class="nav-number">4.</span> <span class="nav-text">打开客户端连接MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和数据库相关的SQL"><span class="nav-number">5.</span> <span class="nav-text">和数据库相关的SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询所有数据库"><span class="nav-number">5.1.</span> <span class="nav-text">查询所有数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库"><span class="nav-number">5.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库详情"><span class="nav-number">5.3.</span> <span class="nav-text">查看数据库详情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库指定字符集"><span class="nav-number">5.4.</span> <span class="nav-text">创建数据库指定字符集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据库"><span class="nav-number">5.5.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用数据库"><span class="nav-number">5.6.</span> <span class="nav-text">使用数据库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和表相关的SQL"><span class="nav-number">6.</span> <span class="nav-text">和表相关的SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询所有表"><span class="nav-number">6.1.</span> <span class="nav-text">查询所有表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表"><span class="nav-number">6.2.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表详情"><span class="nav-number">6.3.</span> <span class="nav-text">查看表详情</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建表时指定表的引擎和字符集"><span class="nav-number">6.4.</span> <span class="nav-text">创建表时指定表的引擎和字符集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表的引擎"><span class="nav-number">6.5.</span> <span class="nav-text">表的引擎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL格式："><span class="nav-number">7.</span> <span class="nav-text">SQL格式：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看表字段"><span class="nav-number">7.1.</span> <span class="nav-text">查看表字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除表"><span class="nav-number">7.2.</span> <span class="nav-text">删除表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表相关"><span class="nav-number">7.3.</span> <span class="nav-text">修改表相关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表名——rename-table-原名-to-新名"><span class="nav-number">7.3.1.</span> <span class="nav-text">修改表名——rename table 原名 to 新名;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表的引擎和字符集——alter-table-表名-engine-myisam-innodb-charset-utf8-gbk"><span class="nav-number">7.3.2.</span> <span class="nav-text">修改表的引擎和字符集——alter table 表名 engine=myisam/innodb charset=utf8/gbk;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加表字段"><span class="nav-number">7.3.3.</span> <span class="nav-text">添加表字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除表字段——alter-table-表名-drop-字段名"><span class="nav-number">7.3.4.</span> <span class="nav-text">删除表字段——alter table 表名 drop 字段名;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表字段的名字和类型——alter-table-表名-change-原字段名-新字段名-新字段类型"><span class="nav-number">7.3.5.</span> <span class="nav-text">修改表字段的名字和类型——alter table 表名 change 原字段名 新字段名 新字段类型;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改表字段的类型和位置——alter-table-表名-modify-字段名-类型-位置"><span class="nav-number">7.3.6.</span> <span class="nav-text">修改表字段的类型和位置——alter table 表名 modify 字段名 类型 位置;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习："><span class="nav-number">8.</span> <span class="nav-text">练习：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据相关"><span class="nav-number">9.</span> <span class="nav-text">数据相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入数据"><span class="nav-number">9.1.</span> <span class="nav-text">插入数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询数据"><span class="nav-number">9.2.</span> <span class="nav-text">查询数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数据"><span class="nav-number">9.3.</span> <span class="nav-text">修改数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据"><span class="nav-number">9.4.</span> <span class="nav-text">删除数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习：-1"><span class="nav-number">10.</span> <span class="nav-text">练习：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中文字符问题"><span class="nav-number">11.</span> <span class="nav-text">中文字符问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-MyBatis"><span class="nav-number">1.</span> <span class="nav-text">1. MyBatis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-作用"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-基本使用"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-创建项目"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1. 创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-创建数据库与数据表"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.2. 创建数据库与数据表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-配置数据源"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.3. 配置数据源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-通过MyBatis插入数据"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.2.4. 通过MyBatis插入数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-5-最后的配置"><span class="nav-number">1.2.5.</span> <span class="nav-text">1.2.5. 最后的配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-6-执行单元测试"><span class="nav-number">1.2.6.</span> <span class="nav-text">1.2.6. 执行单元测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-7-小结"><span class="nav-number">1.2.7.</span> <span class="nav-text">1.2.7. 小结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-7-删除指定的数据"><span class="nav-number">1.2.8.</span> <span class="nav-text">1.2.7. 删除指定的数据</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#——————————"><span class="nav-number"></span> <span class="nav-text">——————————-</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作业"><span class="nav-number">1.</span> <span class="nav-text">作业</span></a></li></ol></li></div>
             
 
           </div>
