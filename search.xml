@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mybatis占位符的使用、动态SQL]]></title>
+    <url>%2F2019%2F06%2F17%2FMybatis%E5%8D%A0%E4%BD%8D%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81%E5%8A%A8%E6%80%81SQL%2F</url>
+    <content type="text"><![CDATA[1. MyBatis中的占位符在MyBatis中，常见的占位符格式是#{参数}，其中，也可能是参数对象中的属性，如果参数是Map类型，还可以是Map中的key。 使用#{}的占位符可用于替换值，例如： select * from t_user where username=?即可替换以上语句中的问号(?)，在实际运行时，MyBatis会将以上SQL语句进行预编译，并后续使用#{}替换问号(?)。 假设获取用户列表时，排序规则不确定，可能使用的抽象方法是： List&lt;User&gt; findAllOrderedList(String orderBy);配置的映射可能是： &lt;select id=&quot;xx&quot; resultType=&quot;xx&quot;&gt; select * from t_user order by #{orderBy} &lt;/select&gt;调用时： mapper.findAllOrderedList(&quot;id asc&quot;); mapper.findAllOrderedList(&quot;id desc&quot;);以上代码的执行效果是失败的！需要将#{}修改为${}，且在抽象方法中，这样的参数必须添加@Param注解，即： List&lt;User&gt; findAllOrderedList( @Param(&quot;orderBy&quot;) String orderBy); &lt;select id=&quot;xx&quot; resultType=&quot;xx&quot;&gt; select * from t_user order by ${orderBy} &lt;/select&gt;然后，在调用时，就可以根据参数的不同，实现不同的排序效果！ 使用${}格式的占位符并不具备预编译的效果！它是直接拼接形成的SQL语句，例如：&quot;select * from t_user order by&quot; + orderBy，如果一定使用${}格式的占位符来表示某个值，还需要考虑单引号类似的问题，例如：select * from t_user where username=&#39;${username}&#39;，由于只是拼接，所以，还存在SQL注入风险！ 小结 使用#{}是预编译的（没有SQL注入风险，无需关注数据类型），使用${}不是预编译的； 使用#{}只能替换某个值，使用${}可以替换SQL语句中的任何部分； 关于SQL注入，不需要太过于紧张，预编译可以从根源上杜绝，或者，在执行SQL指令之前，判断参数中是否包含单引号也可以杜绝！ 通过使用${}，可以使得SQL更加灵活，更加通用！但是，却不推荐太过于通用的SQL！因为，即使查询条件可以自由更改，但是，不同的查询条件对应不同的需求，所需的字段列表很有可能是不一样的，查询时，获取不必要的字段，就会造成不必要的资源浪费，例如，显示列表时，可能需要用户名、密码、年龄、手机、邮箱，但是，登录的查询就只需要用户名、密码即可，年龄、手机、邮箱这几项数据在登录时是不需要的，如果也查询出来，就是浪费资源！如果变量太多，又会导致不可控因素太多，容易出错！ 2. 动态SQL在MyBatis的映射文件中，配置SQL语句时，可以添加例如&lt;if&gt;此类的标签，实现SQL语句的动态变化，即：参数不同，最终执行的SQL语句可能是不同的！ 在使用动态SQL时，最常用的就是&lt;if&gt;和&lt;foreach&gt;这两种，&lt;if&gt;是用于判断的，例如： select * from t_user &lt;if test=&quot;where != null&quot;&gt; where ${where} &lt;/if&gt; &lt;if test=&quot;orderBy != null&quot;&gt; order by ${orderBy} &lt;/if&gt;关于&lt;foreach&gt;，主要用于循环处理SQL语句中的某个部分，例如：批量删除某些数据！它的SQL语句可能是： delete from t_user where id in (?,?,?)其中，in关键字右侧的括号中的内容是不确定的，应该是由用户操作时决定的！则需要&lt;foreach&gt;动态的生成这个部分！ 针对这个问题，设计的抽象方法可能是： Integer deleteByIds(Integer[] ids);配置的映射为： &lt;delete id=&quot;deleteByIds&quot;&gt; delete from t_user where id in ( &lt;foreach collection=&quot;array&quot; item=&quot;id&quot; separator=&quot;,&quot;&gt; #{id} &lt;/foreach&gt; ) &lt;/delete&gt;以上配置的&lt;foreach&gt;中，collection表示被遍历的集合对象，当抽象方法只有1个参数时，取值为list或array，取决于集合对象的数据类型，当抽象方法 有多个参数时，使用@Param注解中的名称，item表示遍历过程中的变量名，separator表示分隔符。 以上配置还可以调整为： id in &lt;foreach collection=&quot;array&quot; item=&quot;id&quot; separator=&quot;,&quot; open=&quot;(&quot; close=&quot;)&quot;&gt; #{id} &lt;/foreach&gt;即：open表示由&lt;foreach&gt;处理的SQL语句的起始部分的字符串，而close表示结束部分的字符串。]]></content>
+      <categories>
+        <category>Mybatis</category>
+      </categories>
+      <tags>
+        <tag>Mybatis</tag>
+        <tag>ssm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mybatis获取自增主键值、使用多个参数、关联查询]]></title>
     <url>%2F2019%2F06%2F16%2FMybatis%E8%8E%B7%E5%8F%96%E8%87%AA%E5%A2%9E%E4%B8%BB%E9%94%AE%E5%80%BC%E3%80%81%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0%E3%80%81%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2%2F</url>
     <content type="text"><![CDATA[1. 执行插入数据时获取自增长的id当需要获取新增的数据的id时，首先，需要在&lt;insert&gt;节点中添加2个属性： useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;以上配置中，useGeneratedKeys表示获取自增长的键（自增长的字段的值），keyProperty表示键的属性名，即对应的类中的属性名（即该id是User类中的id，并非t_user表中的id）！ 添加以上配置之后，插入数据操作的返回值依然表示“受影响的行数”，但是，用于执行插入操作的参数对象中就会包含自动生成的id值，例如，调用时的代码： System.out.println(&quot;增加前：&quot; + user); Integer rows = userMapper.insert(user); System.out.println(&quot;rows=&quot; + rows); System.out.println(&quot;增加后：&quot; + user);结果例如： 增加前：User [id=null, username=jsd1808, password=1234, age=31, phone=13900139008, email=jsd1808@tedu.cn] rows=1 增加后：User [id=24, username=jsd1808, password=1234, age=31, phone=13900139008, email=jsd1808@tedu.cn]可以记住：在配置时，需要配置4个属性。 2. 使用多个参数功能设定：将t_user表中年龄大于xx的数据的密码修改为xx 分析所执行的SQL语句： update t_user set password=? where age&gt;?抽象方法： Integer updatePasswordByAge( Integer age, String password);SQL映射： &lt;update id=&quot;updatePasswordByAge&quot;&gt; update t_user set password=#{password} where age&gt;#{age} &lt;/update&gt;直接调用，会报告错误： org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter &apos;password&apos; not found. Available parameters are [arg1, arg0, param1, param2] Caused by: org.apache.ibatis.binding.BindingException: Parameter &apos;password&apos; not found. Available parameters are [arg1, arg0, param1, param2]因为.java文件在编译后变成.class文件就会丢失参数名称，在最终执行的.class文件中，根本就不存在名为password或age的参数，所以，程序会报错，可行的解决方法是把多个参数封装到一个Map中，这样的话，此前使用的方法名称例如age或password就会变成Map的key，是一些字符串，并不会因为编译而丢失，最终运行就不会有问题，当然，每次运行时都需要自行将参数封装为Map，操作麻烦，还存在key拼写错误的风险，所以，MyBatis提供了@Param注解以解决这个问题： 解决多个参数的问题：可以将多个参数封装为1个Map，或封装为1个自定义的数据类型，但是，更推荐使用@Param注解。 3. 关于resultMap使用resultMap可以解决名称不匹配的问题！例如在数据表中存在is_delete字段，则实体类存在isDelete属性，则数据表中使用的名称与实体类中的属性名不一致！ 前置操作： alter table t_user add column is_delete int default 0; update t_user set is_delete=1 where id in (11,13,15);然后，在User类中添加private Integer isDelete;及SET/GET方法，重新生成toString()。 名称不匹配的问题可以通过自定义别名来解决，例如： &lt;select id=&quot;findAll&quot; resultType=&quot;cn.tedu.mybatis.entity.User&quot;&gt; select id, username, password, age, phone, email, is_delete AS isDelete from t_user &lt;/select&gt;也就是：MyBatis的要求是“查询结果中的列名与返回值类型的属性名必须一致”，通过自定义别名就可以满足这个要求，并不需要通过&lt;resultMap&gt;来实现！ 通常，需要自定义&lt;resultMap&gt;时，主要用于解决多表数据关联查询的问题。 例如： create table t_department ( id int auto_increment, name varchar(20) not null, primary key(id) ); insert into t_department (name) values (&apos;UI&apos;), (&apos;RD&apos;), (&apos;TEST&apos;); alter table t_user add column department int;通常实体类都是与数据表一一对应的，符合设计规范，但不适用于多表的关联查询，例如当需要“查询某个部门信息的同时需要获取该部门的所有员工的信息”，则没有任何数据类型可以匹配这样的信息，为了解决这样的问题，通常会定义VO类，即Value Object类，这种类型是专用于解决实体类不满足使用需求而存在的，类的设计结构与实体类非常相似，但是，属性的设计是完全根据使用需求来决定的，例如： public class DepartmentVO { private Integer depId; private String depName; private List&lt;User&gt; users; // SET/GET方法，toString()，序列化接口 }普通的查询无法得到以上结果，查询语句可能是： select t_user.id, username, password, age, phone, email, is_delete, t_department.id AS dep_id, name from t_user, t_department where t_user.department=t_department.id and t_department.id=?以上查询易于理解，通俗易懂，但是，不推荐使用，更推荐使用JOIN系列的查询语法： SELECT t_user.id, username, password, age, phone, email, is_delete, t_department.id AS dep_id, name FROM t_user INNER JOIN t_department ON t_user.department=t_department.id WHERE t_department.id=?这样的查询结果可能有好几行， 需要有效的封装到1个对象中，就必须依靠&lt;resultMap&gt;来设计封装的规则： &lt;!-- id：节点的唯一标识 --&gt; &lt;!-- type：数据类型 --&gt; &lt;resultMap id=&quot;DepartmentVoMap&quot; type=&quot;cn.tedu.mybatis.vo.DepartmentVO&quot;&gt; &lt;!-- id节点：主键的配置 --&gt; &lt;!-- column：查询结果的列名 --&gt; &lt;!-- property：数据类型的属性名 --&gt; &lt;id column=&quot;dep_id&quot; property=&quot;depId&quot;/&gt; &lt;!-- 其它结果的配置 --&gt; &lt;result column=&quot;name&quot; property=&quot;depName&quot;/&gt; &lt;!-- 配置List集合 --&gt; &lt;!-- ofType：集合中放的哪种类型的数据 --&gt; &lt;collection property=&quot;users&quot; ofType=&quot;cn.tedu.mybatis.entity.User&quot;&gt; &lt;!-- 自此开始，property表示User中的属性名 --&gt; &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt; &lt;result column=&quot;username&quot; property=&quot;username&quot;/&gt; &lt;result column=&quot;password&quot; property=&quot;password&quot;/&gt; &lt;result column=&quot;age&quot; property=&quot;age&quot;/&gt; &lt;result column=&quot;phone&quot; property=&quot;phone&quot;/&gt; &lt;result column=&quot;email&quot; property=&quot;email&quot;/&gt; &lt;result column=&quot;is_delete&quot; property=&quot;isDelete&quot;/&gt; &lt;/collection&gt; &lt;/resultMap&gt;配置方式可参考： 最后，应用时，与普通的数据操作相同，先添加接口与抽象方法： public interface DepartmentMapper { DepartmentVO findById(Integer id); }然后配置映射： &lt;select id=&quot;findById&quot; resultMap=&quot;DepartmentVoMap&quot;&gt; SELECT t_department.id AS dep_id, name, t_user.id, username, password, age, phone, email, is_delete FROM t_user INNER JOIN t_department ON t_user.department=t_department.id WHERE t_department.id=#{id} &lt;/select&gt;最终，执行查询获取的结果例如： DepartmentVO [ depId=2, depName=RD, users=[ User [id=13, username=spring, password=1234, age=23, phone=13800138003, email=spring@tedu.cn, isDelete=1, department=null], User [id=14, username=mybatis, password=12cxv34, age=24, phone=13800138004, email=mybatis@tedu.cn, isDelete=0, department=null], User [id=17, username=jdbc, password=88888888, age=27, phone=13800138007, email=jdbc@tedu.cn, isDelete=1, department=null], User [id=21, username=mapper, password=88888888, age=31, phone=13900139001, email=mapper@tedu.cn, isDelete=1, department=null], User [id=23, username=namespace, password=88888888, age=31, phone=13900139002, email=namespace@tedu.cn, isDelete=1, department=null] ] ]如果提示错误TooManyResultsException，则错误多半在于查询结果的列名与&lt;resultMap&gt;中普通的&lt;id/&gt;或&lt;result/&gt;节点的column的配置有误！也有可能存在例如2列的名称都是id，却有多条数据的id值不同的问题！ 练习：存在学生表和班级表，学生表t_student中包括id, name, age, class_id，班级表t_class中包括id, name，最终，查询时，查某班级数据时将显示该班级所有学生的信息。涉及的类为Student、Clazz。 练习步骤1：创建2张数据表，插入一定量的数据，创建对应的实体类，创建班级的VO类： create table t_class ( id int auto_increment, name varchar(20), primary key (id) ); insert into t_class (name) values (&apos;JSD1806&apos;),(&apos;JSD1807&apos;),(&apos;JSD1808&apos;); create table t_student ( id int auto_increment, name varchar(20), age int, class_id int, primary key (id) ); insert into t_student (name,age,class_id) values (&apos;Mike&apos;, 20, 1), (&apos;Tom&apos;, 21, 2), (&apos;Terry&apos;, 21, 3), (&apos;Jerry&apos;, 22, 2), (&apos;Lucy&apos;, 22, 1), (&apos;Kitty&apos;, 22, 2), (&apos;Lily&apos;, 21, 3), (&apos;Lilei&apos;, 20, 3), (&apos;HanMM&apos;, 23, 3), (&apos;XiaoMing&apos;, 21, 2);练习步骤2：创建cn.tedu.mybatis.mapper.ClazzMapper接口，复制得到src\main\resources\ClazzMapper.xml映射文件，这2个文件都是空文件即可。 练习步骤3：设计SQL语句： SELECT t_class.id AS cls_id, t_class.name AS cls_name, t_student.id AS stu_id, t_student.name AS stu_name, age, class_id FROM t_class INNER JOIN t_student ON t_class.id=t_student.class_id WHERE t_class.id=?;练习步骤4：抽象方法 ClazzVO findById(Integer id);练习步骤5：配置&lt;select&gt; &lt;select id=&quot;findById&quot; resultMap=&quot;ClazzVOMapper&quot;&gt; SELECT t_class.id AS cls_id, t_class.name AS cls_name, t_student.id AS stu_id, t_student.name AS stu_name, age, class_id FROM t_class INNER JOIN t_student ON t_class.id=t_student.class_id WHERE t_class.id=#{id}; &lt;/select&gt;练习步骤6：配置&lt;resultMap&gt; &lt;resultMap id=&quot;ClazzVOMapper&quot; type=&quot;cn.tedu.mybatis.vo.ClazzVO&quot;&gt; &lt;id column=&quot;cls_id&quot; property=&quot;clsId&quot;/&gt; &lt;result column=&quot;cls_name&quot; property=&quot;clsName&quot;/&gt; &lt;collection property=&quot;student&quot; ofType=&quot;cn.tedu.mybatis.entity.Student&quot;&gt; &lt;id column=&quot;stu_id&quot; property=&quot;id&quot;/&gt; &lt;result column=&quot;stu_name&quot; property=&quot;name&quot;/&gt; &lt;result column=&quot;age&quot; property=&quot;age&quot;/&gt; &lt;result column=&quot;class_id&quot; property=&quot;classId&quot;/&gt; &lt;/collection&gt; &lt;/resultMap&gt;课后练习：新添加考试成绩表t_score，包括字段id(int)、stu_id(int), subject(varchar), score(int)，要求最终实现：根据学生id查询出该学生的所有成绩，例如： XX学生成绩单 学号：xx 姓名：xx 序号 | 科目 | 分数 1 Java 80 2 SQL 70]]></content>
@@ -8,8 +20,8 @@
         <category>Mybatis</category>
       </categories>
       <tags>
-        <tag>ssm</tag>
         <tag>Mybatis</tag>
+        <tag>ssm</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +32,8 @@
         <category>Mybatis</category>
       </categories>
       <tags>
-        <tag>ssm</tag>
         <tag>Mybatis</tag>
+        <tag>ssm</tag>
       </tags>
   </entry>
   <entry>
@@ -92,8 +104,8 @@
         <category>Spring</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
         <tag>ssm</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +116,8 @@
         <category>Spring</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
         <tag>ssm</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>
@@ -116,8 +128,8 @@
         <category>Spring</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
         <tag>ssm</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>

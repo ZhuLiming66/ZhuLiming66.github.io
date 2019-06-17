@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Mybatis,ssm,">
 
 
 
@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
-<meta name="keywords" content="Java SE,HTML,javascript,jquery,MySQL,Spring,SpringMVC,SpringBoot,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://zhuliming66.com/tags/index.html">
+<meta name="description" content="1. MyBatis中的占位符在MyBatis中，常见的占位符格式是#{参数}，其中，也可能是参数对象中的属性，如果参数是Map类型，还可以是Map中的key。 使用#{}的占位符可用于替换值，例如： select * from t_user where username=?即可替换以上语句中的问号(?)，在实际运行时，MyBatis会将以上SQL语句进行预编译，并后续使用#{}替换问号(?)。">
+<meta name="keywords" content="Mybatis,ssm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis占位符的使用、动态SQL">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/17/Mybatis占位符的使用、动态SQL/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta property="og:description" content="1. MyBatis中的占位符在MyBatis中，常见的占位符格式是#{参数}，其中，也可能是参数对象中的属性，如果参数是Map类型，还可以是Map中的key。 使用#{}的占位符可用于替换值，例如： select * from t_user where username=?即可替换以上语句中的问号(?)，在实际运行时，MyBatis会将以上SQL语句进行预编译，并后续使用#{}替换问号(?)。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-02T04:29:54.751Z">
+<meta property="og:updated_time" content="2019-06-17T09:53:46.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta name="twitter:title" content="Mybatis占位符的使用、动态SQL">
+<meta name="twitter:description" content="1. MyBatis中的占位符在MyBatis中，常见的占位符格式是#{参数}，其中，也可能是参数对象中的属性，如果参数是Map类型，还可以是Map中的key。 使用#{}的占位符可用于替换值，例如： select * from t_user where username=?即可替换以上语句中的问号(?)，在实际运行时，MyBatis会将以上SQL语句进行预编译，并后续使用#{}替换问号(?)。">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/tags/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/17/Mybatis占位符的使用、动态SQL/">
 
 
 
 
 
-  <title>标签 | 阿希、@的博客</title>
+  <title>Mybatis占位符的使用、动态SQL | 阿希、@的博客</title>
   
 
 
@@ -326,40 +326,329 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/17/Mybatis占位符的使用、动态SQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 9 个标签
+          <h1 class="post-title" itemprop="name headline">Mybatis占位符的使用、动态SQL</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-17T17:53:05+08:00">
+                2019-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">Mybatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/17/Mybatis占位符的使用、动态SQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/17/Mybatis占位符的使用、动态SQL/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Dao/" style="font-size: 12px; color: #ccc">Dao</a> <a href="/tags/HTTP/" style="font-size: 12px; color: #ccc">HTTP</a> <a href="/tags/Jsp/" style="font-size: 12px; color: #ccc">Jsp</a> <a href="/tags/MySQL/" style="font-size: 18px; color: #8e8e8e">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 24px; color: #4f4f4f">Mybatis</a> <a href="/tags/Servlet/" style="font-size: 24px; color: #4f4f4f">Servlet</a> <a href="/tags/Spring/" style="font-size: 24px; color: #4f4f4f">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 24px; color: #4f4f4f">SpringMVC</a> <a href="/tags/ssm/" style="font-size: 30px; color: #111">ssm</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="1-MyBatis中的占位符"><a href="#1-MyBatis中的占位符" class="headerlink" title="1. MyBatis中的占位符"></a>1. MyBatis中的占位符</h2><p>在MyBatis中，常见的占位符格式是<code>#{参数}</code>，其中，也可能是参数对象中的属性，如果参数是<code>Map</code>类型，还可以是<code>Map</code>中的key。</p>
+<p>使用<code>#{}</code>的占位符可用于替换<strong>值</strong>，例如：</p>
+<pre><code>select * from t_user where username=?</code></pre><p>即可替换以上语句中的问号(<code>?</code>)，在实际运行时，MyBatis会将以上SQL语句进行预编译，并后续使用<code>#{}</code>替换问号(<code>?</code>)。</p>
+<p>假设获取用户列表时，排序规则不确定，可能使用的抽象方法是：</p>
+<pre><code>List&lt;User&gt; findAllOrderedList(String orderBy);</code></pre><p>配置的映射可能是：</p>
+<pre><code>&lt;select id=&quot;xx&quot; resultType=&quot;xx&quot;&gt;
+    select * from t_user
+    order by #{orderBy}
+&lt;/select&gt;</code></pre><p>调用时：</p>
+<pre><code>mapper.findAllOrderedList(&quot;id asc&quot;);
+mapper.findAllOrderedList(&quot;id desc&quot;);</code></pre><p>以上代码的执行效果是失败的！需要将<code>#{}</code>修改为<code>${}</code>，且在抽象方法中，这样的参数必须添加<code>@Param</code>注解，即：</p>
+<pre><code>List&lt;User&gt; findAllOrderedList(
+    @Param(&quot;orderBy&quot;) String orderBy);
+
+&lt;select id=&quot;xx&quot; resultType=&quot;xx&quot;&gt;
+    select * from t_user
+    order by ${orderBy}
+&lt;/select&gt;</code></pre><p>然后，在调用时，就可以根据参数的不同，实现不同的排序效果！</p>
+<p>使用<code>${}</code>格式的占位符并不具备预编译的效果！它是直接拼接形成的SQL语句，例如：<code>&quot;select * from t_user order by&quot; + orderBy</code>，如果一定使用<code>${}</code>格式的占位符来表示某个值，还需要考虑单引号类似的问题，例如：<code>select * from t_user where username=&#39;${username}&#39;</code>，由于只是拼接，所以，还存在SQL注入风险！</p>
+<p><strong>小结</strong></p>
+<p>使用<code>#{}</code>是预编译的（没有SQL注入风险，无需关注数据类型），使用<code>${}</code>不是预编译的；</p>
+<p>使用<code>#{}</code>只能替换某个值，使用<code>${}</code>可以替换SQL语句中的任何部分；</p>
+<p>关于SQL注入，不需要太过于紧张，预编译可以从根源上杜绝，或者，在执行SQL指令之前，判断参数中是否包含单引号也可以杜绝！</p>
+<p>通过使用<code>${}</code>，可以使得SQL更加灵活，更加通用！但是，却不推荐太过于通用的SQL！因为，即使查询条件可以自由更改，但是，不同的查询条件对应不同的需求，所需的字段列表很有可能是不一样的，查询时，获取不必要的字段，就会造成不必要的资源浪费，例如，显示列表时，可能需要用户名、密码、年龄、手机、邮箱，但是，登录的查询就只需要用户名、密码即可，年龄、手机、邮箱这几项数据在登录时是不需要的，如果也查询出来，就是浪费资源！如果变量太多，又会导致不可控因素太多，容易出错！</p>
+<h2 id="2-动态SQL"><a href="#2-动态SQL" class="headerlink" title="2. 动态SQL"></a>2. 动态SQL</h2><p>在MyBatis的映射文件中，配置SQL语句时，可以添加例如<code>&lt;if&gt;</code>此类的标签，实现SQL语句的动态变化，即：参数不同，最终执行的SQL语句可能是不同的！</p>
+<p>在使用动态SQL时，最常用的就是<code>&lt;if&gt;</code>和<code>&lt;foreach&gt;</code>这两种，<code>&lt;if&gt;</code>是用于判断的，例如：</p>
+<pre><code>select 
+    * 
+from 
+    t_user
+
+&lt;if test=&quot;where != null&quot;&gt;
+where 
+    ${where}
+&lt;/if&gt;
+
+&lt;if test=&quot;orderBy != null&quot;&gt;
+order by 
+    ${orderBy}
+&lt;/if&gt;</code></pre><p>关于<code>&lt;foreach&gt;</code>，主要用于循环处理SQL语句中的某个部分，例如：批量删除某些数据！它的SQL语句可能是：</p>
+<pre><code>delete from t_user where id in (?,?,?)</code></pre><p>其中，<code>in</code>关键字右侧的括号中的内容是不确定的，应该是由用户操作时决定的！则需要<code>&lt;foreach&gt;</code>动态的生成这个部分！</p>
+<p>针对这个问题，设计的抽象方法可能是：</p>
+<pre><code>Integer deleteByIds(Integer[] ids);</code></pre><p>配置的映射为：</p>
+<pre><code>&lt;delete id=&quot;deleteByIds&quot;&gt;
+    delete from 
+        t_user
+    where
+        id in (
+        &lt;foreach collection=&quot;array&quot;
+            item=&quot;id&quot; separator=&quot;,&quot;&gt;
+            #{id}
+        &lt;/foreach&gt;
+        )
+&lt;/delete&gt;</code></pre><p>以上配置的<code>&lt;foreach&gt;</code>中，<code>collection</code>表示被遍历的集合对象，当抽象方法只有1个参数时，取值为<code>list</code>或<code>array</code>，取决于集合对象的数据类型，当抽象方法 有多个参数时，使用<code>@Param</code>注解中的名称，<code>item</code>表示遍历过程中的变量名，<code>separator</code>表示分隔符。</p>
+<p>以上配置还可以调整为：</p>
+<pre><code>id in
+&lt;foreach collection=&quot;array&quot;
+    item=&quot;id&quot; separator=&quot;,&quot;
+    open=&quot;(&quot; close=&quot;)&quot;&gt;
+    #{id}
+&lt;/foreach&gt;</code></pre><p>即：<code>open</code>表示由<code>&lt;foreach&gt;</code>处理的SQL语句的起始部分的字符串，而<code>close</code>表示结束部分的字符串。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/AliPay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mybatis/" rel="tag"><i class="fas fa-tag"></i> Mybatis</a>
+          
+            <a href="/tags/ssm/" rel="tag"><i class="fas fa-tag"></i> ssm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/16/Mybatis获取自增主键值、使用多个参数、关联查询/" rel="next" title="Mybatis获取自增主键值、使用多个参数、关联查询">
+                <i class="fa fa-chevron-left"></i> Mybatis获取自增主键值、使用多个参数、关联查询
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -395,8 +684,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -517,6 +815,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-MyBatis中的占位符"><span class="nav-number">1.</span> <span class="nav-text">1. MyBatis中的占位符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-动态SQL"><span class="nav-number">2.</span> <span class="nav-text">2. 动态SQL</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
