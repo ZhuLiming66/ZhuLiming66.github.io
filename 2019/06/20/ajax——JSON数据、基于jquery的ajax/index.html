@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="ajax,">
 
 
 
@@ -92,17 +92,18 @@
 
 
 
-<meta name="description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
-<meta name="keywords" content="Java SE,HTML,javascript,jquery,MySQL,Spring,SpringMVC,SpringBoot,Linux">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿希、@的博客">
-<meta property="og:url" content="http://zhuliming66.com/tags/Mybatis/index.html">
+<meta name="description" content="1. 响应方式在Java EE中，常见的响应方式有：转发和重定向。 无论是转发，还是重定向，都是由服务器端完成最终页面的显示，具体的表现为：用户提交请求后，页面完全由服务器端来完成！并且，伴随着页面的“刷新”！ 例如：当用户尝试登录时，假设用户名错误，只能转发到某个页面（可能是错误提示页面），或重定向到某个页面，无论是哪种操作，用户在浏览器中看到的都不会再是原有的页面了！ 使用这种做法，主要问题在">
+<meta name="keywords" content="ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax——JSON数据、基于jquery的ajax">
+<meta property="og:url" content="http://zhuliming66.com/2019/06/20/ajax——JSON数据、基于jquery的ajax/index.html">
 <meta property="og:site_name" content="阿希、@的博客">
-<meta property="og:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta property="og:description" content="1. 响应方式在Java EE中，常见的响应方式有：转发和重定向。 无论是转发，还是重定向，都是由服务器端完成最终页面的显示，具体的表现为：用户提交请求后，页面完全由服务器端来完成！并且，伴随着页面的“刷新”！ 例如：当用户尝试登录时，假设用户名错误，只能转发到某个页面（可能是错误提示页面），或重定向到某个页面，无论是哪种操作，用户在浏览器中看到的都不会再是原有的页面了！ 使用这种做法，主要问题在">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-20T09:59:08.043Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿希、@的博客">
-<meta name="twitter:description" content="潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手">
+<meta name="twitter:title" content="ajax——JSON数据、基于jquery的ajax">
+<meta name="twitter:description" content="1. 响应方式在Java EE中，常见的响应方式有：转发和重定向。 无论是转发，还是重定向，都是由服务器端完成最终页面的显示，具体的表现为：用户提交请求后，页面完全由服务器端来完成！并且，伴随着页面的“刷新”！ 例如：当用户尝试登录时，假设用户名错误，只能转发到某个页面（可能是错误提示页面），或重定向到某个页面，无论是哪种操作，用户在浏览器中看到的都不会再是原有的页面了！ 使用这种做法，主要问题在">
 
 
 
@@ -132,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://zhuliming66.com/tags/Mybatis/">
+  <link rel="canonical" href="http://zhuliming66.com/2019/06/20/ajax——JSON数据、基于jquery的ajax/">
 
 
 
 
 
-  <title>标签: Mybatis | 阿希、@的博客</title>
+  <title>ajax——JSON数据、基于jquery的ajax | 阿希、@的博客</title>
   
 
 
@@ -157,7 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
       <a href="https://github.com/zhuliming66" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -323,104 +324,381 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Mybatis<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/06/20/ajax——JSON数据、基于jquery的ajax/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/06/17/Mybatis占位符的使用、动态SQL/" itemprop="url">
-              
-                <span itemprop="name">Mybatis占位符的使用、动态SQL</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">ajax——JSON数据、基于jquery的ajax</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-17T17:53:05+08:00" content="2019-06-17">
-          06-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T17:58:23+08:00">
+                2019-06-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/20/ajax——JSON数据、基于jquery的ajax/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/20/ajax——JSON数据、基于jquery的ajax/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/16/Mybatis获取自增主键值、使用多个参数、关联查询/" itemprop="url">
-              
-                <span itemprop="name">Mybatis获取自增主键值、使用多个参数、关联查询</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-16T17:44:51+08:00" content="2019-06-16">
-          06-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h3 id="1-响应方式"><a href="#1-响应方式" class="headerlink" title="1. 响应方式"></a>1. 响应方式</h3><p>在Java EE中，常见的响应方式有：转发和重定向。</p>
+<p>无论是转发，还是重定向，都是由服务器端完成最终页面的显示，具体的表现为：用户提交请求后，页面完全由服务器端来完成！并且，伴随着页面的“刷新”！</p>
+<p>例如：当用户尝试登录时，假设用户名错误，只能转发到某个页面（可能是错误提示页面），或重定向到某个页面，无论是哪种操作，用户在浏览器中看到的都不会再是原有的页面了！</p>
+<p>使用这种做法，主要问题在于：(1)用户体验非常差；(2)服务器端压力较大，用户的请求次数也可能较多！(3)不适用于多种不同的客户端，例如PC端的浏览器、Android APP、iOS APP……</p>
+<p>其实，服务器端并不一定需要把页面都处理掉，更多的应该是告之客户端此次操作的结果，例如客户端尝试登录时，服务器端应该给出“登录成功”或“登录失败！用户名或密码错误！”此类的结果即可，至于界面如何处理，可以交给客户端程序（例如Javascript）去进行处理！</p>
+<p>如果需要响应的方式不是转发或重定向，而是直接响应一串字符，只需要在控制器处理请求的方式上添加<code>@ResponseBody</code>注解即可！</p>
+<blockquote>
+<p>使用该注解之前，应该在Spring的配置文件中添加<code>&lt;mvc:annotation-driven /&gt;</code>注解驱动。</p>
+</blockquote>
+<p>例如：</p>
+<pre><code>@Controller
+@RequestMapping(&quot;/user&quot;)
+public class UserController {
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    @GetMapping(&quot;/login.do&quot;)
+    @ResponseBody
+    public String handleLogin() {
+        return &quot;LOGIN ERR.&quot;;
+    }
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/13/MyBatis概念、配置连接、配置映射、查询操作/" itemprop="url">
-              
-                <span itemprop="name">MyBatis概念、配置连接、配置映射、查询操作</span>
-              
-            </a>
-        
-      </h2>
+}</code></pre><blockquote>
+<p>以上<code>@GetMapping</code>等效于<code>@RequestMapping(method=RequestMethod.GET)</code>，使用4.3或以上版本的Spring框架时可用。</p>
+</blockquote>
+<p><strong>使用@ResponseBody可以向客户端响应正文，而不是某个页面！</strong></p>
+<h3 id="2-JSON"><a href="#2-JSON" class="headerlink" title="2. JSON"></a>2. JSON</h3><p>以用户登录为例，可能存在：(1)成功；(2)用户名错误；(3)密码错误。即：同一次请求得到的结果可能是以上3种当中的某1种，客户获取到响应内容后，必须能够作出区分，然后执行下一步的任务，例如：成功，则跳转到某个页面，错误，则提示信息。当客户端收到数据后，如果数据中既包含操作结果的代码，又包含相关提示信息，则是比较好的处理方案，例如：</p>
+<pre><code>1-登录成功！
+2-登录失败！尝试登录的用户名不存在！
+3-登录失败！密码错误！</code></pre><p>以上组织数据的方式并不严谨，为了更好的组织数据，可以使用XML语法：</p>
+<pre><code>&lt;data&gt;
+    &lt;state&gt;1&lt;/state&gt;
+    &lt;message&gt;登录成功！&lt;/message&gt;
+&lt;/data&gt;</code></pre><p>使用XML组织数据可以很好的约定数据的格式，保证能够正确的获取到所需的数据内容！但是，这样的语法格式比较笨重，解析相对麻烦，目前，比较推荐的是使用JSON格式来组织数据：</p>
+<pre><code>{
+    &quot;state&quot;:1,
+    &quot;message&quot;:&quot;登录成功！&quot;
+}</code></pre><p>JSON格式不仅简单，而且，在Javascript中，是默认直接识别并解析的，例如：</p>
+<pre><code>var data = { &quot;state&quot;:1, &quot;message&quot;:&quot;登录成功！&quot; };
+alert(data.message); // 使用警告框显示message</code></pre><p><strong>JSON的基本格式</strong></p>
+<p>JSON数据的基本格式是：使用大括号框住所有内容，内部可以有多个属性与值，属性与值使用冒号分隔，各属性及值的配置之间使用逗号分隔，如果值是字符串型的，需要使用单引号或双引号框住，如果值是数值型或布尔型则不需要使用引号。</p>
+<p>练习：使用JSON表达某个用户数据，姓名为张三，来自北京，年龄25。</p>
+<pre><code>var user = { &quot;name&quot;:&quot;张三&quot;, &quot;from&quot;:&quot;北京&quot;, &quot;age&quot;:25 };
+alert(user.name);</code></pre><p><strong>属性的值也可以是另一个对象</strong></p>
+<p>每个属性的值，可以是直接表示出来的基本值，也可以是另一个对象，对象的表示方式与整个JSON的表示方式是一样的。</p>
+<p>例如：用户数据中包括“部门”，而部门信息有编号与名称。</p>
+<pre><code>var user = { &quot;name&quot;:&quot;张三&quot;, &quot;department&quot;:{&quot;id&quot;:&quot;9527&quot;, &quot;name&quot;:&quot;RD&quot;} };
+alert(user.department.name);</code></pre><p><strong>属性的值还可以是数组</strong></p>
+<p>在JSON中，和其它语言一样，使用<code>[]</code>表示数组。</p>
+<p>例如：某用户的个人技能包含：JAVA / HTML / CSS / JS / MYSQL</p>
+<pre><code>var user = { &quot;name&quot;: &quot;张三&quot;, &quot;skill&quot;: [&quot;JAVA&quot;, &quot;HTML&quot;, &quot;CSS&quot;, &quot;JS&quot;, &quot;MYSQL&quot;] }
+alert(user.skill[2]);
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-13T16:53:11+08:00" content="2019-06-13">
-          06-13
-        </time>
-      </div>
+for (var i = 0; i &lt; user.skill.length; i++) {
+    alert(user.skill[i]);
+}</code></pre><p><strong>属性的值的组合应用</strong></p>
+<p>属性的值可以是基本值（数值、布尔值、字符串），也可以是某个对象，或是某个数组，甚至，当值是某个对象时，对象中还可以再包含对象或数组，当然，数组的成员也可以是对象，基于这种特性，JSON可以组织出任何类型的数据！</p>
+<p><strong>将字符串转换为JSON对象</strong></p>
+<p>在Javascript中，通过<code>JSON.parse(str)</code>就可以将字符串转换为JSON对象，当然，字符串本身必须是符合JSON数据格式的！</p>
+<pre><code>var jsonString = &apos;{ &quot;name&quot;:&quot;Tom&quot;, &quot;age&quot;: 25 }&apos;;
+var json = JSON.parse(jsonString);</code></pre><p><strong>小结</strong></p>
+<p>掌握JSON的数据格式，及数据的使用方式，掌握将字符串转换为JSON对象。</p>
+<h2 id="3-服务器向客户端响应JSON格式的字符串"><a href="#3-服务器向客户端响应JSON格式的字符串" class="headerlink" title="3. 服务器向客户端响应JSON格式的字符串"></a>3. 服务器向客户端响应JSON格式的字符串</h2><p>添加依赖：</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+    &lt;version&gt;2.9.7&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>当处理请求的方法添加<code>@ResponseBody</code>后，处理请求的方法的返回值将作为响应正文，响应到客户端，如果返回值类型是SpringMVC默认识别的类型，将直接处理，例如String，如果返回值类型是SpringMVC默认不识别的类型，将自动调用Jackson，将返回值组织成JSON数据格式！</p>
+<p>除此以外，Jackson还会设置响应头为：<code>application/json, charset=utf-8</code>，也就解决了中文乱码的问题！</p>
+<p>通常会在服务器端创建专门用于确定响应结果的数据类型，例如：</p>
+<pre><code>public class ResponseResult {
 
-    </header>
-  </article>
-
-
+    private Integer state;
+    private String message;
+    // SET/GET, Serializable
+}</code></pre><p>然后，每次向客户端响应时，都使用<code>ResponseResult</code>作为方法的返回值！</p>
+<h2 id="4-AJAX"><a href="#4-AJAX" class="headerlink" title="4. AJAX"></a>4. AJAX</h2><p>AJAX是通过Javascript发出异步请求，并处理响应结果的做法！</p>
+<p>原生的AJAX使用比较麻烦，还可能存在兼容性的问题，所以，推荐使用jQuery框架中封装好的函数来实现AJAX访问。</p>
+<p>由jQuery提供的AJAX请求函数是<code>$.ajax()</code>，参数是1个JSON对象，在该JSON对象中，通常，至少需要设置5个属性：</p>
+<ul>
+<li><p><code>url</code>：将请求提交到哪里去，相当于<form>中的action</form></p>
+</li>
+<li><p><code>data</code>：请求参数，参数格式为<code>xx=xx&amp;xx=xx&amp;xx=xx</code></p>
+</li>
+<li><p><code>type</code>：请求类型，例如<code>&quot;GET&quot;</code>或<code>&quot;POST&quot;</code>等</p>
+</li>
+<li><p><code>dataType</code>：服务器端响应的数据类型，取值可以是<code>&quot;text&quot;</code>、<code>&quot;xml&quot;</code>、<code>&quot;json&quot;</code></p>
+</li>
+<li><p><code>success</code>：当服务器正确响应时（响应码=200）如何处理，取值为函数，由该函数对结果进行处理，可以在函数中添加1个参数，该参数就是服务器响应的内容，如果前序将<code>dataType</code>设置为<code>&quot;json&quot;</code>，则参数就是直接是JSON对象，无需实现<code>JSON.parse()</code>转换！</p>
+</li>
+</ul>
+<p>使用例如：</p>
+<pre><code>function login() {
+    var u = $(&quot;#username&quot;).val();
+    var p = $(&quot;#password&quot;).val();
+    $.ajax({
+        &quot;url&quot;: &quot;user/login.do&quot;,
+        &quot;data&quot;: &quot;username=&quot; + u + &quot;&amp;password=&quot; + p,
+        &quot;type&quot;: &quot;POST&quot;,
+        &quot;dataType&quot;: &quot;json&quot;,
+        &quot;success&quot;: function(json) {
+            if (json.state == 1) {
+                // 登录成功
+                location.href = &quot;index.html&quot;
+            } else if (json.state == 2) {
+                // 用户名错误
+                alert(json.message);
+            } else if (json.state == 3) {
+                // 密码错误
+                alert(json.message);
+            }
+        }
+    });
+}
+&lt;/script&gt;</code></pre>
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/AliPay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ajax/" rel="tag"><i class="fas fa-tag"></i> ajax</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/19/JavaScript中String、数组、日期、正则对象/" rel="next" title="JavaScript中String、数组、日期、正则对象">
+                <i class="fa fa-chevron-left"></i> JavaScript中String、数组、日期、正则对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -428,6 +706,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -448,8 +733,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -570,6 +864,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-响应方式"><span class="nav-number">1.</span> <span class="nav-text">1. 响应方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-JSON"><span class="nav-number">2.</span> <span class="nav-text">2. JSON</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#3-服务器向客户端响应JSON格式的字符串"><span class="nav-number"></span> <span class="nav-text">3. 服务器向客户端响应JSON格式的字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-AJAX"><span class="nav-number"></span> <span class="nav-text">4. AJAX</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -737,6 +1047,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
