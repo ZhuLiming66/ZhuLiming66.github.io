@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/favicons/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/favicons/manifest.json">
+
+
+  <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+
+
+
+  <meta name="keywords" content="project,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="阿希、@的博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="1. 项目大致分析需要处理的数据的种类：用户，商品，收货地址，购物车，订单，收藏，商品分类…… 开发时，应该先完成：比较简单的、与其它数据关联不大、是其它数据的基础支撑的数据，例如用户数据。 所以，处理数据的顺序可以大致是：用户 &amp;gt; 收货地址 &amp;gt; 商品分类与商品 &amp;gt; 购物车与收藏 &amp;gt; 订单。 每种数据的处理，都涉及一些功能，以用户数据为例，可能有：注册、登录、修改资料、修改">
+<meta name="keywords" content="project">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学子商城———项目分析、用户注册">
+<meta property="og:url" content="http://zhuliming66.com/2019/07/18/学子商城———项目分析、用户注册/index.html">
+<meta property="og:site_name" content="阿希、@的博客">
+<meta property="og:description" content="1. 项目大致分析需要处理的数据的种类：用户，商品，收货地址，购物车，订单，收藏，商品分类…… 开发时，应该先完成：比较简单的、与其它数据关联不大、是其它数据的基础支撑的数据，例如用户数据。 所以，处理数据的顺序可以大致是：用户 &amp;gt; 收货地址 &amp;gt; 商品分类与商品 &amp;gt; 购物车与收藏 &amp;gt; 订单。 每种数据的处理，都涉及一些功能，以用户数据为例，可能有：注册、登录、修改资料、修改">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-18T14:40:26.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学子商城———项目分析、用户注册">
+<meta name="twitter:description" content="1. 项目大致分析需要处理的数据的种类：用户，商品，收货地址，购物车，订单，收藏，商品分类…… 开发时，应该先完成：比较简单的、与其它数据关联不大、是其它数据的基础支撑的数据，例如用户数据。 所以，处理数据的顺序可以大致是：用户 &amp;gt; 收货地址 &amp;gt; 商品分类与商品 &amp;gt; 购物车与收藏 &amp;gt; 订单。 每种数据的处理，都涉及一些功能，以用户数据为例，可能有：注册、登录、修改资料、修改">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhuliming66.com/2019/07/18/学子商城———项目分析、用户注册/">
+
+
+
+
+
+  <title>学子商城———项目分析、用户注册 | 阿希、@的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+      <a href="https://github.com/zhuliming66" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">阿希、@的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">从学习中积淀，从实践中成长</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhuliming66.com/2019/07/18/学子商城———项目分析、用户注册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿希、@">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headphoto.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿希、@的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学子商城———项目分析、用户注册</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-18T22:38:33+08:00">
+                2019-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/project/" itemprop="url" rel="index">
+                    <span itemprop="name">project</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/18/学子商城———项目分析、用户注册/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/18/学子商城———项目分析、用户注册/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-项目大致分析"><a href="#1-项目大致分析" class="headerlink" title="1. 项目大致分析"></a>1. 项目大致分析</h3><p>需要处理的数据的种类：用户，商品，收货地址，购物车，订单，收藏，商品分类……</p>
+<p>开发时，应该先完成：比较简单的、与其它数据关联不大、是其它数据的基础支撑的数据，例如用户数据。</p>
+<p>所以，处理数据的顺序可以大致是：用户 &gt; 收货地址 &gt; 商品分类与商品 &gt; 购物车与收藏 &gt; 订单。</p>
+<p>每种数据的处理，都涉及一些功能，以用户数据为例，可能有：注册、登录、修改资料、修改密码、上传头像，通常，遵循“增 &gt; 查 &gt; 删 &gt; 改”且“由简到难”的步骤一一完成，所以，当处理用户数据时，应该：注册 &gt; 登录 &gt; 修改密码 &gt; 修改资料 &gt; 上传头像。</p>
+<p>在处理每一个功能时，都应该遵循的开发顺序：持久层 &gt; 业务层 &gt; 控制器层 &gt; 界面。</p>
+<h3 id="2-用户-注册-持久层"><a href="#2-用户-注册-持久层" class="headerlink" title="2. 用户-注册-持久层"></a>2. 用户-注册-持久层</h3><p><strong>创建数据库</strong></p>
+<p>在MySQL中创建名为<code>tedu_store</code>的数据库：</p>
+<pre><code>CREATE DATABASE tedu_store;</code></pre><p><strong>创建数据表</strong></p>
+<pre><code>CREATE TABLE t_user (
+    id INT AUTO_INCREMENT COMMENT &apos;id&apos;,
+    username VARCHAR(20) UNIQUE NOT NULL  COMMENT &apos;用户名&apos;, 
+    password CHAR(32) NOT NULL COMMENT &apos;密码&apos;,
+    salt CHAR(36) NOT NULL COMMENT &apos;盐值&apos;,
+    gender INT COMMENT &apos;性别&apos;,
+    phone VARCHAR(20) COMMENT &apos;手机号码&apos;,
+    email VARCHAR(50) COMMENT &apos;电子邮箱&apos;,
+    avatar VARCHAR(100) COMMENT &apos;头像&apos;,
+    is_delete INT DEFAULT 0 COMMENT &apos;是否删除，0-未删除，1-已删除&apos;,
+    created_user VARCHAR(20) COMMENT &apos;创建者&apos;,
+    created_time DATETIME COMMENT &apos;创建时间&apos;,
+    modified_user VARCHAR(20) COMMENT &apos;最后修改者&apos;,
+    modified_time DATETIME COMMENT &apos;最后修改时间&apos;,
+    PRIMARY KEY(id)
+) DEFAULT CHARSET=UTF8;</code></pre><p><strong>创建项目</strong></p>
+<p>打开Spring Boot的官方网站：<a href="https://start.spring.io/" target="_blank" rel="noopener">https://start.spring.io/</a></p>
+<p>输入各参数，并勾选<code>MyBatis</code>和<code>MySQL</code>，生成项目。</p>
+<p>将下载的压缩包解压到Workspace中，然后，在Eclipse中通过Import &gt; Import &gt; Existing Maven Projects导入该项目（如果是第1次使用Spring Boot，需要保证与Maven服务器的网络畅通）。</p>
+<p>由于创建项目时勾选了数据库编程的依赖，所以，当Spring Boot启动时，会尝试创建数据源对象，但是，没有添加任何配置时，是无法创建数据源对象的，就会导致启动失败，所以，先在配置文件<code>application.properties</code>中添加数据源的配置：</p>
+<pre><code># spring datasource
+spring.datasource.url=jdbc:mysql://localhost:3306/tedu_store?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=root</code></pre><blockquote>
+<p>框架会自动读取数据库驱动jar包中的<strong>META-INF/services/java.sql.Driver</strong>文件，文件中的值就是数据源的<code>driverClassName</code>的值，所以，配置数据源时，无须配置<code>driverClassName</code>。</p>
+</blockquote>
+<p>完成后，测试连接是否可用：</p>
+<pre><code>package cn.tedu.store.db;
+
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DataSourceTestCase {
+
+    @Autowired
+    DataSource dataSource;
+
+    @Test
+    public void getConnection() throws SQLException {
+        System.out.println(dataSource.getConnection());
+    }
+}</code></pre><p><strong>创建实体类</strong></p>
+<p>创建实体类的基类<code>cn.tedu.store.entity.BaseEntity</code>，添加日志相关的4个属性，并实现序列化接口：</p>
+<pre><code>package cn.tedu.store.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class BaseEntity implements Serializable {
+
+    private static final long serialVersionUID = -6185124879935579311L;
+
+    private String createdUser;
+    private Date createdTime;
+    private String modifiedUser;
+    private Date modifiedTime;
+
+    public String getCreatedUser() {
+        return createdUser;
+    }
+
+    public void setCreatedUser(String createdUser) {
+        this.createdUser = createdUser;
+    }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public String getModifiedUser() {
+        return modifiedUser;
+    }
+
+    public void setModifiedUser(String modifiedUser) {
+        this.modifiedUser = modifiedUser;
+    }
+
+    public Date getModifiedTime() {
+        return modifiedTime;
+    }
+
+    public void setModifiedTime(Date modifiedTime) {
+        this.modifiedTime = modifiedTime;
+    }
+
+}</code></pre><p>创建<code>cn.tedu.store.entity.User</code>类，添加与数据表对应的属性，并继承自以上的<code>BaseEntity</code>类：</p>
+<pre><code>package cn.tedu.store.entity;
+
+public class User extends BaseEntity {
+
+    private static final long serialVersionUID = -3643571432521920213L;
+
+    private Integer id;
+    private String username;
+    private String password;
+    private String salt;
+    private Integer gender;
+    private String phone;
+    private String email;
+    private String avatar;
+    private Integer isDelete;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;User [id=&quot; + id + &quot;, username=&quot; + username + &quot;, password=&quot; + password + &quot;, salt=&quot; + salt + &quot;, gender=&quot;
+                + gender + &quot;, phone=&quot; + phone + &quot;, email=&quot; + email + &quot;, avatar=&quot; + avatar + &quot;, isDelete=&quot; + isDelete
+                + &quot;]&quot;;
+    }
+
+}</code></pre><p><strong>持久层接口</strong></p>
+<p>创建<code>cn.tedu.store.mapper.UserMapper</code>接口，并在接口中添加抽象方法：</p>
+<pre><code>package cn.tedu.store.mapper;
+
+import cn.tedu.store.entity.User;
+
+/**
+ * 处理用户数据的持久层
+ */
+public interface UserMapper {
+
+    /**
+     * 插入用户数据
+     * @param user 用户数据
+     * @return 受影响的行数
+     */
+    Integer addnew(User user);
+
+    /**
+     * 根据用户名查询用户数据
+     * @param username 用户名
+     * @return 匹配的用户数据，如果没有匹配的数据，则返回null
+     */
+    User findByUsername(String username);
+
+}</code></pre><blockquote>
+<p>由于注册时需要判断用户名是否被占用，所以，添加了根据用户名查询用户数据的方法。</p>
+</blockquote>
+<p>为了使得MyBatis能找到接口，可以在启动类之前添加<code>@MapperScan</code>注解：</p>
+<pre><code>@SpringBootApplication
+@MapperScan(&quot;cn.tedu.store.mapper&quot;)
+public class TeduStoreApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(TeduStoreApplication.class, args);
+    }
+
+}</code></pre><p>当然，在接口文件之前添加<code>@Mapper</code>注解也可以，相比之下，使用<code>@MapperScan</code>是一次性配置，如果不使用它的话，每个接口文件之前都必须添加<code>@Mapper</code>注解，这2种方案选取其中的任何一种即可。</p>
+<p>接下来，需要配置接口文件的映射，首先，在<code>application.properties</code>中添加XML文件位置的配置：</p>
+<pre><code># mybatis
+mybatis.mapper-locations=classpath:mappers/*.xml</code></pre><p>则需要在<code>resources</code>下创建名为<code>mappers</code>的文件夹，然后，在该文件夹下添加映射的XML，配置以上抽象方法的映射：</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;  
+&lt;!DOCTYPE mapper PUBLIC &quot;-//ibatis.apache.org//DTD Mapper 3.0//EN&quot;      
+    &quot;http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd&quot;&gt;
+
+&lt;mapper namespace=&quot;cn.tedu.store.mapper.UserMapper&quot;&gt;
+
+    &lt;!-- 插入用户数据 --&gt;
+    &lt;!-- Integer addnew(User user) --&gt;
+    &lt;insert id=&quot;addnew&quot;
+        parameterType=&quot;cn.tedu.store.entity.User&quot;
+        useGeneratedKeys=&quot;true&quot;
+        keyProperty=&quot;id&quot;&gt;
+        INSERT INTO t_user (
+            username, password,
+            salt, gender,
+            phone, email,
+            avatar, is_delete,
+            created_user, created_time,
+            modified_user, modified_time
+        ) VALUES (
+            #{username}, #{password},
+            #{salt}, #{gender},
+            #{phone}, #{email},
+            #{avatar}, #{isDelete},
+            #{createdUser}, #{createdTime},
+            #{modifiedUser}, #{modifiedTime}
+        )
+    &lt;/insert&gt;
+
+    &lt;!-- 根据用户名查询用户数据 --&gt;
+    &lt;!-- 应用于：注册，登录 --&gt;
+    &lt;!-- User findByUsername(String username) --&gt;
+    &lt;select id=&quot;findByUsername&quot;
+        resultType=&quot;cn.tedu.store.entity.User&quot;&gt;
+        SELECT 
+            id, username, password,
+            salt, avatar, 
+            is_delete isDelete
+        FROM 
+            t_user
+        WHERE 
+            username=#{username}
+    &lt;/select&gt;
+
+&lt;/mapper&gt;</code></pre><p>当以上内容全部完成后，应该执行单元测试：</p>
+<pre><code>package cn.tedu.store.mapper;
+
+import java.util.Date;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import cn.tedu.store.entity.User;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class UserMapperTestCase {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Test
+    public void addnew() {
+        Date now = new Date();
+        User user = new User();
+        user.setUsername(&quot;root&quot;);
+        user.setPassword(&quot;1234&quot;);
+        user.setGender(1);
+        user.setPhone(&quot;13800138001&quot;);
+        user.setEmail(&quot;root@tedu.cn&quot;);
+        user.setSalt(&quot;Hello,MD5!&quot;);
+        user.setIsDelete(0);
+        user.setCreatedUser(&quot;Admin&quot;);
+        user.setModifiedUser(&quot;Admin&quot;);
+        user.setCreatedTime(now);
+        user.setModifiedTime(now);
+        Integer rows = userMapper.addnew(user);
+        System.err.println(&quot;rows=&quot; + rows);
+    }
+
+    @Test
+    public void findByUsername() {
+        String username = &quot;root&quot;;
+        User user = userMapper.findByUsername(username);
+        System.err.println(user);
+    }
+
+}</code></pre><h3 id="3-用户-注册-业务层"><a href="#3-用户-注册-业务层" class="headerlink" title="3. 用户-注册-业务层"></a>3. 用户-注册-业务层</h3><p>业务层应该有业务层接口与实现类，允许被外部（控制器或其它业务类）调用的方法应该在接口中声明，例如<code>reg()</code>、<code>login()</code>方法等。</p>
+<p>当前完成的是“注册”功能，则先创建业务层接口<code>cn.tedu.store.service.IUserService</code>：</p>
+<pre><code>/**
+ * 处理用户数据的业务层接口
+ */
+public interface IUserService {
+
+}</code></pre><p>已知注册过程中，可能出现“用户名被占用异常”、“插入数据异常”，这2种都是业务异常，则应该在<code>cn.tedu.store.service.exception</code>先创建对应的异常类：</p>
+<pre><code>ServiceException
+    DuplicateKeyException
+    InsertException</code></pre><p>然后，在接口中声明“注册”的抽象方法：</p>
+<pre><code>/**
+ * 用户注册
+ * @param user 用户的注册信息
+ * @return 成功注册的用户数据
+ * @throws DuplicateKeyException
+ * @throws InsertException
+ */
+User reg(User user) 
+    throws DuplicateKeyException, 
+        InsertException;</code></pre><blockquote>
+<p>如果事先并不清楚可能抛出哪些异常，甚至还没有创建对应的异常类，可以直接编写业务方法的代码，后续再补充抛出异常的声明。</p>
+</blockquote>
+<p>然后，创建<code>cn.tedu.store.service.impl.UserServiceImpl</code>类，并实现<code>IUserService</code>接口：</p>
+<pre><code>package cn.tedu.store.service.impl;
+
+import cn.tedu.store.entity.User;
+import cn.tedu.store.service.IUserService;
+import cn.tedu.store.service.exception.DuplicateKeyException;
+import cn.tedu.store.service.exception.InsertException;
+
+public class UserServiceImpl 
+    implements IUserService {
+
+    @Override
+    public User reg(User user) throws DuplicateKeyException, InsertException {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+}</code></pre><p>关于业务层的实现类，创建后，固定的任务有：</p>
+<ul>
+<li><p>添加<code>@Service</code>注解；</p>
+</li>
+<li><p>声明<code>@Autowired private UserMapper userMapper;</code>持久层对象；</p>
+</li>
+</ul>
+<p>然后，添加与持久层对应的方法（甚至方法的声明几乎相同，如果是增删改方法，在业务层中，返回值可以调整为<code>void</code>，并通过异常表示操作失败），并声明为私有，通过调用持久层对象来完成方法：</p>
+<pre><code>/**
+ * 插入用户数据
+ * @param user 用户数据
+ * @return 受影响的行数
+ * @throws InsertException
+ */
+private void addnew(User user) {
+    Integer rows = userMapper.addnew(user);
+    if (rows != 1) {
+        throw new InsertException(
+            &quot;增加用户数据时出现未知错误！&quot;);
+    }
+}
+
+/**
+ * 根据用户名查询用户数据
+ * @param username 用户名
+ * @return 匹配的用户数据，如果没有匹配的数据，则返回null
+ */
+private User findByUsername(String username) {
+    return userMapper.findByUsername(username);
+}</code></pre><p>然后，在公有的<code>reg()</code>方法中编写思路：</p>
+<pre><code>@Override
+public User reg(User user) throws DuplicateKeyException, InsertException {
+    // 根据尝试注册的用户名查询用户数据
+    // 判断查询到的数据是否为null
+    // 是：用户名不存在，允许注册，则执行注册
+    // -- 返回注册的用户对象
+    // 否：用户名已被占用，抛出DuplicateKeyException异常
+    return null;
+}</code></pre><p>然后，完成代码的编写：</p>
+<pre><code>@Override
+public User reg(User user) throws DuplicateKeyException, InsertException {
+    // 根据尝试注册的用户名查询用户数据
+    User data = findByUsername(
+            user.getUsername());
+    // 判断查询到的数据是否为null
+    if (data == null) {
+        // 是：用户名不存在，允许注册，则执行注册
+        addnew(user);
+        // 返回注册的用户对象
+        return user;
+    } else {
+        // 否：用户名已被占用，抛出DuplicateKeyException异常
+        throw new DuplicateKeyException(
+            &quot;注册失败！尝试注册的用户名(&quot; + user.getUsername() + &quot;)已经被占用！&quot;);
+    }
+}</code></pre><p>虽然还有“加密”及其它细节没有处理，但是，可以先进行测试，所以，创建<code>cn.tedu.store.service.UserServiceTestCase</code>：</p>
+<pre><code>package cn.tedu.store.service;
+
+import java.util.Date;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import cn.tedu.store.entity.User;
+import cn.tedu.store.service.exception.ServiceException;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class UserServiceTestCase {
+
+    @Autowired
+    private IUserService userService;
+
+    @Test
+    public void reg() {
+        try {
+            Date now = new Date();
+            User user = new User();
+            user.setUsername(&quot;admin&quot;);
+            user.setPassword(&quot;1234&quot;);
+            user.setGender(1);
+            user.setPhone(&quot;13800138002&quot;);
+            user.setEmail(&quot;admin@tedu.cn&quot;);
+            user.setSalt(&quot;Hello,MD5!&quot;);
+            user.setIsDelete(0);
+            user.setCreatedUser(&quot;Admin&quot;);
+            user.setModifiedUser(&quot;Admin&quot;);
+            user.setCreatedTime(now);
+            user.setModifiedTime(now);
+            User result = userService.reg(user);
+            System.err.println(&quot;result=&quot; + result);
+        } catch (ServiceException e) {
+            System.err.println(&quot;错误类型：&quot; + e.getClass().getName());
+            System.err.println(&quot;错误描述：&quot; + e.getMessage());
+        }
+    }
+
+}</code></pre><p>接下来，需要完成密码加密的功能，本次加密使用了随机的盐，可以使用UUID作为随机盐。</p>
+<blockquote>
+<p>UUID是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的。通常平台会提供生成的API。按照开放软件基金会(OSF)制定的标准计算，用到了以太网卡地址、纳秒级时间、芯片ID码和许多可能的数字。</p>
+</blockquote>
+<p>在Java中，通过<code>java.util.UUID</code>类即可轻松获取到随机的UUID值：</p>
+<pre><code>String uuid = UUID.randomUUID().toString();</code></pre><p>在<code>UserServiceImpl</code>中添加加密方法：</p>
+<pre><code>/**
+ * 获取根据MD5加密的密码
+ * @param srcPassword 原密码
+ * @param salt 盐值
+ * @return 加密后的密码
+ */
+private String getMd5Password(
+        String srcPassword, String salt) {
+    // 【注意】以下加密规则是自由设计的
+    // ----------------------------
+    // 盐值 拼接 原密码 拼接 盐值
+    String str = salt + srcPassword + salt;
+    // 循环执行10次摘要运算
+    for (int i = 0; i &lt; 10; i++) {
+        str = DigestUtils
+            .md5DigestAsHex(str.getBytes());
+    }
+    // 返回摘要结果
+    return str;
+}</code></pre><p>然后，在<code>reg()</code>方法中，在执行注册之前，先获取随机盐值，获取原始密码，执行加密，然后把盐值、加密后的密码封装回User对象中，再执行注册：</p>
+<pre><code>// 是：用户名不存在，允许注册，则处理密码加密
+// 加密-1：获取随机的UUID作为盐值
+String salt = UUID.randomUUID().toString();
+// 加密-2：获取用户提交的原始密码
+String srcPassword = user.getPassword();
+// 加密-3：基于原始密码和盐值执行加密，获取通过MD5加密的密码
+String md5Password = getMd5Password(srcPassword, salt);
+// 加密-4：将加密后的密码封装在user对象中
+user.setPassword(md5Password);
+// 加密-5：将盐值封装在user对象中
+user.setSalt(salt);
+// 执行注册
+addnew(user);</code></pre><p>然后，在执行注册之前，还应该补充非用户提交的数据：</p>
+<pre><code>// 是否已经删除：否
+user.setIsDelete(0); 
+// 4项日志
+Date now = new Date();
+user.setCreatedUser(user.getUsername());
+user.setCreatedTime(now);
+user.setModifiedUser(user.getUsername());
+user.setModifiedTime(now);</code></pre><p>至此，用户注册功能已经完成，由于前序产生的数据可能存在密码没有加密等问题，后续将无法正常使用，所以，应该清除<code>t_user</code>表中所有数据，后续需要数据时，重新注册即可。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>QAQ感谢你的支持=w=</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WeChatPay.png" alt="阿希、@ 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/AliPay.jpg" alt="阿希、@ 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/project/" rel="tag"><i class="fas fa-tag"></i> project</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/28/SpringBoot概念及应用、整合MyBatis、分层开发实战/" rel="next" title="SpringBoot概念及应用、整合MyBatis、分层开发实战">
+                <i class="fa fa-chevron-left"></i> SpringBoot概念及应用、整合MyBatis、分层开发实战
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/18/Servlet——转发、相对路径与绝对路径/" rel="prev" title="Servlet——转发、相对路径与绝对路径">
+                Servlet——转发、相对路径与绝对路径 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/headphoto.jpg" alt="阿希、@">
+            
+              <p class="site-author-name" itemprop="name">阿希、@</p>
+              <p class="site-description motion-element" itemprop="description">潍坊学院2016级网络工程专业，现读大三，自学Java，一名编程新手</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhuliming66" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1920713530@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/6178872113/" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/qq.jpg" target="_blank" title="qq">
+                      
+                        <i class="fa fa-fw fa-qq"></i>qq</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/weixin.jpg" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-wechat"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://weibo.com" title="新浪微博" target="_blank">新浪微博</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-项目大致分析"><span class="nav-number">1.</span> <span class="nav-text">1. 项目大致分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-用户-注册-持久层"><span class="nav-number">2.</span> <span class="nav-text">2. 用户-注册-持久层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-用户-注册-业务层"><span class="nav-number">3.</span> <span class="nav-text">3. 用户-注册-业务层</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿希、@</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'v4p2OOAyWILPIUdG0FGElyND-gzGzoHsz',
+        appKey: 'VvLs07VJ94QfBTCo5pRgOw0S',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
