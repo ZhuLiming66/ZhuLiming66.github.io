@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SpringBoot设置上传文件限制]]></title>
+    <url>%2F2019%2F09%2F03%2FSpringBoot%E8%AE%BE%E7%BD%AE%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E9%99%90%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[SpringBoot默认上传文件限制为1MB，如果上传的文件超过1MB项目会报告错误设置上传文件大小的限制方法一：1.低版本：1.xx spring.http.multipart.max-file-size=10MB spring.http.multipart.max-request-size=10MB2.高版本：2.xx spring.servlet.multipart.max-file-size=30Mb spring.servlet.multipart.max-request-size=30Mb方法二： 在启动类中添加@Configuration注解 然后在类中添加如下方法： @Bean public MultipartConfigElement getMultipartConfigElement() { MultipartConfigFactory factory= new MultipartConfigFactory(); //单个文件最大值 factory.setMaxFileSize(DataSize.ofMegabytes(100)); //总的文件最大值 factory.setMaxRequestSize(DataSize.ofMegabytes(100)); MultipartConfigElement element = factory.createMultipartConfig(); return element; }]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Idea中无法使用el表达式的解决方法]]></title>
     <url>%2F2019%2F09%2F03%2FIdea%E4%B8%AD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8el%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[修改web.xml文件的web-app节点如下： &lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot; version=&quot;3.1&quot;&gt; &lt;/web-app&gt;]]></content>
