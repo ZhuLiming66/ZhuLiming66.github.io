@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Idea中无法使用el表达式的解决方法]]></title>
+    <url>%2F2019%2F09%2F03%2FIdea%E4%B8%AD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8el%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[修改web.xml文件的web-app节点如下： &lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot; version=&quot;3.1&quot;&gt; &lt;/web-app&gt;]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java常见面试题]]></title>
+    <url>%2F2019%2F09%2F03%2FJava%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Get和Post请求的区别GET请求会把请求参数体现在URL中，通常，不推荐用于敏感信息的传递，另外，传递的数据也会受到URL长度的限制，通常建议值是不超过2K，具体值取决于浏览器和服务器的设置值，向下兼容(取较小的值)； POST请求会把请求参数封装在请求体中，并不体现在URL中，对外不可见，所以，可以用于传递敏感信息，并且，不受到长度限制！ 尽管POST请求有一定的优势，但是，也存在一些使用的不便利，例如：不适用于需要刷新的应用场景，因为刷新会反复提交数据；另外，不适合分享URL。 另外，GET请求的速度比POST请求更快！ 转发和重定向的区别转发是1次请求，当请求到服务器的控制器后，控制器可以将请求转发给JSP页面进行处理，整个转发过程是服务器内部行为，对于客户端来说是不可见的，所以，在转发时，客户端的浏览器中的URL并不会发生变化！ 重定向是2次请求，当请求到器控制器后，控制器会要求客户端进行重定向，会响应302响应码，并给客户端目标地址，然后客户端会根据目标地址发出第2次请求，所以，在重定向时，客户端的浏览器中的URL会是第2次请求的URL！ 由于转发是发生在服务器内部的行为，所以，控制器可以将数据转发给JSP页面！而重定向是2次请求，由于HTTP协议是无状态协议，所以，第1次请求处理的数据不可以直接(可以通过其它技术手段)用于第2次请求时的处理过程！ Cookie和Session的区别Cookie和Session都用与解决无连接协议的状态保持问题。Cookie是服务器下发给游览器，保存到游览器端，Cookie是不安全的，会被篡改和禁用，且只能保存字符串且最多保存4K。Session分为SessionID和Session对象，SessionID是依赖Cookie保存在游览器端的，Session对象保存在服务器端，相比较Cookie，Session保存数据更安全，可以保存任意类型的数据。]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jar包和war包的介绍和区别]]></title>
+    <url>%2F2019%2F09%2F03%2Fjar%E5%8C%85%E5%92%8Cwar%E5%8C%85%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[详见：https://www.jianshu.com/p/3b5c45e8e5bd]]></content>
+      <categories>
+        <category>other</category>
+      </categories>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[还原表单控件的默认状态]]></title>
+    <url>%2F2019%2F09%2F03%2F%E8%BF%98%E5%8E%9F%E8%A1%A8%E5%8D%95%E6%8E%A7%E4%BB%B6%E7%9A%84%E9%BB%98%E8%AE%A4%E7%8A%B6%E6%80%81%2F</url>
+    <content type="text"><![CDATA[$(“#form-addnew”)[0].reset();//js中的函数]]></content>
+      <categories>
+        <category>jQuery</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IDEA常用快捷键]]></title>
+    <url>%2F2019%2F09%2F03%2FIDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[详见：https://www.jianshu.com/p/1ca2ff26d064]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[$.ajajx()的使用]]></title>
+    <url>%2F2019%2F09%2F03%2Fajajx-%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[详见：https://www.w3school.com.cn/jquery/ajax_ajax.asp]]></content>
+      <categories>
+        <category>jQuery</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[$.cookie()的使用]]></title>
+    <url>%2F2019%2F09%2F03%2Fcookie-%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[在jQuery官网下载jQuery.cookie.js文件 https://plugins.jquery.com/cookie/ 在页面中导入 &lt;scriptsrc=”../bootstrap3/js/jquery.cookie.js”type=”text/javascript” 使用 (1)创建一个整站cookie,当没有指明 cookie有效时间时，所创建的cookie有效期默认到用户关闭浏览器为止 ①$.cookie(‘name’, ‘value’); (2)创建一个整站cookie ，cookie 的有效期为 7 天 ①$.cookie(‘name’, ‘value’, { expires: 7 }); (3)创建一个仅对 path 路径页面有效的 cookie ，cookie 的有效期为 7 天 ①$.cookie(‘name’, ‘value’, { expires: 7, path: ‘/‘ }); (4)读取 cookie ①$.cookie(‘name’); // 如果cookie存在 则获取到cookie值 =&gt; ‘value’ ②$.cookie(‘nothing’); // 如果cookie不存在 则返回 =&gt; undefined (5)获取所有可见的 cookie ①$.cookie(); // 数据格式 =&gt; { name: ‘value’ } (6)删除 cookie ①$.removeCookie(‘name’); // =&gt; true ②$.removeCookie(‘nothing’); // =&gt; false (7)删除带属性的cookie ①$.cookie(‘name’, ‘value’, { path: ‘/‘ });// 错误 ②$.removeCookie(‘name’); // =&gt; false// 正确 ③$.removeCookie(‘name’, { path: ‘/‘ }); // =&gt; true 属性 (1)domain–创建cookie所在网页所拥有的域名 ①$.cookie(‘name’, ‘value’, { domain: ‘weber.pub’ }); (2)secure–默认是false，如果为true，cookie的传输协议需为https； ①$.cookie(‘name’, ‘value’, { secure: true }); (3)raw–默认为false，读取和写入时候自动进行编码和解码（使用encodeURIComponent编码，使用decodeURIComponent解码），关闭这个功能，请设置为true。 ①$.cookie.raw = true; (4)json ①$.cookie.json = true;]]></content>
+      <categories>
+        <category>jQuery</category>
+      </categories>
+      <tags>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[idea下使用struts2]]></title>
+    <url>%2F2019%2F09%2F03%2Fidea%E4%B8%8B%E4%BD%BF%E7%94%A8struts2%2F</url>
+    <content type="text"><![CDATA[详见:https://blog.csdn.net/weixin_41060905/article/details/82890332]]></content>
+      <categories>
+        <category>struts2</category>
+      </categories>
+      <tags>
+        <tag>struts2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[BOM和DOM详解]]></title>
     <url>%2F2019%2F08%2F11%2FBOM%E5%92%8CDOM%E8%AF%A6%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[转载自：https://www.cnblogs.com/wangxiang9528/p/9855358.html]]></content>
